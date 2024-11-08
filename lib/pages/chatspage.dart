@@ -1,67 +1,78 @@
 import 'package:flutter/material.dart';
-import 'package:whatsappclone/main.dart';
 
+class ChatPage extends StatefulWidget {
+  const ChatPage({super.key});
 
-class chatpage extends StatelessWidget {
-  const chatpage({super.key});
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  final List<String> arrDrawerItems = [
+    'New Group',
+    'New Broadcast',
+    'Linked List',
+    'Starred messages',
+    'Payments',
+    'Settings'
+  ];
 
   @override
   Widget build(BuildContext context) {
-    var srcheight=MediaQuery.of(context).size.height;
-    var srcwidth =MediaQuery.of(context).size.width;
-
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
-        backgroundColor:  Color.fromARGB(255, 6, 21, 28),
-        title: Text('WhatsApp',style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize:25,
-        ),
+        backgroundColor: Color.fromARGB(255, 6, 21, 28),
+        title: Text(
+          'WhatsApp',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
         actions: [
-            IconButton(
-            icon: Icon(Icons.qr_code_scanner_outlined,
+          IconButton(
+            icon: Icon(
+              Icons.qr_code_scanner_outlined,
               color: Colors.white,
-            size: 30,),
-            onPressed: (){},
+              size: 30,
+            ),
+            onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.camera_alt_outlined,
+            icon: Icon(
+              Icons.camera_alt_outlined,
               color: Colors.white,
-              size: 30,),
-            onPressed: (){},
+              size: 30,
+            ),
+            onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(Icons.more_vert,
-              color: Colors.white,
-              size: 30,),
-            onPressed: (){
-              Scaffold.of(context).openEndDrawer();
-            },
+          Builder(
+            builder: (context) => IconButton(
+              icon: Icon(
+                Icons.more_vert,
+                color: Colors.white,
+                size: 30,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            ),
           ),
         ],
       ),
       endDrawer: Drawer(
         child: ListView.builder(
-            itemBuilder:(context, index) {
-              return Container(
-                height: srcheight*0.05,
-                child: Row(
-                  children: [
-                    Text('')
-                  ],
-                ),
-
-              );
-            }, )
+          itemCount: arrDrawerItems.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(arrDrawerItems[index]),
+              onTap: () {},
+            );
+          },
+        ),
       ),
-
-
-
-
-
       body: Center(
         child: Container(
           color: Colors.black,
@@ -69,7 +80,6 @@ class chatpage extends StatelessWidget {
           width: 300,
         ),
       ),
-
     );
   }
 }

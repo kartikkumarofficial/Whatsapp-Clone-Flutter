@@ -27,7 +27,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> widgetList = [
-      chatpage(),
+      ChatPage(),
       Center(child: Text('page2', style: TextStyle(fontSize: 40))),
       Center(child: Text('page3', style: TextStyle(fontSize: 40))),
       Center(child: Text('page4', style: TextStyle(fontSize: 40))),
