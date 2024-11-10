@@ -35,31 +35,37 @@ class _HomepageState extends State<Homepage> {
       Communitiespage(),
       Callspage(),
     ];
+    var srcheight = MediaQuery.of(context).size.height;
+    var srcwidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {
-          setState(() {
-            navigationbarindex = index;
-            // _pageController?.jumpToPage(index);
-            _pageController?.animateToPage(
-              index,
-              duration: Duration(milliseconds: 10),
-              curve: Curves.linearToEaseOut,
-            );
-          });
-        },
-        currentIndex: navigationbarindex,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        backgroundColor: Color.fromARGB(255, 7,21,29),
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
-          BottomNavigationBarItem(icon: Icon(Icons.update), label: 'Updates'),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Communities'),
-          BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
-        ],
+      bottomNavigationBar: Container(
+        height: srcheight*0.08,
+        child: BottomNavigationBar(
+          onTap: (index) {
+            setState(() {
+              navigationbarindex = index;
+              // _pageController?.jumpToPage(index);
+              _pageController?.animateToPage(
+                index,
+                duration: Duration(milliseconds: 10),
+                curve: Curves.linearToEaseOut,
+              );
+            });
+          },
+
+          currentIndex: navigationbarindex,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey,
+          backgroundColor: Color.fromARGB(255, 7,21,29),
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
+            BottomNavigationBarItem(icon: Icon(Icons.update), label: 'Updates'),
+            BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Communities'),
+            BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
+          ],
+        ),
       ),
       body: PageView(
         controller: _pageController,
