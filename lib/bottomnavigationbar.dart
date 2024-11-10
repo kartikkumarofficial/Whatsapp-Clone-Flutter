@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/pages/callpage.dart';
 import 'package:whatsappclone/pages/chatspage.dart';
+import 'package:whatsappclone/pages/communitiespage.dart';
+import 'package:whatsappclone/pages/updatespage.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -28,9 +31,9 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     List<Widget> widgetList = [
       ChatPage(),
-      Center(child: Text('page2', style: TextStyle(fontSize: 40))),
-      Center(child: Text('page3', style: TextStyle(fontSize: 40))),
-      Center(child: Text('page4', style: TextStyle(fontSize: 40))),
+      Updatespage(),
+      Communitiespage(),
+      Callspage(),
     ];
 
     return Scaffold(
@@ -49,11 +52,11 @@ class _HomepageState extends State<Homepage> {
         currentIndex: navigationbarindex,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
-        backgroundColor: Color.fromARGB(255, 6, 21, 28),
+        backgroundColor: Color.fromARGB(255, 7,21,29),
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Updates'),
+          BottomNavigationBarItem(icon: Icon(Icons.update), label: 'Updates'),
           BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Communities'),
           BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
         ],
