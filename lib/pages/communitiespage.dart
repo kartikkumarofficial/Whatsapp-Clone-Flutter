@@ -102,7 +102,7 @@ class _CommunitiespageState extends State<Communitiespage> {
           ))
               .toList(),
           onSelected: (value) {
-            // Handle menu selection if needed
+
           },
         ),
       ],
@@ -119,9 +119,9 @@ class _CommunitiespageState extends State<Communitiespage> {
               padding: EdgeInsets.only(top: srcheight*0.02, left: srcwidth * 0.04,bottom: srcwidth*0.02),
               child: SizedBox(
                 child: Align(
-                  alignment: Alignment.centerLeft, // Align the row to the left
+                  alignment: Alignment.centerLeft,
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center, // Vertically center the icon
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         decoration: BoxDecoration(

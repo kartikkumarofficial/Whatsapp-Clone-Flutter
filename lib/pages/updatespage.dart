@@ -110,7 +110,7 @@ class _UpdatespageState extends State<Updatespage> {
             ))
                 .toList(),
             onSelected: (value) {
-              // Handle menu selection if needed
+
             },
           ),
         ],
@@ -140,7 +140,7 @@ class _UpdatespageState extends State<Updatespage> {
           height: 130,
           child: ListView.builder(
               shrinkWrap: true,
-              // physics: NeverScrollableScrollPhysics(),
+              physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: arrImages.length,
               itemBuilder: (context,index)=>Container(
