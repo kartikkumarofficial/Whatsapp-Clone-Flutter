@@ -128,7 +128,7 @@ class _ChatPageState extends State<ChatPage> {
                       prefixIcon: Padding(
                         padding: const EdgeInsets.only(left: 8.0,top: 2,bottom: 2),
                         child: Image.asset('assets/images/meta.png',
-                        height: srcheight*0.006,),
+                        height: srcheight*0.004,),
                       ),
                       hintText: '   Ask Meta AI or Search',
                     hintStyle: TextStyle(fontSize: srcwidth*0.045,
