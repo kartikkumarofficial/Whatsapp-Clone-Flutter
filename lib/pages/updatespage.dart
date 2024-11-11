@@ -35,6 +35,10 @@ class _UpdatespageState extends State<Updatespage> {
       'Parenting advice and support.', 'Photography tutorials.', 'Inspiring quotes daily.',
       'Gaming trends and updates.',
     ];
+    List<String> StatusNames = [
+      'My Status', 'Mummy', 'Bhai', 'Papa',
+    'Benaam', 'Badnaam', 'chotu', 'who', 'who', 'who', 'who', 'who'
+    ];
 
     List<String> arrTime = [
       '07:00 AM', '08:30 AM', '09:45 AM', '11:30 AM', '01:00 PM', '02:30 PM', '04:00 PM', '05:30 PM',
@@ -140,7 +144,6 @@ class _UpdatespageState extends State<Updatespage> {
           height: 130,
           child: ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: arrImages.length,
               itemBuilder: (context,index)=>Container(
@@ -148,9 +151,26 @@ class _UpdatespageState extends State<Updatespage> {
                     shape: BoxShape.circle),
 
                 margin: EdgeInsets.symmetric(horizontal: 7),
-                child: CircleAvatar(
-                  radius: 30,
-                  backgroundImage: arrImages[index].image,),
+                child: Center(
+                  // height: srcheight*0.01,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding:  EdgeInsets.only(top: srcwidth*0.083),
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundImage: arrImages[index].image,),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: srcwidth*0.01),
+                        child: Text(StatusNames[index],
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),),
+                      ),
+                    ],
+                  ),
+                ),
               )),
         ),
               Divider(

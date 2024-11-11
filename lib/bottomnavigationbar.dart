@@ -49,7 +49,7 @@ class _HomepageState extends State<Homepage> {
               _pageController?.animateToPage(
                 index,
                 duration: Duration(milliseconds: 10),
-                curve: Curves.linearToEaseOut,
+                curve: Curves.linear,
               );
             });
           },
