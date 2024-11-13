@@ -36,7 +36,7 @@ class _UpdatespageState extends State<Updatespage> {
       'Gaming trends and updates.',
     ];
     List<String> StatusNames = [
-      'My Status', 'Mummy', 'Bhai', 'Papa',
+      'MyStatus', 'Mummy', 'Bhai', 'Papa',
     'Benaam', 'Badnaam', 'chotu', 'who', 'who', 'who', 'who', 'who'
     ];
 
@@ -141,22 +141,23 @@ class _UpdatespageState extends State<Updatespage> {
                 ),
               ),
         SizedBox(
-          height: 130,
+          height: srcwidth*0.328,
           child: ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: arrImages.length,
               itemBuilder: (context,index)=>Container(
-                decoration: BoxDecoration(border: Border.all(color: Colors.green,width: 2),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.green,width: srcwidth*0.006),
                     shape: BoxShape.circle),
 
-                margin: EdgeInsets.symmetric(horizontal: 7),
+                margin: EdgeInsets.symmetric(horizontal: srcwidth*0.015),
                 child: Center(
                   // height: srcheight*0.01,
                   child: Column(
                     children: [
                       Padding(
-                        padding:  EdgeInsets.only(top: srcwidth*0.083),
+                        padding:  EdgeInsets.only(top: srcwidth*0.08),
                         child: CircleAvatar(
                           radius: 30,
                           backgroundImage: arrImages[index].image,),

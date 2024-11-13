@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/main.dart';
+import 'package:badges/badges.dart' as badges;
+import 'package:badges/badges.dart';
+
 
 
 
@@ -116,34 +119,44 @@ class _CommunitiespageState extends State<Communitiespage> {
           child: Column(
             children: [
               Padding(
-              padding: EdgeInsets.only(top: srcheight*0.02, left: srcwidth * 0.04,bottom: srcwidth*0.02),
+              padding: EdgeInsets.only(
+                  top: srcheight*0.02, left: srcwidth * 0.04,bottom: srcwidth*0.02),
               child: SizedBox(
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.grey,
-                            shape: BoxShape.rectangle
-                        ),
+                      badges.BadgePositioned(
 
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Icon(
-                            Icons.group_add,
-                            color: Colors.white,
-                            size: srcwidth * 0.1,
+
+
+                        child: Container(
+
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey,
+                              shape: BoxShape.rectangle
+                          ),
+                        
+                          child: Padding(
+                            padding: EdgeInsets.all(srcwidth*0.02),
+                            child: Icon(
+                              Icons.group_add,
+                              color: Colors.white,
+                              size: srcwidth * 0.1,
+                            ),
                           ),
                         ),
                       ),
-                      Text('   New Community',
-                        style: TextStyle(
-                            fontSize: srcwidth*0.06,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500
+                      Padding(
+                        padding:  EdgeInsets.only(left: srcwidth*0.038),
+                        child: Text('New Community',
+                          style: TextStyle(
+                              fontSize: srcwidth*0.056,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500
+                          ),
                         ),
                       ),
                     ],
@@ -194,8 +207,11 @@ class _CommunitiespageState extends State<Communitiespage> {
                       arrCommunity1[index],
                       style: TextStyle(color: Colors.white),
                     ),
-                    leading: CircleAvatar(
-                      backgroundImage: arrImages[index].image,
+                    leading: Padding(
+                      padding: EdgeInsets.only(left: srcwidth*0.009),
+                      child: CircleAvatar(
+                        backgroundImage: arrImages[index].image,
+                      ),
                     ),
                     trailing: Text(
                       arrTimes[index],
@@ -219,7 +235,7 @@ class _CommunitiespageState extends State<Communitiespage> {
                       size: 15,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 30),
+                      margin: EdgeInsets.only(left: srcwidth*0.093),
                       child: Text(
                         'View all', // Changed text
                         style: TextStyle(color: Colors.grey),
@@ -270,8 +286,11 @@ class _CommunitiespageState extends State<Communitiespage> {
                       arrCommunity1[index],
                       style: TextStyle(color: Colors.white),
                     ),
-                    leading: CircleAvatar(
-                      backgroundImage: arrImages[index].image,
+                    leading: Padding(
+                      padding: EdgeInsets.only(left: srcwidth*0.0069),
+                      child: CircleAvatar(
+                        backgroundImage: arrImages[index].image,
+                      ),
                     ),
                     trailing: Text(
                       arrTimes[index],
@@ -295,7 +314,7 @@ class _CommunitiespageState extends State<Communitiespage> {
                       size: 15,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 30),
+                      margin: EdgeInsets.only(left: srcwidth*0.093),
                       child: Text(
                         'View all', // Changed text
                         style: TextStyle(color: Colors.grey),

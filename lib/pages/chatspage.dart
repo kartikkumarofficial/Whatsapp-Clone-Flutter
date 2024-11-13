@@ -57,6 +57,8 @@ class _ChatPageState extends State<ChatPage> {
 
 
     return Scaffold(
+      // extendBodyBehindAppBar: true,
+
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 70,
@@ -86,21 +88,24 @@ class _ChatPageState extends State<ChatPage> {
             ),
             onPressed: () {},
           ),
-          PopupMenuButton<String>(
-            icon: Icon(
-              Icons.more_vert,
-              color: Colors.white,
-              size: 28,
-            ),
-            itemBuilder: (context) => arrDrawerItems
-                .map((item) => PopupMenuItem<String>(
-              value: item,
-              child: Text(item),
-            ))
-                .toList(),
-            onSelected: (value) {
+          Container(
+            color: Color.fromARGB(255,7,21,29),
+            child: PopupMenuButton<String>(
+              icon: Icon(
+                Icons.more_vert,
+                color: Colors.white,
+                size: 28,
+              ),
+              itemBuilder: (context) => arrDrawerItems
+                  .map((item) => PopupMenuItem<String>(
+                value: item,
+                child: Text(item),
+              ))
+                  .toList(),
+              onSelected: (value) {
 
-            },
+              },
+            ),
           ),
         ],
       ),
@@ -152,7 +157,7 @@ class _ChatPageState extends State<ChatPage> {
                 ),
 
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: srcwidth*0.01),
             Expanded(
               child: ListView.builder(
                   itemCount: arrNames.length,
@@ -169,6 +174,7 @@ class _ChatPageState extends State<ChatPage> {
                       ],
                     ),
                     leading: CircleAvatar(
+                      radius: srcwidth*0.06,
                       backgroundImage:arrImages[index].image ,
                       backgroundColor:Colors.white,
                     ),

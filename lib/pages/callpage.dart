@@ -118,6 +118,40 @@ class _CallspageState extends State<Callspage> {
               child: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.0, top: srcwidth * 0.02),
                 child: Text(
+                  'Favourites',
+                  style: TextStyle(
+                    fontSize: srcwidth * 0.05,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding:  EdgeInsets.only(top: srcwidth*0.013),
+              child: ListTile(
+                title: Text(
+                  'Add favourite',
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth*0.048
+                ),),
+                leading: CircleAvatar(
+                  backgroundColor: Colors.green,
+                  child: Icon(Icons.favorite_rounded,
+                    color: Colors.black,
+                  size: srcwidth*0.05,),
+                  // radius: srcwidth*0.06,
+                  // backgroundImage: AssetImage('assets/images/communitiespage/library.jpg')
+                  ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: EdgeInsets.only(left: srcwidth * 0.04),
+              child: Padding(
+                padding: EdgeInsets.only(left: srcwidth * 0.0, top: srcwidth * 0.02),
+                child: Text(
                   'Recent',
                   style: TextStyle(
                     fontSize: srcwidth * 0.05,
