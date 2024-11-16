@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/bottomnavigationbar.dart';
+import 'callpage.dart';
+import 'settingspage.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -99,10 +102,28 @@ class _ChatPageState extends State<ChatPage> {
               itemBuilder: (context) => arrDrawerItems
                   .map((item) => PopupMenuItem<String>(
                 value: item,
-                child: Text(item),
+                padding: EdgeInsets.zero,
+
+                child: Container(
+                  padding: EdgeInsets.zero,
+                  // width: double.infinity,
+                  // color: Color.fromARGB(255,7,21,29),
+                  child: ListTile(
+                    // tileColor: Color.fromARGB(255,7,21,29),
+
+
+                      title: Padding(
+                        padding: EdgeInsets.only(left: srcwidth*0.03),
+                        child: Text(item,style: TextStyle(color: Colors.black),),
+                      )),
+                ),
               ))
                   .toList(),
               onSelected: (value) {
+                if(value=='Settings'){
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=> SettingsPage() ));
+                }
 
               },
             ),
@@ -185,6 +206,7 @@ class _ChatPageState extends State<ChatPage> {
                       ),),)
               ),
             ),
+
 
           ],
         ),

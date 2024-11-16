@@ -12,13 +12,13 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int navigationbarindex = 0;
+  int _selectedIndex = 0;
   PageController? _pageController;
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(); //init pagecontrolerr
+    _pageController = PageController();
   }
 
   @override
@@ -35,17 +35,20 @@ class _HomepageState extends State<Homepage> {
       Communitiespage(),
       Callspage(),
     ];
+
     var srcheight = MediaQuery.of(context).size.height;
     var srcwidth = MediaQuery.of(context).size.width;
+    var smallscreen = srcwidth <= 640;
+    var bigscreen = srcwidth > 640;
 
     return Scaffold(
-      bottomNavigationBar: Container(
-        height: srcheight*0.08,
+      bottomNavigationBar: smallscreen
+          ? Container(
+        height: srcheight * 0.08,
         child: BottomNavigationBar(
           onTap: (index) {
             setState(() {
-              navigationbarindex = index;
-              // _pageController?.jumpToPage(index);
+              _selectedIndex = index;
               _pageController?.animateToPage(
                 index,
                 duration: Duration(milliseconds: 10),
@@ -53,11 +56,10 @@ class _HomepageState extends State<Homepage> {
               );
             });
           },
-
-          currentIndex: navigationbarindex,
+          currentIndex: _selectedIndex,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.grey,
-          backgroundColor: Color.fromARGB(255, 7,21,29),
+          backgroundColor: Color.fromARGB(255, 7, 21, 29),
           type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
@@ -66,15 +68,38 @@ class _HomepageState extends State<Homepage> {
             BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
           ],
         ),
-      ),
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            navigationbarindex = index;
-          });
-        },
-        children: widgetList,
+      )
+          : null,
+
+      body: Row(
+        children: [
+          if (bigscreen)
+            NavigationRail(
+              selectedIndex: _selectedIndex,
+              destinations: [
+                NavigationRailDestination(icon: Icon(Icons.chat), label: Text('Chats')),
+                NavigationRailDestination(icon: Icon(Icons.update), label: Text('Updates')),
+                NavigationRailDestination(icon: Icon(Icons.people), label: Text('Communities')),
+                NavigationRailDestination(icon: Icon(Icons.call), label: Text('Calls')),
+              ],
+              onDestinationSelected: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+            ),
+          Expanded(
+            child: PageView(
+              controller: _pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+              children: widgetList,
+            ),
+          ),
+        ],
       ),
     );
   }

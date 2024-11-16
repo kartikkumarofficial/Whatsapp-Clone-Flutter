@@ -28,6 +28,25 @@ class _UpdatespageState extends State<Updatespage> {
       'Entrepreneur Insights', 'Melody Makers', 'Parenting Pioneers', 'Photography Pros',
       'Positive Vibes', 'E-Sports Masters',
     ];
+    List<String> arrChannels = [
+      'Innovation Hub', 'Health Heroes', 'Adventure Seekers', 'Your Everyday Kitchen', 'Readers Paradise',
+      'Entrepreneur Insights', 'Melody Makers', 'Parenting Pioneers', 'Photography Pros',
+      'Positive Vibes', 'E-Sports Masters',
+    ];
+    List<Image> arrChannelImage = [
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+      Image.asset('assets/images/communitiespage/tech.jpg'),
+    ];
 
     List<String> arrSubtitles = [
       'Latest tech news.', 'Fitness hacks and tips.', 'Travel adventures.', 'Delicious cooking ideas.',
@@ -143,7 +162,7 @@ class _UpdatespageState extends State<Updatespage> {
         SizedBox(
           height: srcwidth*0.328,
           child: ListView.builder(
-              shrinkWrap: true,
+              // shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: arrImages.length,
               itemBuilder: (context,index)=>Container(
@@ -234,8 +253,8 @@ class _UpdatespageState extends State<Updatespage> {
                           ),),)
                   ),
                 ),
-              )
-
+              ),
+             
 
 
 
