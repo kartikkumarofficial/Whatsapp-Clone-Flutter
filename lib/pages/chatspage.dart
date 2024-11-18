@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/bottomnavigationbar.dart';
+import 'package:whatsappclone/pages/newgrouppage.dart';
 import 'callpage.dart';
 import 'settingspage.dart';
 
@@ -14,7 +15,7 @@ class _ChatPageState extends State<ChatPage> {
   final List arrDrawerItems = [
     'New Group',
     'New Broadcast',
-    'Linked List',
+    'Linked Devices',
     'Starred messages',
     'Payments',
     'Settings'
@@ -123,6 +124,9 @@ class _ChatPageState extends State<ChatPage> {
                 if(value=='Settings'){
                   Navigator.push(context,
                   MaterialPageRoute(builder: (context)=> SettingsPage() ));
+                }else if (value =='New Group'){
+                  Navigator.push(context, 
+                  MaterialPageRoute(builder: (context) => NewgroupPage(),));
                 }
 
               },

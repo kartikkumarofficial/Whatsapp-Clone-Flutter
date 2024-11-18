@@ -105,9 +105,4 @@ class _HomepageState extends State<Homepage> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: Homepage(),
-    theme: ThemeData.dark(),
-  ));
-}
+

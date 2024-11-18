@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/pages/splashscreen.dart';
 import 'bottomnavigationbar.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
       ),
-      home: Homepage(),
+      home: Splashscreen(),
     );
   }
 }

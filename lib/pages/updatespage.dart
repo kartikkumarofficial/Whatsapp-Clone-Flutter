@@ -176,7 +176,7 @@ class _UpdatespageState extends State<Updatespage> {
                   child: Column(
                     children: [
                       Padding(
-                        padding:  EdgeInsets.only(top: srcwidth*0.08),
+                        padding:  EdgeInsets.only(top: srcwidth*0.089),
                         child: CircleAvatar(
                           radius: 30,
                           backgroundImage: arrImages[index].image,),
