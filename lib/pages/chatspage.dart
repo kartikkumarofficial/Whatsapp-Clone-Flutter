@@ -146,25 +146,27 @@ class _ChatPageState extends State<ChatPage> {
             width: double.infinity,
             child: Column(
               children: [
+
+                //searchbox
                 Padding(
                   padding: const EdgeInsets.only(left: 10,top:10,right: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       // borderRadius: BorderRadius.circular(30)
                     ),
-                    height: srcheight*0.06,
+                    height: srcheight*0.055,
                     width: srcwidth*1,
                     child: TextField(
                       textAlignVertical: TextAlignVertical.bottom,
                       decoration: InputDecoration(
                         filled: true,
                           prefixIcon: Padding(
-                            padding: const EdgeInsets.only(left: 8.0,top: 2,bottom: 2),
+                            padding: const EdgeInsets.only(left: 8.0,top: 4,bottom: 4),
                             child: Image.asset('assets/images/meta.png',
                             height: srcheight*0.004,),
                           ),
                           hintText: '   Ask Meta AI or Search',
-                        hintStyle: TextStyle(fontSize: srcwidth*0.045,
+                        hintStyle: TextStyle(fontSize: srcwidth*0.04,
                         color: Colors.grey),
                         fillColor: Color.fromARGB(255,35,43,51),
                         border: OutlineInputBorder(
@@ -186,61 +188,70 @@ class _ChatPageState extends State<ChatPage> {
 
                 ),
                 SizedBox(height: srcwidth*0.02),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8,right: 14),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: size.height*0.037,
-                        width: size.width*0.1,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff20292f),
-                            borderRadius: BorderRadius.circular(15)
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8,right: 14),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: size.height*0.037,
+                          width: size.width*0.1,
+                          decoration: BoxDecoration(
+                              color: const Color(0xff20292f),
+                              borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: const Center(child: Text("All",style: TextStyle(color: Colors.white38))),
                         ),
-                        child: const Center(child: Text("All",style: TextStyle(color: Colors.white38))),
-                      ),
-                      Container(
-                        height: size.height*0.037,
-                        width: size.width*0.18,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff20292f),
-                            borderRadius: BorderRadius.circular(15)
+                        Container(
+                          height: size.height*0.037,
+                          width: size.width*0.18,
+                          decoration: BoxDecoration(
+                              color: const Color(0xff20292f),
+                              borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: const Center(child: Text("Unread",style: TextStyle(color: Colors.white38))),
                         ),
-                        child: const Center(child: Text("Unread",style: TextStyle(color: Colors.white38))),
-                      ),
 
-                      Container(
-                        height:size.height*0.037,
-                        width: size.width*0.24,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff20292f),
-                            borderRadius: BorderRadius.circular(15)
+                        Container(
+                          height:size.height*0.037,
+                          width: size.width*0.24,
+                          decoration: BoxDecoration(
+                              color: const Color(0xff20292f),
+                              borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: const Center(child: Text("Favourities",style: TextStyle(color: Colors.white38),)),
                         ),
-                        child: const Center(child: Text("Favourities",style: TextStyle(color: Colors.white38),)),
-                      ),
 
-                      Container(
-                        height: size.height*0.037,
-                        width: size.width*0.17,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff20292f),
-                            borderRadius: BorderRadius.circular(15)
+                        InkWell(
+                          onTap: (){},
+                          child: Container(
+                            height: size.height*0.037,
+                            width: size.width*0.17,
+                            decoration: BoxDecoration(
+                                color: const Color(0xff20292f),
+                                borderRadius: BorderRadius.circular(15)
+                            ),
+                            child: const Center(child: Text("Groups",style: TextStyle(color: Colors.white38),)),
+                          ),
                         ),
-                        child: const Center(child: Text("Groups",style: TextStyle(color: Colors.white38),)),
-                      ),
-                      Container(
-                        height: size.height*0.037,
-                        width: size.width*0.1,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff20292f),
-                            borderRadius: BorderRadius.circular(15)
+                        Container(
+                          height: size.height*0.037,
+                          width: size.width*0.1,
+                          decoration: BoxDecoration(
+                              color: const Color(0xff20292f),
+                              borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: const Center(child: Icon(Icons.add,color: Colors.white38,)),
                         ),
-                        child: const Center(child: Icon(Icons.add,color: Colors.white38,)),
-                      ),
-                    ],
+
+
+                      ],
+                    ),
+
                   ),
                 ),
+
 
 
                 Expanded(
