@@ -25,6 +25,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     var srcheight=MediaQuery.of(context).size.height;
     var srcwidth =MediaQuery.of(context).size.width;
+    var size =MediaQuery.of(context).size;
     List<String> arrNames = [
       'Supreme Leader', 'Mummy', 'Bhai', 'Koi toh hai', 'Pata nahi kon',
       'hmmm....', 'Benaam', 'Badnaam', 'chotu', 'kuch toh naam hai'
@@ -66,7 +67,7 @@ class _ChatPageState extends State<ChatPage> {
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 70,
-        backgroundColor: Color.fromARGB(255, 7,21,29),
+        backgroundColor: Color.fromARGB(255,11,17,21),
         title: Text(
           'WhatsApp',
           style: TextStyle(
@@ -93,7 +94,7 @@ class _ChatPageState extends State<ChatPage> {
             onPressed: () {},
           ),
           Container(
-            color: Color.fromARGB(255,7,21,29),
+            color: Color.fromARGB(255,11,17,21),
             child: PopupMenuButton<String>(
               icon: Icon(
                 Icons.more_vert,
@@ -125,7 +126,7 @@ class _ChatPageState extends State<ChatPage> {
                   Navigator.push(context,
                   MaterialPageRoute(builder: (context)=> SettingsPage() ));
                 }else if (value =='New Group'){
-                  Navigator.push(context, 
+                  Navigator.push(context,
                   MaterialPageRoute(builder: (context) => NewgroupPage(),));
                 }
 
@@ -136,84 +137,193 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body:
 
-      Container(
-        color: Color.fromARGB(255,7,21,29),
+      Stack(
+        children: [
+          Container(
+            color: Color.fromARGB(255,11,17,21),
 
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10,top:10,right: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  // borderRadius: BorderRadius.circular(30)
-                ),
-                height: srcheight*0.06,
-                width: srcwidth*1,
-                child: TextField(
-                  textAlignVertical: TextAlignVertical.bottom,
-                  decoration: InputDecoration(
-                    filled: true,
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.only(left: 8.0,top: 2,bottom: 2),
-                        child: Image.asset('assets/images/meta.png',
-                        height: srcheight*0.004,),
+            height: double.infinity,
+            width: double.infinity,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10,top:10,right: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      // borderRadius: BorderRadius.circular(30)
+                    ),
+                    height: srcheight*0.06,
+                    width: srcwidth*1,
+                    child: TextField(
+                      textAlignVertical: TextAlignVertical.bottom,
+                      decoration: InputDecoration(
+                        filled: true,
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.only(left: 8.0,top: 2,bottom: 2),
+                            child: Image.asset('assets/images/meta.png',
+                            height: srcheight*0.004,),
+                          ),
+                          hintText: '   Ask Meta AI or Search',
+                        hintStyle: TextStyle(fontSize: srcwidth*0.045,
+                        color: Colors.grey),
+                        fillColor: Color.fromARGB(255,35,43,51),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
                       ),
-                      hintText: '   Ask Meta AI or Search',
-                    hintStyle: TextStyle(fontSize: srcwidth*0.045,
-                    color: Colors.grey),
-                    fillColor: Color.fromARGB(255,35,43,51),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide.none,
+                          // Image.asset('assets/images/meta.png'),
+                      ),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide.none,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
-                      // Image.asset('assets/images/meta.png'),
+
+                ),
+                SizedBox(height: srcwidth*0.02),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8,right: 14),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: size.height*0.037,
+                        width: size.width*0.1,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff20292f),
+                            borderRadius: BorderRadius.circular(15)
+                        ),
+                        child: const Center(child: Text("All",style: TextStyle(color: Colors.white38))),
+                      ),
+                      Container(
+                        height: size.height*0.037,
+                        width: size.width*0.18,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff20292f),
+                            borderRadius: BorderRadius.circular(15)
+                        ),
+                        child: const Center(child: Text("Unread",style: TextStyle(color: Colors.white38))),
+                      ),
+
+                      Container(
+                        height:size.height*0.037,
+                        width: size.width*0.24,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff20292f),
+                            borderRadius: BorderRadius.circular(15)
+                        ),
+                        child: const Center(child: Text("Favourities",style: TextStyle(color: Colors.white38),)),
+                      ),
+
+                      Container(
+                        height: size.height*0.037,
+                        width: size.width*0.17,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff20292f),
+                            borderRadius: BorderRadius.circular(15)
+                        ),
+                        child: const Center(child: Text("Groups",style: TextStyle(color: Colors.white38),)),
+                      ),
+                      Container(
+                        height: size.height*0.037,
+                        width: size.width*0.1,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff20292f),
+                            borderRadius: BorderRadius.circular(15)
+                        ),
+                        child: const Center(child: Icon(Icons.add,color: Colors.white38,)),
+                      ),
+                    ],
                   ),
                 ),
 
-            ),
-            SizedBox(height: srcwidth*0.01),
-            Expanded(
-              child: ListView.builder(
-                  itemCount: arrNames.length,
-                  itemBuilder: (context,index)=> ListTile(title:Text(arrNames[index],
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),),
-                    subtitle:Row(
-                      children: [
-                        Icon(Icons.check),
-                        Text(arrMessages[index],style: TextStyle(color: Colors.grey),)
-                      ],
-                    ),
-                    leading: CircleAvatar(
-                      radius: srcwidth*0.06,
-                      backgroundImage:arrImages[index].image ,
-                      backgroundColor:Colors.white,
-                    ),
-                    trailing: Text(arrTime[index],
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 13
-                      ),),)
-              ),
-            ),
+
+                Expanded(
+                  child: ListView.builder(
+                      itemCount: arrNames.length,
+                      itemBuilder: (context,index)=> ListTile(title:Text(arrNames[index],
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),),
+                        subtitle:Row(
+                          children: [
+                            Icon(Icons.check),
+                            Text(arrMessages[index],style: TextStyle(color: Colors.grey),)
+                          ],
+                        ),
+                        leading: CircleAvatar(
+                          radius: srcwidth*0.06,
+                          backgroundImage:arrImages[index].image ,
+                          backgroundColor:Colors.white,
+                        ),
+                        trailing: Text(arrTime[index],
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 13
+                          ),),)
+                  ),
+                ),
 
 
-          ],
-        ),
+
+              ],
+
+            ),
+          ),
+          Positioned(
+              height: srcwidth*0.14,
+              width: srcwidth*0.14,
+              bottom: srcwidth*0.06,
+              right: srcwidth*0.04,
+              child: ElevatedButton(
+                onPressed: () {
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(srcwidth*0.045)
+                  ),
+                  padding: EdgeInsets.all(14),
+                  backgroundColor: Colors.green,
+                ),
+                child: Icon(
+                  Icons.chat,
+                  color: Colors.black,
+                  size: srcwidth*0.065,
+
+                ),)
+
+          ),
+          Positioned(
+              height: srcwidth*0.11,
+              width: srcwidth*0.11,
+              bottom: srcwidth*0.24,
+              right: srcwidth*0.055,
+              child: ElevatedButton(
+                onPressed: () {
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(srcwidth*0.035)
+                  ),
+                  padding: EdgeInsets.all(7),
+                  backgroundColor: Color.fromARGB(255,24,46,49),
+                ),
+                child: Image.asset('assets/images/meta.png',
+                  height: srcwidth*0.2,
+                  width: srcwidth*0.2 , ),)
+
+          ),
+
+
+        ],
+
       ),
     );
   }

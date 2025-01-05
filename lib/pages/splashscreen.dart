@@ -40,10 +40,11 @@ class _SplashscreenState extends State<Splashscreen> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
+        color: Color.fromARGB(255,19,24,28),
         child: Center(
           child: AnimatedOpacity(
             opacity: _opacity,
-            duration: Duration(seconds: 1),
+            duration: Duration(seconds: 2),
             child: Image.asset(
               'assets/images/splash.png',
               height: srcwidth * 0.55,

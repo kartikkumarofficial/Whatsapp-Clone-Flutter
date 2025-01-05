@@ -57,9 +57,9 @@ class _HomepageState extends State<Homepage> {
             });
           },
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.white,
+          selectedItemColor: Colors.green,
           unselectedItemColor: Colors.grey,
-          backgroundColor: Color.fromARGB(255, 7, 21, 29),
+          backgroundColor: Color.fromARGB(255,11,17,21),
           type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),

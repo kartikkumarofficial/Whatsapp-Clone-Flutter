@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:whatsappclone/main.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:badges/badges.dart';
+import 'newgrouppage.dart';
+import 'settingspage.dart';
 
 
 
@@ -62,54 +64,76 @@ class _CommunitiespageState extends State<Communitiespage> {
 
     return Scaffold(
       appBar: AppBar(
-
-      elevation: 0,
-
-      toolbarHeight: 70,
-      backgroundColor: Color.fromARGB(255, 7,21,29),
-      title: Text(
-        'Communities',
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 25,
+        elevation: 0,
+        toolbarHeight: 70,
+        backgroundColor: Color.fromARGB(255, 7,21,29),
+        title: Text(
+          'WhatsApp',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.qr_code_scanner_outlined,
+              color: Colors.white,
+              size: 28,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.camera_alt_outlined,
+              color: Colors.white,
+              size: 28,
+            ),
+            onPressed: () {},
+          ),
+          Container(
+            color: Color.fromARGB(255,7,21,29),
+            child: PopupMenuButton<String>(
+              icon: Icon(
+                Icons.more_vert,
+                color: Colors.white,
+                size: 28,
+              ),
+              itemBuilder: (context) => arrDrawerItems
+                  .map((item) => PopupMenuItem<String>(
+                value: item,
+                padding: EdgeInsets.zero,
+
+                child: Container(
+                  padding: EdgeInsets.zero,
+                  // width: double.infinity,
+                  // color: Color.fromARGB(255,7,21,29),
+                  child: ListTile(
+                    // tileColor: Color.fromARGB(255,7,21,29),
+
+
+                      title: Padding(
+                        padding: EdgeInsets.only(left: srcwidth*0.03),
+                        child: Text(item,style: TextStyle(color: Colors.black),),
+                      )),
+                ),
+              ))
+                  .toList(),
+              onSelected: (value) {
+                if(value=='Settings'){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=> SettingsPage() ));
+                }else if (value =='New Group'){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => NewgroupPage(),));
+                }
+
+              },
+            ),
+          ),
+        ],
       ),
-      actions: [
-        IconButton(
-          icon: Icon(
-            Icons.qr_code_scanner_outlined,
-            color: Colors.white,
-            size: 28,
-          ),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Icon(
-            Icons.camera_alt_outlined,
-            color: Colors.white,
-            size: 28,
-          ),
-          onPressed: () {},
-        ),
-        PopupMenuButton<String>(
-          icon: Icon(
-            Icons.more_vert,
-            color: Colors.white,
-            size: 28,
-          ),
-          itemBuilder: (context) => arrDrawerItems
-              .map((item) => PopupMenuItem<String>(
-            value: item,
-            child: Text(item),
-          ))
-              .toList(),
-          onSelected: (value) {
-
-          },
-        ),
-      ],
-    ),
 
       body:Container(
         height: double.infinity,
