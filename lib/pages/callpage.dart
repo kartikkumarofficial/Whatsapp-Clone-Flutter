@@ -56,7 +56,7 @@ class _CallspageState extends State<Callspage> {
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 70,
-        backgroundColor: Color.fromARGB(255, 7,21,29),
+        backgroundColor: Color.fromARGB(255,11,17,21),
         title: Text(
           'WhatsApp',
           style: TextStyle(
@@ -83,7 +83,7 @@ class _CallspageState extends State<Callspage> {
             onPressed: () {},
           ),
           Container(
-            color: Color.fromARGB(255,7,21,29),
+            color: Color.fromARGB(255,11,17,21),
             child: PopupMenuButton<String>(
               icon: Icon(
                 Icons.more_vert,
@@ -129,7 +129,7 @@ class _CallspageState extends State<Callspage> {
           Container(
             height: double.infinity,
             width: double.infinity,
-            color: Color.fromARGB(255, 7, 21, 29),
+            color: Color.fromARGB(255,11,17,21),
             child: Column(
               children: [
                 Container(

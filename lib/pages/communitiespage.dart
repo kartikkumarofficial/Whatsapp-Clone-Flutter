@@ -66,7 +66,7 @@ class _CommunitiespageState extends State<Communitiespage> {
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 70,
-        backgroundColor: Color.fromARGB(255, 7,21,29),
+        backgroundColor: Color.fromARGB(255,11,17,21),
         title: Text(
           'WhatsApp',
           style: TextStyle(
@@ -93,7 +93,7 @@ class _CommunitiespageState extends State<Communitiespage> {
             onPressed: () {},
           ),
           Container(
-            color: Color.fromARGB(255,7,21,29),
+            color: Color.fromARGB(255,11,17,21),
             child: PopupMenuButton<String>(
               icon: Icon(
                 Icons.more_vert,
@@ -138,7 +138,7 @@ class _CommunitiespageState extends State<Communitiespage> {
       body:Container(
         height: double.infinity,
         width: double.infinity,
-        color: Color.fromARGB(255,7,21,29),
+        color: Color.fromARGB(255,11,17,21),
         child: SingleChildScrollView(
           child: Column(
             children: [
