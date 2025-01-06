@@ -224,7 +224,7 @@ class _ChatPageState extends State<ChatPage> {
                         ),
 
                         InkWell(
-                          onTap: (){},
+                          onTap: (){}, //todo have to add ontap functionallity here
                           child: Container(
                             height: size.height*0.037,
                             width: size.width*0.17,
