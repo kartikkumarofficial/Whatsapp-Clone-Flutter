@@ -58,7 +58,7 @@ class _SplashscreenState extends State<Splashscreen> {
                       height: srcwidth * 0.35,
                       width: srcwidth * 0.35,
                     ),
-                    SizedBox(height: srcheight * 0.3), // Add spacing
+                    SizedBox(height: srcheight * 0.3),
                     Image.asset(
                       'assets/images/frommeta.png',
                       height: srcwidth * 0.3,
