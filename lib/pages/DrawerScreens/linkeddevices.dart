@@ -10,12 +10,27 @@ class LinkedDevicesPage extends StatefulWidget {
 }
 
 class _LinkedDevicesPageState extends State<LinkedDevicesPage> {
+
   @override
   Widget build(BuildContext context) {
+    var srcheight = MediaQuery.of(context).size.height;
+    var srcwidth = MediaQuery.of(context).size.width;
+    var srcsize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Linked devices'),
+        backgroundColor: Color.fromARGB(255,11,17,21),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Text('Linked devices',style: TextStyle(color: Colors.white),),
       ),
+      body:Container(
+        height: srcheight*0.4 ,
+        width: double.infinity,
+        color: Color.fromARGB(255,11,17,21),
+
+      ),
+
+
+
     );
   }
 }
