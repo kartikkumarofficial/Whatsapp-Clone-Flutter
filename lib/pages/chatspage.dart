@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:whatsappclone/bottomnavigationbar.dart';
+import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/newgrouppage.dart';
 import 'callpage.dart';
 import 'settingspage.dart';
@@ -12,6 +16,20 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+  //todo fix image picker to fetch images
+  File? image;
+  Future pickImage() async {
+   try {
+     await ImagePicker().pickImage(source: ImageSource.camera);
+     if(image==null) return;
+     final imageTemporary = File(image!.path);
+     this.image = imageTemporary;
+   }catch(e){
+     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to pick image : $e'),));
+   }
+  }
+
+
   final List arrDrawerItems = [
     'New Group',
     'New Broadcast',
@@ -91,7 +109,11 @@ class _ChatPageState extends State<ChatPage> {
               color: Colors.white,
               size: 28,
             ),
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                pickImage();
+              });
+            },
           ),
           Container(
             color: Color.fromARGB(255,11,17,21),
@@ -128,6 +150,9 @@ class _ChatPageState extends State<ChatPage> {
                 }else if (value =='New Group'){
                   Navigator.push(context,
                   MaterialPageRoute(builder: (context) => NewgroupPage(),));
+                }else if (value =='Linked Devices'){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => LinkedDevicesPage(),));
                 }
 
               },
