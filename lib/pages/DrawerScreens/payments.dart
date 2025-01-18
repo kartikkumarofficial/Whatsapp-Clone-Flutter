@@ -62,11 +62,11 @@ class _PaymentsPageState extends State<PaymentsPage> {
         title: Column(
           children: [
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.bottomLeft,
               child: Text(
                 'Payments',
                 style: TextStyle(
-                  fontSize: srcwidth * 0.042,
+                  fontSize: srcwidth * 0.06,
                   color: Colors.white,
                 ),
               ),
@@ -98,9 +98,10 @@ class _PaymentsPageState extends State<PaymentsPage> {
                   title: Text('Scan any UPI QR code' , style: TextStyle(color: Colors.white),),
                   onTap: (){},
                 ),
+                  SizedBox(height: srcwidth*0.02,),
                   Divider(
                     // height: srcwidth*0.1,
-                    thickness: srcwidth*0.05,
+                    thickness: srcwidth*0.03,
                     color: Color.fromRGBO(18,24,29,1.0),
                   ),
                 Container(
@@ -123,7 +124,7 @@ class _PaymentsPageState extends State<PaymentsPage> {
                 ),
                 Divider(
                   // height: srcwidth*0.1,
-                  thickness: srcwidth*0.05,
+                  thickness: srcwidth*0.03,
                   color: Color.fromRGBO(18,24,29,1.0),
                 ),
                 Container(
@@ -135,17 +136,81 @@ class _PaymentsPageState extends State<PaymentsPage> {
                         padding: const EdgeInsets.all(20.0),
                         child: Text('Payment Methods',style: TextStyle(color: Colors.green),),
                       ),
-                      Align(
-                          alignment: Alignment.center,
-                          child: Image.asset('assets/images/nopaymenthistorybg.png',height: srcwidth*0.2,color: Colors.grey,)),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Container(
+                          height: srcwidth*0.2,
+                          width: srcwidth*0.9,
+                          // color: Colors.green,
+                          decoration: BoxDecoration(
+                            color:Colors.blueGrey,
+                            borderRadius: BorderRadius.circular(srcwidth*0.05)
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 15,bottom: 20,right: 15),
+                                child: Icon(Icons.security,color: Colors.green,),
+                              ),
+                              Center(
+                                child: RichText(
+                                  text: TextSpan(
+                                    style: TextStyle(color: Colors.white),
+                                    children: [
+                                      TextSpan(
+                                        text: 'To protect your security, Whatsapp does '
+                                            '\n not store your UPI PIN or full bank account\n number.',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      TextSpan(
+                                        text: 'Learn more',
+                                        style: TextStyle(color: Colors.green)
+                                      )
+                                    ],
+                                      ),
+
+
+                                ),
+                              ),
+                            ],
+                          )
+                        ),
+                      ),
                       ListTile(
                         leading: Icon(Icons.add_circle_outline,color: Colors.white,),
                         title: Text('Add payment method',style: TextStyle(color: Colors.white),),
                         onTap: (){},
-                      )
+                      ),
+
                     ],
                   ),
                 ),
+                Divider(
+                  // height: srcwidth*0.1,
+                  thickness: srcwidth*0.03,
+                  color: Color.fromRGBO(18,24,29,1.0),
+                ),
+                ListTile(
+                  leading: Icon(Icons.question_mark,color: Colors.white,),
+                  title: Text('Help',style: TextStyle(color: Colors.white),),
+                  onTap: (){},
+                ),
+                Divider(
+                  // height: srcwidth*0.1,
+                  thickness: srcwidth*0.03,
+                  color: Color.fromRGBO(18,24,29,1.0),
+                ),
+                ListTile(
+                  leading: Icon(Icons.delete,color: Colors.grey,),
+                  title: Text('Remove payments information',style: TextStyle(color: Colors.grey),),
+                  onTap: (){},
+                ),
+                Container(
+                  height: double.infinity,
+                  color: Color.fromRGBO(18,24,29,1.0),
+                  width: double.infinity,
+                  child: Text('fdf'),
+                )
 
 
               ],

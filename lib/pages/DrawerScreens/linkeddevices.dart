@@ -100,7 +100,8 @@ class _LinkedDevicesPageState extends State<LinkedDevicesPage> {
               child: Row(
                 children: [
                   Icon(Icons.lock_outline, color: Colors.grey,size: srcwidth*0.035,),
-                  RichText(text: TextSpan(
+                  RichText(
+                      text: TextSpan(
                       style:TextStyle(fontSize: srcwidth*0.035)
                       ,children: [
                     TextSpan(
