@@ -44,6 +44,9 @@ class _NewBroadcastPageState extends State<NewBroadcastPage> {
       Image.asset('assets/images/chatpage/bro2.jpg'),
     ];
 
+    var phoneNumber = '+91 38782678';
+
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -95,7 +98,8 @@ class _NewBroadcastPageState extends State<NewBroadcastPage> {
         ],
       ),
       body: Stack(
-        children: [ Container(
+        children: [
+          Container(
           color: const Color.fromARGB(255, 7, 21, 29),
           height: double.infinity,
           width: double.infinity,
@@ -106,6 +110,22 @@ class _NewBroadcastPageState extends State<NewBroadcastPage> {
                 thickness: 1,
                 color: Color.fromARGB(255, 31, 43, 50),
               ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: srcheight*0.01,),
+                  Text('Only contacts with $phoneNumber in their address' , style: TextStyle(color: Colors.grey, fontSize: srcwidth*0.038),),
+                  Text('book will receive your broadcast messages.' , style: TextStyle(color: Colors.grey,fontSize: srcwidth*0.038),),
+                  SizedBox(height: srcheight*0.01,),
+
+                ],
+              ),
+
+              Divider(
+                thickness: 1,
+                color: Color.fromARGB(255, 31, 43, 50),
+              ),
+
 
               Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.043, top: srcwidth * 0.02),
