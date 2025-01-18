@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class NewgroupPage extends StatefulWidget {
-  const NewgroupPage({super.key});
+class NewBroadcastPage extends StatefulWidget {
+  const NewBroadcastPage({super.key});
 
   @override
-  State<NewgroupPage> createState() => _SettingsPageState();
+  State<NewBroadcastPage> createState() => _NewBroadcastPageState();
 }
 
-class _SettingsPageState extends State<NewgroupPage> {
+class _NewBroadcastPageState extends State<NewBroadcastPage> {
   @override
   Widget build(BuildContext context) {
     var srcheight = MediaQuery.of(context).size.height;
@@ -61,7 +61,7 @@ class _SettingsPageState extends State<NewgroupPage> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'New group',
+                'New Broadcast',
                 style: TextStyle(
                   fontSize: srcwidth * 0.042,
                   color: Colors.white,
@@ -73,7 +73,7 @@ class _SettingsPageState extends State<NewgroupPage> {
               child: Padding(
                 padding: EdgeInsets.only(top: srcwidth * 0.008),
                 child: Text(
-                  'Add members',
+                  '0 of 256 selected',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: srcwidth * 0.032,
@@ -105,44 +105,6 @@ class _SettingsPageState extends State<NewgroupPage> {
               Divider(
                 thickness: 1,
                 color: Color.fromARGB(255, 31, 43, 50),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: srcwidth * 0.043, top: srcwidth * 0.02),
-                child: Text(
-                  'Frequently Contacted',
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 135, 145, 147),
-                      fontSize: srcwidth * 0.038,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: arrFreqContactedNames.length,
-                itemBuilder: (context, index) => ListTile(
-                  title: Text(
-                    arrFreqContactedNames[index],
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
-                  subtitle: Row(
-                    children: [
-                      Text(
-                        arrMessages[index],
-                        style: TextStyle(color: Colors.grey),
-                      )
-                    ],
-                  ),
-                  leading: CircleAvatar(
-                    radius: srcwidth * 0.06,
-                    backgroundImage: arrImages[index].image,
-                    backgroundColor: Colors.white,
-                  ),
-                ),
               ),
 
               Padding(
@@ -203,7 +165,7 @@ class _SettingsPageState extends State<NewgroupPage> {
                   backgroundColor: Colors.green,
                 ),
                 child: Icon(
-                  Icons.arrow_forward,
+                Icons.check,
                   color: Colors.black,
                   size: srcwidth*0.065,
 

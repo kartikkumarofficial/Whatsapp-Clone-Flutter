@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:whatsappclone/bottomnavigationbar.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
+import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'callpage.dart';
 import 'settingspage.dart';
@@ -153,6 +154,10 @@ class _ChatPageState extends State<ChatPage> {
                 }else if (value =='Linked Devices'){
                   Navigator.push(context, MaterialPageRoute(
                       builder: (context) => LinkedDevicesPage(),));
+                }
+                else if (value =='New Broadcast'){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => NewBroadcastPage(),));
                 }
 
               },
