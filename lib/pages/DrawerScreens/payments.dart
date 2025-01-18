@@ -89,14 +89,63 @@ class _PaymentsPageState extends State<PaymentsPage> {
                   color: Color.fromARGB(255, 31, 43, 50),
                 ),
                 ListTile(
-                  leading: CircleAvatar( radius: srcwidth*0.04,backgroundColor: Colors.green,child: Icon(Icons.currency_rupee,)),
+                  leading: CircleAvatar( radius: srcwidth*0.035,backgroundColor: Colors.green,child: Icon(size: srcwidth*0.04,Icons.currency_rupee,)),
                   title: Text('Send payment' , style: TextStyle(color: Colors.white),),
+                  onTap: (){},
                 ),
-                //todo add same list tile
-
-                
-
-
+                ListTile(
+                  leading: Icon(size: srcwidth*0.072,Icons.qr_code,color: Colors.green,),
+                  title: Text('Scan any UPI QR code' , style: TextStyle(color: Colors.white),),
+                  onTap: (){},
+                ),
+                  Divider(
+                    // height: srcwidth*0.1,
+                    thickness: srcwidth*0.05,
+                    color: Color.fromRGBO(18,24,29,1.0),
+                  ),
+                Container(
+                  height: srcwidth*0.5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text('History',style: TextStyle(color: Colors.green),),
+                      ),
+                      Align(
+                          alignment: Alignment.center,
+                          child: Image.asset('assets/images/nopaymenthistorybg.png',height: srcwidth*0.2,color: Colors.grey,)),
+                      Align(
+                          alignment: Alignment.center,
+                          child: Text('No payment history', style: TextStyle(color: Colors.grey),))
+                    ],
+                  ),
+                ),
+                Divider(
+                  // height: srcwidth*0.1,
+                  thickness: srcwidth*0.05,
+                  color: Color.fromRGBO(18,24,29,1.0),
+                ),
+                Container(
+                  height: srcwidth*0.5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text('Payment Methods',style: TextStyle(color: Colors.green),),
+                      ),
+                      Align(
+                          alignment: Alignment.center,
+                          child: Image.asset('assets/images/nopaymenthistorybg.png',height: srcwidth*0.2,color: Colors.grey,)),
+                      ListTile(
+                        leading: Icon(Icons.add_circle_outline,color: Colors.white,),
+                        title: Text('Add payment method',style: TextStyle(color: Colors.white),),
+                        onTap: (){},
+                      )
+                    ],
+                  ),
+                ),
 
 
               ],
