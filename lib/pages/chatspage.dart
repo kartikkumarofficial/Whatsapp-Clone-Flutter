@@ -6,6 +6,7 @@ import 'package:whatsappclone/bottomnavigationbar.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
+import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
 import 'callpage.dart';
 import 'settingspage.dart';
 
@@ -154,10 +155,12 @@ class _ChatPageState extends State<ChatPage> {
                 }else if (value =='Linked Devices'){
                   Navigator.push(context, MaterialPageRoute(
                       builder: (context) => LinkedDevicesPage(),));
-                }
-                else if (value =='New Broadcast'){
+                } else if (value =='New Broadcast'){
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) => NewBroadcastPage(),));
+                }else if (value =='Payments'){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => PaymentsPage(),));
                 }
 
               },

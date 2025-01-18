@@ -120,11 +120,12 @@ class _NewBroadcastPageState extends State<NewBroadcastPage> {
 
                 ],
               ),
-
               Divider(
-                thickness: 1,
-                color: Color.fromARGB(255, 31, 43, 50),
-              ),
+                // height: srcwidth*0.1,
+                thickness: srcwidth*0.05,
+
+                color: Color.fromRGBO(18,24,29,1.0),),
+
 
 
               Padding(
