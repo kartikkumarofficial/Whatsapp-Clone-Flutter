@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:whatsappclone/bottomnavigationbar.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
-import 'package:whatsappclone/pages/newgrouppage.dart';
+import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'callpage.dart';
 import 'settingspage.dart';
 

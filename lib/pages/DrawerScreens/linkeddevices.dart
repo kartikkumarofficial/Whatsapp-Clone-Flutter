@@ -29,22 +29,29 @@ class _LinkedDevicesPageState extends State<LinkedDevicesPage> {
         child: Column(
           children: [
             Container(
-              height: srcheight*0.4 ,
+              height: srcheight*0.35 ,
               width: double.infinity,
               color: Color.fromARGB(255,11,17,21),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-                  // Image.asset('assets/linkeddevices.png',color: Colors.red,),
+                  Image.asset('assets/images/linkeddevices.png'),
                   Text('You can link other devices to this account.',style: TextStyle(color: Colors.grey),),
                   Text('Learn More',style: TextStyle(color: Colors.blue),),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromRGBO(80,255,50,1.0)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: SizedBox(
+                      width: srcwidth*0.9,
+                      child: ElevatedButton(
+
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromRGBO(33,193,98,1.0)
+                        ),
+                          onPressed: (){},
+                          child: Text('Link a device',style: TextStyle(color: Colors.black),)),
                     ),
-                      onPressed: (){},
-                      child: Text('Link a device',style: TextStyle(color: Colors.black),)),
+                  ),
 
                 ],
               ),
@@ -88,24 +95,35 @@ class _LinkedDevicesPageState extends State<LinkedDevicesPage> {
                 ],
               ),
             ),
-            Icon(Icons.lock, color: Colors.grey),
-            RichText(text: TextSpan(
-              style:TextStyle(fontSize: srcwidth*0.1)
-                  ,children: [
-              TextSpan(
-              text: 'Your personal',
-              style: TextStyle(color: Colors.grey),
-            ),
-              TextSpan(
-                text: 'Green Text ',
-                style: TextStyle(color: Colors.green),
-              ),
-              TextSpan(
-                text: 'More Grey Text',
-                style: TextStyle(color: Colors.grey),
-              ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20,top: 15),
+              child: Row(
+                children: [
+                  Icon(Icons.lock_outline, color: Colors.grey,size: srcwidth*0.035,),
+                  RichText(text: TextSpan(
+                      style:TextStyle(fontSize: srcwidth*0.035)
+                      ,children: [
+                    TextSpan(
+                      text: 'Your personal messages are ',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    TextSpan(
+                      text: 'end-to-end encrypted',
+                      style: TextStyle(color: Color.fromRGBO(33,193,98,1.0)),
+                    ),
+                    TextSpan(
+                      text: ' on',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ]
+                  )),
 
-            ))
+
+                ],
+              ),
+            ),
+            Text('all your devices',style: TextStyle(color: Colors.grey),)
+
           ],
         ),
 
