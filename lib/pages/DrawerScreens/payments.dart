@@ -205,12 +205,6 @@ class _PaymentsPageState extends State<PaymentsPage> {
                   title: Text('Remove payments information',style: TextStyle(color: Colors.grey),),
                   onTap: (){},
                 ),
-                Container(
-                  height: double.infinity,
-                  color: Color.fromRGBO(18,24,29,1.0),
-                  width: double.infinity,
-                  child: Text('fdf'),
-                )
 
 
               ],
