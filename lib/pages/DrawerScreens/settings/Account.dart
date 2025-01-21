@@ -11,9 +11,12 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
-  List<String> accountpagelist=['Security notifications','Passkeys','Email address'];
+  List<String> accountpagelist=['Security notifications','Passkeys','Email address',
+    'Two-step verification','Change number','Request account info','Add account','Delete account'];
 
-  List accountpageicons=[Icon(Icons.security),Icon(Icons.person),Icon(Icons.email_outlined),Icon(Icons.password),Icon(Icons.phone_android_rounded),Icon(Icons.document_scanner),Icon(Icons.person_add_alt_1_outlined),Icon(Icons.delete_outlined)];
+  List accountpageicons=[Icon(Icons.security,color: Colors.white60,),Icon(Icons.person,color: Colors.white60),Icon(Icons.email_outlined,color: Colors.white60)
+    ,Icon(Icons.password,color: Colors.white60),Icon(Icons.phone_android_rounded,color: Colors.white60),Icon(Icons.document_scanner,color: Colors.white60),
+    Icon(Icons.person_add_alt_1_outlined,color: Colors.white60),Icon(Icons.delete_outlined,color: Colors.white60)];
   @override
   Widget build(BuildContext context) {
 
@@ -31,25 +34,17 @@ class _AccountPageState extends State<AccountPage> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 7, 21, 29),
+        backgroundColor: Color.fromARGB(255,11,17,21),
         title: const Text(
           'Account',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-          ),
-        ],
+        
       ),
       body: Container(
-        color: const Color.fromARGB(255, 7, 21, 29),
+        color:Color.fromARGB(255,11,17,21),
         height: double.infinity,
         width: double.infinity,
         child: ListView(
@@ -60,57 +55,24 @@ class _AccountPageState extends State<AccountPage> {
               color: Color.fromARGB(255, 31, 43, 50),
             ),
             ListView.builder(
+              shrinkWrap: true,
+
               itemCount: accountpagelist.length,
                 itemBuilder:(context, index) {
                   return ListTile(
+                    leading: accountpageicons[index],
                     title: Text(accountpagelist[index],
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: srcwidth * 0.045,
+                        fontSize: srcwidth * 0.04,
                       ),),
+                    onTap: (){
+                      print('Tapped on ${accountpagelist[index]}');
+                    },
 
                   );
                 }, ),
 
-
-            ListTile(
-              leading: Padding(
-                padding: EdgeInsets.only(left: srcwidth * 0.01),
-                child: Icon(
-                  Icons.people_alt_outlined,
-                  color: Color.fromARGB(255, 135, 145, 147),
-                ),
-              ),
-              title: Padding(
-                padding: EdgeInsets.only(left: srcwidth * 0.015),
-                child: Text(
-                  'Invite a Friend',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.045,
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Padding(
-                padding: EdgeInsets.only(left: srcwidth * 0.01),
-                child: Icon(
-                  Icons.security_update_good_outlined,
-                  color: Color.fromARGB(255, 135, 145, 147),
-                ),
-              ),
-              title: Padding(
-                padding: EdgeInsets.only(left: srcwidth * 0.015),
-                child: Text(
-                  'App updates',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.045,
-                  ),
-                ),
-              ),
-            ),
 
           ],
         ),
