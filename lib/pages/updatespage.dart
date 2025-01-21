@@ -265,7 +265,8 @@ class _UpdatespageState extends State<Updatespage> {
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemCount: arrNames.length,
-                          itemBuilder: (context,index)=> ListTile(title:Text(arrNames[index],
+                          itemBuilder: (context,index)=> ListTile(
+                            title:Text(arrNames[index],
                             style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 16,

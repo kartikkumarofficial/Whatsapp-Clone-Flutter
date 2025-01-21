@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class AccountPage extends StatefulWidget {
-  List<String> accountpagelist=[];
+
 
   AccountPage({super.key});
 
@@ -11,6 +11,9 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  List<String> accountpagelist=['Security notifications','Passkeys','Email address'];
+
+  List accountpageicons=[Icon(Icons.security),Icon(Icons.person),Icon(Icons.email_outlined),Icon(Icons.password),Icon(Icons.phone_android_rounded),Icon(Icons.document_scanner),Icon(Icons.person_add_alt_1_outlined),Icon(Icons.delete_outlined)];
   @override
   Widget build(BuildContext context) {
 
@@ -57,9 +60,15 @@ class _AccountPageState extends State<AccountPage> {
               color: Color.fromARGB(255, 31, 43, 50),
             ),
             ListView.builder(
+              itemCount: accountpagelist.length,
                 itemBuilder:(context, index) {
                   return ListTile(
-                    title: accountpagelist[index].label,
+                    title: Text(accountpagelist[index],
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: srcwidth * 0.045,
+                      ),),
+
                   );
                 }, ),
 
