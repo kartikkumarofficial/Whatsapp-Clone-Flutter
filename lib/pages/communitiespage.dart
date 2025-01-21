@@ -3,7 +3,7 @@ import 'package:whatsappclone/main.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:badges/badges.dart';
 import 'DrawerScreens/newgroup.dart';
-import 'settingspage.dart';
+import 'DrawerScreens/settings/settingspage.dart';
 
 
 

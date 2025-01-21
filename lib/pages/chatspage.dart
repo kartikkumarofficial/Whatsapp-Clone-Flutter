@@ -8,7 +8,7 @@ import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
 import 'callpage.dart';
-import 'settingspage.dart';
+import 'DrawerScreens/settings/settingspage.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});

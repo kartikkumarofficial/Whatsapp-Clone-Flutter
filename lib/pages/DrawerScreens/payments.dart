@@ -205,34 +205,13 @@ class _PaymentsPageState extends State<PaymentsPage> {
                   title: Text('Remove payments information',style: TextStyle(color: Colors.grey),),
                   onTap: (){},
                 ),
+                Image.asset('assets/images/upi.png')
 
 
               ],
             ),
           ),
-          Positioned(
-              height: srcwidth*0.15,
-              width: srcwidth*0.15,
-              bottom: srcwidth*0.06,
-              right: srcwidth*0.04,
-              child: ElevatedButton(
-                onPressed: () {
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(srcwidth*0.05)
-                  ),
-                  padding: EdgeInsets.all(16),
-                  backgroundColor: Colors.green,
-                ),
-                child: Icon(
-                  Icons.check,
-                  color: Colors.black,
-                  size: srcwidth*0.065,
-
-                ),)
-
-          ),],
+        ],
       ),
     );
   }
