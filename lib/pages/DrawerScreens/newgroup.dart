@@ -55,7 +55,7 @@ class _SettingsPageState extends State<NewgroupPage> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 7, 21, 29),
+        backgroundColor: Color.fromARGB(255,11,17,21),
         title: Column(
           children: [
             Align(
@@ -96,7 +96,7 @@ class _SettingsPageState extends State<NewgroupPage> {
       ),
       body: Stack(
         children: [ Container(
-          color: const Color.fromARGB(255, 7, 21, 29),
+          color: Color.fromARGB(255,11,17,21),
           height: double.infinity,
           width: double.infinity,
           child: ListView(
