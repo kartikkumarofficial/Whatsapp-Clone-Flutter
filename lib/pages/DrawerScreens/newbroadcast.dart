@@ -58,7 +58,7 @@ class _NewBroadcastPageState extends State<NewBroadcastPage> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 7, 21, 29),
+        backgroundColor:Color.fromARGB(255,11,17,21),
         title: Column(
           children: [
             Align(
@@ -100,14 +100,14 @@ class _NewBroadcastPageState extends State<NewBroadcastPage> {
       body: Stack(
         children: [
           Container(
-          color: const Color.fromARGB(255, 7, 21, 29),
+          color:Color.fromARGB(255,11,17,21),
           height: double.infinity,
           width: double.infinity,
           child: ListView(
             physics: AlwaysScrollableScrollPhysics() ,
             children: [
               Divider(
-                thickness: 1,
+                thickness: 0.5,
                 color: Color.fromARGB(255, 31, 43, 50),
               ),
               Column(
@@ -120,11 +120,14 @@ class _NewBroadcastPageState extends State<NewBroadcastPage> {
 
                 ],
               ),
-              Divider(
-                // height: srcwidth*0.1,
-                thickness: srcwidth*0.05,
-
-                color: Color.fromRGBO(18,24,29,1.0),),
+              Padding(
+                padding: EdgeInsets.only(left: 10,right: 10),
+                child: Divider(
+                  thickness: 1,
+                  color: Color.fromARGB(255, 31, 43, 50),
+                // color: Colors.blueGrey,
+                ),
+              ),
 
 
 
