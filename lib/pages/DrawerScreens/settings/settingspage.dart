@@ -208,7 +208,7 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               title: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.015),
-                child: Text( //
+                child: Text(
                   'Open Instagram',
                   style: TextStyle(
                     color: Colors.white,
