@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class AccountPage extends StatefulWidget {
+
   const AccountPage({super.key});
 
   @override
@@ -11,6 +12,7 @@ class AccountPage extends StatefulWidget {
 class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
+
     var srcheight = MediaQuery.of(context).size.height;
     var srcwidth = MediaQuery.of(context).size.width;
 
@@ -262,3 +264,62 @@ class _AccountPageState extends State<AccountPage> {
     );
   }
 }
+
+
+
+
+class SettingsTile {
+  final String label;
+  final String subtitle;
+  final Icon iicon;
+
+  SettingsTile(this.label, this.subtitle, this.iicon);
+}
+
+List<SettingsTile> items = [
+  SettingsTile(
+    'Account',
+    'Security notifications, change number',
+    Icon(Icons.key, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'Privacy',
+    'Block contacts, disappearing messages',
+    Icon(Icons.lock, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'Avatar',
+    'Create, edit, profile photo',
+    Icon(Icons.person, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'Lists',
+    'Manage people and groups',
+    Icon(Icons.list, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'Chats',
+    'Theme, wallpapers, chat history',
+    Icon(Icons.chat, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'Notifications',
+    'Message, group & call tones',
+    Icon(Icons.notifications, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'Storage and data',
+    'Network usage, auto-download',
+    Icon(Icons.storage, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'App language',
+    "English (device's language)",
+    Icon(Icons.language, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+  SettingsTile(
+    'Help',
+    'Help center, contact us, privacy policy',
+    Icon(Icons.help, color: Color.fromARGB(255, 135, 145, 147)),
+  ),
+];
