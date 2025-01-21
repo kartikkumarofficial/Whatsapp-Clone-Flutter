@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -146,6 +147,13 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                     ),
                   ),
+                  onTap: (){
+                    print('Tapped on ${items[index].label}');
+                    if(items[index].label=='Account'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => AccountPage(),));
+                      
+                    }
+                  },
                 );
               },
             ),
