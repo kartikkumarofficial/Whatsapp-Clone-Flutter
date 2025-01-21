@@ -25,7 +25,7 @@ class _SettingsPageState extends State<SettingsPage> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 7, 21, 29),
+        backgroundColor: Color.fromARGB(255,11,17,21),
         title: const Text(
           'Settings',
           style: TextStyle(
@@ -43,7 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
         ],
       ),
       body: Container(
-        color: const Color.fromARGB(255, 7, 21, 29),
+        color:Color.fromARGB(255,11,17,21),
         height: double.infinity,
         width: double.infinity,
         child: ListView(
