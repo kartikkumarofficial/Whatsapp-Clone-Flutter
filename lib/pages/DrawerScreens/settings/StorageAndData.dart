@@ -104,13 +104,7 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
                   value: switchController.notifications.value,
                   onChanged: (value){
                     print('Switch Value: $value');
-                    switchController.setNotification(value);
-                    if (value=true){
 
-
-                    }else if(value=false){
-
-                    }
 
 
                   })),
