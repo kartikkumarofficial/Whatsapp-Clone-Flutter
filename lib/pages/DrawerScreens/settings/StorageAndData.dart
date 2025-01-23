@@ -94,22 +94,50 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.network_check,color: Colors.grey,),
+
               title: Text('Use less data for calls',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: srcwidth * 0.04,
                 ),),
               trailing: Obx(()=>Switch(
-                  value: switchController.notifications.value,
+
+                activeTrackColor: Colors.green,
+                activeColor: Colors.black,
+                inactiveTrackColor: Color.fromRGBO(17,25,28,1.0),
+                inactiveThumbColor: Colors.grey,
+
+                  value: switchController.dataforcalls.value,
                   onChanged: (value){
                     print('Switch Value: $value');
+                    switchController.dataforcalls(value);
+                    if (value=true){
 
+
+                    }else if(value=false){
+
+                    }
 
 
                   })),
               onTap: (){
                 print('Changed value for using data for calls');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.network_check,color: Colors.grey,),
+              title: Text('Network usage',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+              subtitle: Text('4.3 GB sent • 9.5 GB received',
+                style: TextStyle(
+                    color: Colors.grey
+                ),
+              ),
+              onTap: (){
+                print('Tapped on Network Usage');
               },
             ),
 

@@ -34,3 +34,29 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     );
   }
 }
+
+
+class getxswitch{
+  Widget build {
+    return Obx(()=>Switch(
+  activeTrackColor: Colors.green,
+  activeColor: Colors.black,
+  inactiveTrackColor: Color.fromRGBO(17,25,28,1.0),
+  inactiveThumbColor: Colors.grey,
+
+  value: switchController.dataforcalls.value,
+  onChanged: (value){
+  print('Switch Value: $value');
+  switchController.dataforcalls(value);
+  if (value=true){
+
+
+  }else if(value=false){
+
+  }
+
+
+  })), in a seperate file
+}
+
+}
