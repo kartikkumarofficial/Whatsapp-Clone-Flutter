@@ -162,7 +162,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
               trailing: utils().getxswitch(),
 
               onTap: (){
-                print('Changed value for using data for calls');
+
               },
             ),
             Divider(
@@ -360,7 +360,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
 
               title: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.018, ),
-                child: Text('Calls',
+                child: Text('Advanced',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: srcwidth * 0.042,
@@ -368,7 +368,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
               ),
               subtitle: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.018),
-                child: Text('Silence unknown callers',
+                child: Text('Protect IP address in calls, Disable link previews',
                   style: TextStyle(
                       color: Colors.grey
                   ),
@@ -376,6 +376,10 @@ class _PrivacyPageState extends State<PrivacyPage> {
               ),
               onTap: (){
               },
+            ),
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
             ),
 
 
@@ -401,6 +405,8 @@ class _PrivacyPageState extends State<PrivacyPage> {
               onTap: (){
               },
             ),
+            SizedBox(height: srcwidth*0.03,),
+
 
 
 
