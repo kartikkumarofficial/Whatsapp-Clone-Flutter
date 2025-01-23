@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/constants/constants.dart';
 import 'package:whatsappclone/Controllers/controllers.dart';
+import 'package:whatsappclone/widgets.dart';
 
 
 class StorageAndDataScreen extends StatefulWidget {
@@ -95,43 +96,53 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
             ),
             ListTile(
 
-              title: Text('Use less data for calls',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: srcwidth * 0.04,
-                ),),
-              trailing: Obx(()=>Switch(
+              title: Padding(
+                padding: const EdgeInsets.only(left:37),
+                child: Text('Use less data for calls',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),),
+              ),
+              trailing: utils().getxswitch(),
 
-                activeTrackColor: Colors.green,
-                activeColor: Colors.black,
-                inactiveTrackColor: Color.fromRGBO(17,25,28,1.0),
-                inactiveThumbColor: Colors.grey,
-
-                  value: switchController.dataforcalls.value,
-                  onChanged: (value){
-                    print('Switch Value: $value');
-                    switchController.dataforcalls(value);
-                    if (value=true){
-
-
-                    }else if(value=false){
-
-                    }
-
-
-                  })),
               onTap: (){
                 print('Changed value for using data for calls');
               },
             ),
             ListTile(
-              leading: Icon(Icons.network_check,color: Colors.grey,),
-              title: Text('Network usage',
+              title: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('Proxy',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('Off',
+                  style: TextStyle(
+                      color: Colors.grey
+                  ),
+                ),
+              ),
+              onTap: (){
+                print('Tapped on Network Usage');
+              },
+            ),
+            Divider(
+              thickness: 1,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            ListTile(
+              leading: Icon(Icons.hd_outlined,color: Colors.grey,),
+              title: Text('Media upload quality',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: srcwidth * 0.04,
                 ),),
-              subtitle: Text('4.3 GB sent • 9.5 GB received',
+              subtitle: Text('HD quality',
                 style: TextStyle(
                     color: Colors.grey
                 ),
@@ -140,6 +151,82 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
                 print('Tapped on Network Usage');
               },
             ),
+
+            Divider(
+              thickness: 1,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            ListTile(
+              title: Text('Media auto-download',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: srcwidth * 0.04,
+                ),),
+              subtitle: Text('Voice messages are always automatically \ndownloaded',
+                style: TextStyle(
+                    color: Colors.grey
+                ),
+              ),
+              onTap: (){
+
+              },
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('When using mobile data',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('All media',
+                  style: TextStyle(
+                      color: Colors.grey
+                  ),
+                ),
+              ),
+              onTap: (){
+                print('Tapped on Network Usage');
+
+                //todo make this dialog box and make 3 such boxes
+                Get.defaultDialog(
+
+                  radius: 25,
+
+                  backgroundColor: Color.fromRGBO(43,46,51, 1.0),
+                  title: 'When using mobile data',
+                  titleStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth*0.05
+                  ),
+                  middleText: 'Are you sure u wanna delete this chat?',
+                  onConfirm: () {
+                    print('Chat deleted');
+                    Get.back(); },
+                  onCancel: (){
+                    print('Cancelled');
+                    Get.back();
+
+                  },
+                  contentPadding: EdgeInsets.all(20),
+                  textCancel: 'No',
+                  textConfirm: 'Yes',
+                  confirm: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('OK')),
+                  cancel: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('Cancel')),
+
+
+                );
+              },
+            ),
+
+
 
 
 

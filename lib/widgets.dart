@@ -1,6 +1,8 @@
 // custom_bottom_navigation_bar.dart
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:whatsappclone/Controllers/controllers.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   final Function(int) onTabSelected;
@@ -36,8 +38,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 }
 
 
-class getxswitch{
-  Widget build {
+class utils{
+  SwitchController switchController = Get.put(SwitchController());
+  bool flag = true;
+  Widget getxswitch(){
     return Obx(()=>Switch(
   activeTrackColor: Colors.green,
   activeColor: Colors.black,
@@ -56,7 +60,7 @@ class getxswitch{
   }
 
 
-  })), in a seperate file
+  }));
 }
 
 }
