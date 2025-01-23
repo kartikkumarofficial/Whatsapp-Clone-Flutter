@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsappclone/pages/DrawerScreens/settings/Account.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Account.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/StorageAndData.dart';
 
 class SettingsPage extends StatefulWidget {
