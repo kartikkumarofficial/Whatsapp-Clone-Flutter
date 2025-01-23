@@ -48,7 +48,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
           // physics: const BouncingScrollPhysics(),
           children: [
             Divider(
-              thickness: 1,
+              thickness: 0.5,
               color: Color.fromARGB(255, 31, 43, 50),
             ),
             Padding(
@@ -320,6 +320,40 @@ class _PrivacyPageState extends State<PrivacyPage> {
               ),
 
               onTap: (){
+              },
+            ),
+            ListTile(
+
+              title: Padding(
+                padding: EdgeInsets.only(left: srcwidth * 0.018, ),
+                child: Text('Allow camera effects',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.042,
+                  ),),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Padding(
+                padding: EdgeInsets.only(left: srcwidth * 0.018),
+                child:RichText(
+                    text: TextSpan(
+                        style:TextStyle(fontSize: srcwidth*0.035)
+                        ,children: [
+                      TextSpan(
+                        text: 'Use effects in the camera and video calls ',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      TextSpan(
+                        text: 'Learn more',
+                        style: TextStyle(color: Colors.blue),
+                      ),
+
+                    ]
+                    ))
+              ),
+
+              onTap: (){
+
               },
             ),
             ListTile(
