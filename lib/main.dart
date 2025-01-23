@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/pages/splashscreen.dart';
 import 'bottomnavigationbar.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +17,13 @@ class MyApp extends StatelessWidget {
 
 
 
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Whatsappclone',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        popupMenuTheme: PopupMenuThemeData(
+          color: Color.fromARGB(255,11,17,21)
+        )
 
       ),
       home: Splashscreen(),

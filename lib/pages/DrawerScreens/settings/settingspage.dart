@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/StorageAndData.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -151,9 +152,10 @@ class _SettingsPageState extends State<SettingsPage> {
                     print('Tapped on ${items[index].label}');
                     if(items[index].label=='Account'){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => AccountPage(),));
-                      
                     }
-                  },
+                    else if(items[index].label=='Storage and data'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                  }},
                 );
               },
             ),

@@ -131,6 +131,7 @@ class _ChatPageState extends State<ChatPage> {
                 padding: EdgeInsets.zero,
 
                 child: Container(
+                  // color: Color.fromARGB(255,11,17,21),
                   padding: EdgeInsets.zero,
                   // width: double.infinity,
                   // color: Color.fromARGB(255,7,21,29),
@@ -140,7 +141,7 @@ class _ChatPageState extends State<ChatPage> {
 
                       title: Padding(
                         padding: EdgeInsets.only(left: srcwidth*0.03),
-                        child: Text(item,style: TextStyle(color: Colors.black),),
+                        child: Text(item,style: TextStyle(color: Colors.white),),
                       )),
                 ),
               ))
