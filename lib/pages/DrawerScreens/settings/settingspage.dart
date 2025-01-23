@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Account.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Privacy.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/StorageAndData.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -155,7 +156,34 @@ class _SettingsPageState extends State<SettingsPage> {
                     }
                     else if(items[index].label=='Storage and data'){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
-                  }},
+                  }
+                    else if(items[index].label=='Privacy'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PrivacyPage(),));
+                    }
+                    else if(items[index].label=='Avatar'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    }
+                    else if(items[index].label=='Lists'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    }
+                    else if(items[index].label=='Chats'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    }
+                    else if(items[index].label=='Notifications'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    }
+                    else if(items[index].label=='Lists'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    }
+                    else if(items[index].label=='Lists'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    }
+
+
+
+
+
+                    },
                 );
               },
             ),
