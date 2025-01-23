@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/constants/constants.dart';
+import 'package:whatsappclone/Controllers/controllers.dart';
 
 
-class StorageAndDataScreen extends StatelessWidget {
+class StorageAndDataScreen extends StatefulWidget {
+  @override
+  State<StorageAndDataScreen> createState() => _StorageAndDataScreenState();
+}
+
+class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
+  SwitchController switchController = Get.put(SwitchController());
+  bool flag = true;
+
+
   @override
   Widget build(BuildContext context) {
+
 
     var srcheight = MediaQuery.of(context).size.height;
     var srcwidth = MediaQuery.of(context).size.width;
@@ -46,6 +57,68 @@ class StorageAndDataScreen extends StatelessWidget {
               thickness: 1,
               color: Color.fromARGB(255, 31, 43, 50),
             ),
+            ListTile(
+              leading: Icon(Icons.folder_outlined,color: Colors.grey,),
+              title: Text('Manage Storage',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+              subtitle: Text('9.4 GB',
+                style: TextStyle(
+                  color: Colors.grey
+                ),
+              ),
+              onTap: (){
+                print('Tapped on Manage Storage');
+              },
+            ),
+            Divider(
+              thickness: 1,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            ListTile(
+              leading: Icon(Icons.network_check,color: Colors.grey,),
+              title: Text('Network usage',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+              subtitle: Text('4.3 GB sent • 9.5 GB received',
+                style: TextStyle(
+                    color: Colors.grey
+                ),
+              ),
+              onTap: (){
+                print('Tapped on Network Usage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.network_check,color: Colors.grey,),
+              title: Text('Use less data for calls',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+              trailing: Obx(()=>Switch(
+                  value: switchController.notifications.value,
+                  onChanged: (value){
+                    print('Switch Value: $value');
+                    switchController.setNotification(value);
+                    if (value=true){
+
+
+                    }else if(value=false){
+
+                    }
+
+
+                  })),
+              onTap: (){
+                print('Changed value for using data for calls');
+              },
+            ),
+
 
 
 
