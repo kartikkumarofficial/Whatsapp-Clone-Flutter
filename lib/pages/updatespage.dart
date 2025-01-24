@@ -305,7 +305,7 @@ class _UpdatespageState extends State<Updatespage> {
                   )  ),
             ),
 
-                  Padding(padding: EdgeInsets.only(top: srcheight*0.01,left: srcwidth*0.05),
+                  Padding(padding: EdgeInsets.only(top: srcheight*0.03,left: srcwidth*0.05),
                     child:
                     Align(
                       alignment: Alignment.centerLeft,
@@ -401,7 +401,8 @@ class _UpdatespageState extends State<Updatespage> {
                               backgroundColor:Colors.white,
                             ),
                             trailing: Container(
-                              height: srcwidth*0.09,
+                              width: srcwidth*0.23,
+                              height: srcwidth*0.08,
                               child: ElevatedButton(onPressed: (){},
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Color.fromARGB(255, 0, 55, 40),

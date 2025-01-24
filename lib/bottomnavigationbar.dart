@@ -44,7 +44,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       bottomNavigationBar: smallscreen
           ? Container(
-        height: srcheight * 0.08,
+        height: srcheight * 0.1,
         child: BottomNavigationBar(
           onTap: (index) {
             setState(() {
@@ -58,19 +58,31 @@ class _HomepageState extends State<Homepage> {
           },
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.green,
-          unselectedItemColor: Colors.grey,
-          backgroundColor: Color.fromARGB(255,11,17,21),
+          unselectedItemColor: Colors.white70,
+          backgroundColor: Color.fromARGB(255, 11, 17, 21),
           type: BottomNavigationBarType.fixed,
+          elevation: 0, // Remove shadow
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
-            BottomNavigationBarItem(icon: Icon(Icons.update), label: 'Updates'),
-            BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Communities'),
-            BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
+            BottomNavigationBarItem(
+              icon: _buildSelectedItem(0, Icons.chat),
+              label: 'Chats',
+            ),
+            BottomNavigationBarItem(
+              icon: _buildSelectedItem(1, Icons.update),
+              label: 'Updates',
+            ),
+            BottomNavigationBarItem(
+              icon: _buildSelectedItem(2, Icons.people),
+              label: 'Communities',
+            ),
+            BottomNavigationBarItem(
+              icon: _buildSelectedItem(3, Icons.call),
+              label: 'Calls',
+            ),
           ],
         ),
       )
           : null,
-
       body: Row(
         children: [
           if (bigscreen)
@@ -103,6 +115,20 @@ class _HomepageState extends State<Homepage> {
       ),
     );
   }
+
+  Widget _buildSelectedItem(int index, IconData icon) {
+    bool isSelected = _selectedIndex == index;
+    return Container(
+      decoration: BoxDecoration(
+        color: isSelected ? Colors.green.withOpacity(0.3) : Colors.transparent,
+        borderRadius: BorderRadius.circular(40),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Icon(
+        icon,
+        size: 30,
+        color:  Colors.white70,
+      ),
+    );
+  }
 }
-
-
