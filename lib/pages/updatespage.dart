@@ -193,45 +193,89 @@ class _UpdatespageState extends State<Updatespage> {
                     ),
                   ),
             SizedBox(
-              height: srcwidth*0.328,
+              height: srcheight*0.22,
               child: ListView.builder(
                   // shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: arrImages.length,
-                  itemBuilder: (context,index)=>Container(
+                  itemBuilder: (context,index)=> index ==0 ? Container(
                     decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.green,
-                            width: srcwidth*0.006),
-                        shape: BoxShape.circle),
-
-                    margin: EdgeInsets.symmetric(horizontal: srcwidth*0.015),
-                    child: Center(
-                      // height: srcheight*0.01,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding:  EdgeInsets.only(top: srcwidth*0.08),
-                            child: CircleAvatar(
-                              radius: 30,
-                              backgroundImage: arrChannelImage[index].image,),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: srcwidth*0.01),
-                            child: Text(StatusNames[index],
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),),
-                          ),
-                        ],
-                      ),
+                      color: Color.fromRGBO(62,71,78, 1.0),
+                      borderRadius: BorderRadius.circular(20)
                     ),
-                  )),
+                    margin: EdgeInsets.all(srcwidth*0.008),
+                    height: srcheight*0.4,
+                    width: srcwidth*0.27,
+                    child: Column(
+                      children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8,right:43 ),
+                        child: CircleAvatar(
+                        radius: 22,
+                        backgroundImage: arrChannelImage[index].image,),
+                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 105),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text('Add status',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: srcwidth*0.03),),
+                              ),
+                            ],
+                          ),
+                        )
+
+
+                ],
+                    ),
+                  ) : Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(62,71,78, 1.0),
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                    margin: EdgeInsets.all(srcwidth*0.008),
+                    height: srcheight*0.4,
+                    width: srcwidth*0.27,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8,right:43 ),
+                          child: Container(
+
+
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.green,
+                                width: 2.5,
+                              ),),
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: CircleAvatar(
+                                radius: 20,
+                                backgroundImage: arrChannelImage[index].image,),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 100),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text(StatusNames[index],style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: srcwidth*0.03),),
+                              ),
+                            ],
+                          ),
+                        )
+
+
+                      ],
+                    ),
+                  )  ),
             ),
-                  Divider(
-                    thickness: 1,
-                    color:Color.fromARGB(255,31,43,50),
-                  ),
+
                   Padding(padding: EdgeInsets.only(top: srcheight*0.01,left: srcwidth*0.05),
                     child:
                     Align(
