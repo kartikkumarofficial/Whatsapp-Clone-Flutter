@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Account.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Profile.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Privacy.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/StorageAndData.dart';
 
@@ -57,62 +59,65 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.03),
-              child: Container(
-                height: srcwidth * 0.22,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/chatpage/bro.jpg'),
-                      radius: srcwidth * 0.08,
-                    ),
-                    SizedBox(width: srcwidth * 0.04),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: srcwidth * 0.04),
-                            child: Text(
-                              'Kartik the Don',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: srcwidth * 0.053,
+              child: InkWell(
+                onTap:(){Get.to(ProfilePage());} ,
+                child: Container(
+                  height: srcwidth * 0.22,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: AssetImage('assets/images/chatpage/bro.jpg'),
+                        radius: srcwidth * 0.08,
+                      ),
+                      SizedBox(width: srcwidth * 0.04),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(top: srcwidth * 0.04),
+                              child: Text(
+                                'Kartik the Don',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: srcwidth * 0.053,
+                                ),
                               ),
                             ),
+                            SizedBox(height: srcheight * 0.001),
+                            Text(
+                              'Wandering',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: srcwidth * 0.045,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.qr_code,
+                              color: Color(0xff08E23D),
+                              size: srcwidth * 0.065,
+                            ),
                           ),
-                          SizedBox(height: srcheight * 0.001),
-                          Text(
-                            'Wandering',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: srcwidth * 0.045,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add_circle_outline,
+                              color: Color(0xff08E23D),
+                              size: srcwidth * 0.065,
                             ),
                           ),
                         ],
                       ),
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.qr_code,
-                            color: Color(0xff08E23D),
-                            size: srcwidth * 0.065,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.add_circle_outline,
-                            color: Color(0xff08E23D),
-                            size: srcwidth * 0.065,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
