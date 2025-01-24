@@ -35,6 +35,31 @@ class _UpdatespageState extends State<Updatespage> {
       'Entrepreneur Insights', 'Melody Makers', 'Parenting Pioneers', 'Photography Pros',
       'Positive Vibes', 'E-Sports Masters',
     ];
+    List<String> arrChannelImage2 = [
+      'assets/images/communitiespage/tech.jpg',
+      'assets/images/meta.png',
+      'assets/images/communitiespage/library.jpg',
+      'assets/images/communitiespage/food.jpg',
+      'assets/images/communitiespage/travel.jpg',
+      'assets/images/communitiespage/workout.jpg',
+      'assets/images/communitiespage/research.jpg',
+      'assets/images/communitiespage/tech.jpg',
+      'assets/images/meta.png',
+      'assets/images/communitiespage/library.jpg',
+      'assets/images/communitiespage/food.jpg',
+      'assets/images/communitiespage/travel.jpg',
+      'assets/images/communitiespage/workout.jpg',
+      'assets/images/communitiespage/research.jpg',
+      'assets/images/communitiespage/tech.jpg',
+      'assets/images/meta.png',
+      'assets/images/communitiespage/library.jpg',
+      'assets/images/communitiespage/food.jpg',
+      'assets/images/communitiespage/travel.jpg',
+      'assets/images/communitiespage/workout.jpg',
+      'assets/images/communitiespage/research.jpg',
+
+    ];
+
     List<Image> arrChannelImage = [
       Image.asset('assets/images/communitiespage/tech.jpg'),
       Image.asset('assets/images/meta.png'),
@@ -232,6 +257,10 @@ class _UpdatespageState extends State<Updatespage> {
                   ) : Container(
                     decoration: BoxDecoration(
                         color: Color.fromRGBO(62,71,78, 1.0),
+                       image: DecorationImage(
+                           image: AssetImage(arrChannelImage2[index]),
+                        fit: BoxFit.cover,),
+
                         borderRadius: BorderRadius.circular(20)
                     ),
                     margin: EdgeInsets.all(srcwidth*0.008),
