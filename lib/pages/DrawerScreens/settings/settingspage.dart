@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Account.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Profile.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Avatar.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/Chats.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Lists.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Privacy.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/StorageAndData.dart';
 
@@ -166,13 +169,13 @@ class _SettingsPageState extends State<SettingsPage> {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => PrivacyPage(),));
                     }
                     else if(items[index].label=='Avatar'){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarPage(),));
                     }
                     else if(items[index].label=='Lists'){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListsPage(),));
                     }
                     else if(items[index].label=='Chats'){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsSettingsPage(),));
                     }
                     else if(items[index].label=='Notifications'){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
