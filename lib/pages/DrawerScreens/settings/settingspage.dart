@@ -4,6 +4,7 @@ import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Account.dart'
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Profile.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Avatar.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/Chats.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Help/Help.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Lists.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Notifications/NotificationsSettingsPage.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Privacy.dart';
@@ -181,8 +182,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     else if(items[index].label=='Notifications'){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsSettingsPage(),));
                     }
-                    else if(items[index].label=='Lists'){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    else if(items[index].label=='Help'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => HelpSettingsPage(),));
                     }
                     else if(items[index].label=='Lists'){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));

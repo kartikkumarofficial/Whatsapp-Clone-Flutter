@@ -31,7 +31,7 @@ class _HelpSettingsPageState extends State<HelpSettingsPage> {
         title: Padding(
           padding: const EdgeInsets.only(top: 3),
           child: const Text(
-            'Profile',
+            'Help',
             style: TextStyle(
               fontSize:23,
               color: Colors.white,
@@ -51,6 +51,55 @@ class _HelpSettingsPageState extends State<HelpSettingsPage> {
               thickness: 0.5,
               color: Color.fromARGB(255, 31, 43, 50),
             ),
+            ListTile(
+              leading: Icon(Icons.help_outline,color: Colors.grey,),
+              title: Text('Help Center',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+              subtitle: Text('Get help,contact us',
+                style: TextStyle(
+                    color: Colors.grey
+                ),
+              ),
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.document_scanner,color: Colors.grey,),
+              title: Text('Terms and Privacy Policy',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.newspaper_rounded,color: Colors.grey,),
+              title: Text('Channel reports',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info_outline,color: Colors.grey,),
+              title: Text('App info',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+
+              onTap: (){
+              },
+            ),
+
 
 
 
