@@ -56,7 +56,7 @@ class _SettingsPageState extends State<SettingsPage> {
         height: double.infinity,
         width: double.infinity,
         child: ListView(
-          physics: const BouncingScrollPhysics(),
+          // physics: const BouncingScrollPhysics(),
           children: [
             Divider(
               thickness: 1,

@@ -225,6 +225,114 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
                 );
               },
             ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('When connected on Wi-Fi',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('All media',
+                  style: TextStyle(
+                      color: Colors.grey
+                  ),
+                ),
+              ),
+              onTap: (){
+                print('Tapped on Network Usage');
+
+                //todo make this dialog box and make 3 such boxes
+                Get.defaultDialog(
+
+                  radius: 25,
+
+                  backgroundColor: Color.fromRGBO(43,46,51, 1.0),
+                  title: 'When using mobile data',
+                  titleStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: srcwidth*0.05
+                  ),
+                  middleText: 'Are you sure u wanna delete this chat?',
+                  onConfirm: () {
+                    print('Chat deleted');
+                    Get.back(); },
+                  onCancel: (){
+                    print('Cancelled');
+                    Get.back();
+
+                  },
+                  contentPadding: EdgeInsets.all(20),
+                  textCancel: 'No',
+                  textConfirm: 'Yes',
+                  confirm: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('OK')),
+                  cancel: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('Cancel')),
+
+
+                );
+              },
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('When roaming',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(left:39),
+                child: Text('No media',
+                  style: TextStyle(
+                      color: Colors.grey
+                  ),
+                ),
+              ),
+              onTap: (){
+                print('Tapped on Network Usage');
+
+                //todo make this dialog box and make 3 such boxes
+                Get.defaultDialog(
+
+                  radius: 25,
+
+                  backgroundColor: Color.fromRGBO(43,46,51, 1.0),
+                  title: 'When using mobile data',
+                  titleStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: srcwidth*0.05
+                  ),
+                  middleText: 'Are you sure u wanna delete this chat?',
+                  onConfirm: () {
+                    print('Chat deleted');
+                    Get.back(); },
+                  onCancel: (){
+                    print('Cancelled');
+                    Get.back();
+
+                  },
+                  contentPadding: EdgeInsets.all(20),
+                  textCancel: 'No',
+                  textConfirm: 'Yes',
+                  confirm: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('OK')),
+                  cancel: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text('Cancel')),
+
+
+                );
+              },
+            ),
 
 
 
