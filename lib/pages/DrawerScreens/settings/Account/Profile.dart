@@ -109,6 +109,7 @@ class EditableListTile extends StatelessWidget {
                     alignment: AlignmentDirectional.centerStart,
                     child: Text('Enter your name',style: TextStyle(fontWeight: FontWeight.w600,color: Colors.white),)),
                 TextField(
+
                   style: TextStyle(color: Colors.white),
                   controller: controller,
                   decoration: const InputDecoration(
