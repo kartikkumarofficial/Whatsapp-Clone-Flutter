@@ -87,7 +87,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   padding:  EdgeInsets.only(left: srcwidth*0.14,right: srcwidth*0.02),
                   child: Text('This is not your username or pin. '
                       'This name will be visible to your whatsapp contacts',
-                  style: TextStyle(color: Colors.grey,fontSize: 13),),
+                    style: TextStyle(color: Colors.grey,fontSize: 13),),
                 ),
                 EditableListTileAbout(
                   about: about,
@@ -122,60 +122,66 @@ class EditableListTile extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      isDismissible: true,
       builder: (BuildContext context) {
-        return Container(
-          decoration: BoxDecoration(
-              color: Color.fromRGBO(18, 25, 28, 1.0),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(20))),
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      'Enter your name',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600, color: Colors.white),
-                    )),
-                TextField(
-                  style: TextStyle(color: Colors.white),
-                  controller: controller,
-                  decoration: const InputDecoration(),
-                ),
-                const SizedBox(height: 16),
-                Padding(
-                  padding: EdgeInsets.only(left: Get.height*0.27),
-                  child: Row(
-                    children: [
-                      InkWell(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: Text(
-                            'Cancel',
-                            style: TextStyle(
-                                color: Colors.green, fontWeight: FontWeight.w600),
-                          )),
-                      SizedBox(
-                        width: Get.width * 0.1,
-                      ),
-                      InkWell(
-                          onTap: () {
-                            onNameChanged(controller.text);
-                            Get.back();
-                          },
-                          child: Text(
-                            'Save',
-                            style: TextStyle(
-                                color: Colors.green, fontWeight: FontWeight.w600),
-                          ))
-                    ],
+        return GestureDetector(
+          onTap: () {
+            FocusScope.of(context).requestFocus(FocusNode());
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(18, 25, 28, 1.0),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
+                        'Enter your name',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, color: Colors.white),
+                      )),
+                  TextField(
+                    style: TextStyle(color: Colors.white),
+                    controller: controller,
+                    decoration: const InputDecoration(),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16),
+                  Padding(
+                    padding: EdgeInsets.only(left: Get.height * 0.27),
+                    child: Row(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Text(
+                              'Cancel',
+                              style: TextStyle(
+                                  color: Colors.green, fontWeight: FontWeight.w600),
+                            )),
+                        SizedBox(
+                          width: Get.width * 0.1,
+                        ),
+                        InkWell(
+                            onTap: () {
+                              onNameChanged(controller.text);
+                              Get.back();
+                            },
+                            child: Text(
+                              'Save',
+                              style: TextStyle(
+                                  color: Colors.green, fontWeight: FontWeight.w600),
+                            ))
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -220,60 +226,66 @@ class EditableListTileAbout extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      isDismissible: true,
       builder: (BuildContext context) {
-        return Container(
-          decoration: BoxDecoration(
-              color: Color.fromRGBO(18, 25, 28, 1.0),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(20))),
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      'Enter about yourself',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600, color: Colors.white),
-                    )),
-                TextField(
-                  style: TextStyle(color: Colors.white),
-                  controller: controller,
-                  decoration: const InputDecoration(),
-                ),
-                const SizedBox(height: 16),
-                Padding(
-                  padding:EdgeInsets.only(left: Get.height*0.27),
-                  child: Row(
-                    children: [
-                      InkWell(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: Text(
-                            'Cancel',
-                            style: TextStyle(
-                                color: Colors.green, fontWeight: FontWeight.w600),
-                          )),
-                      SizedBox(
-                        width: Get.width * 0.1,
-                      ),
-                      InkWell(
-                          onTap: () {
-                            onAboutChanged(controller.text);
-                            Get.back();
-                          },
-                          child: Text(
-                            'Save',
-                            style: TextStyle(
-                                color: Colors.green, fontWeight: FontWeight.w600),
-                          ))
-                    ],
+        return GestureDetector(
+          onTap: () {
+            FocusScope.of(context).requestFocus(FocusNode());
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(18, 25, 28, 1.0),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
+                        'Enter about yourself',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, color: Colors.white),
+                      )),
+                  TextField(
+                    style: TextStyle(color: Colors.white),
+                    controller: controller,
+                    decoration: const InputDecoration(),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16),
+                  Padding(
+                    padding: EdgeInsets.only(left: Get.height * 0.27),
+                    child: Row(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Text(
+                              'Cancel',
+                              style: TextStyle(
+                                  color: Colors.green, fontWeight: FontWeight.w600),
+                            )),
+                        SizedBox(
+                          width: Get.width * 0.1,
+                        ),
+                        InkWell(
+                            onTap: () {
+                              onAboutChanged(controller.text);
+                              Get.back();
+                            },
+                            child: Text(
+                              'Save',
+                              style: TextStyle(
+                                  color: Colors.green, fontWeight: FontWeight.w600),
+                            ))
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -318,61 +330,67 @@ class EditableListTilePhone extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      isDismissible: true,
       builder: (BuildContext context) {
-        return Container(
-          decoration: BoxDecoration(
-              color: Color.fromRGBO(18, 25, 28, 1.0),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(20))),
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      'Enter your phone number',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600, color: Colors.white),
-                    )),
-                TextField(
-                  keyboardType: TextInputType.phone,
-                  style: TextStyle(color: Colors.white),
-                  controller: controller,
-                  decoration: const InputDecoration(),
-                ),
-                const SizedBox(height: 16),
-                Padding(
-                  padding: EdgeInsets.only(left: Get.height*0.27),
-                  child: Row(
-                    children: [
-                      InkWell(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: Text(
-                            'Cancel',
-                            style: TextStyle(
-                                color: Colors.green, fontWeight: FontWeight.w600),
-                          )),
-                      SizedBox(
-                        width: Get.width * 0.1,
-                      ),
-                      InkWell(
-                          onTap: () {
-                            onPhoneChanged(controller.text);
-                            Get.back();
-                          },
-                          child: Text(
-                            'Save',
-                            style: TextStyle(
-                                color: Colors.green, fontWeight: FontWeight.w600),
-                          ))
-                    ],
+        return GestureDetector(
+          onTap: () {
+            FocusScope.of(context).requestFocus(FocusNode());
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(18, 25, 28, 1.0),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
+                        'Enter your phone number',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, color: Colors.white),
+                      )),
+                  TextField(
+                    keyboardType: TextInputType.phone,
+                    style: TextStyle(color: Colors.white),
+                    controller: controller,
+                    decoration: const InputDecoration(),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16),
+                  Padding(
+                    padding: EdgeInsets.only(left: Get.height * 0.27),
+                    child: Row(
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Text(
+                              'Cancel',
+                              style: TextStyle(
+                                  color: Colors.green, fontWeight: FontWeight.w600),
+                            )),
+                        SizedBox(
+                          width: Get.width * 0.1,
+                        ),
+                        InkWell(
+                            onTap: () {
+                              onPhoneChanged(controller.text);
+                              Get.back();
+                            },
+                            child: Text(
+                              'Save',
+                              style: TextStyle(
+                                  color: Colors.green, fontWeight: FontWeight.w600),
+                            ))
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
