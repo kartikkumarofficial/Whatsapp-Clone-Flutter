@@ -50,44 +50,32 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
               color: Color.fromARGB(255, 31, 43, 50),
             ),
             ListTile(
-              title: Padding(
-                padding: const EdgeInsets.only(left: 37),
-                child: Text(
-                  'Conversation tones',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.04,
-                  ),
+              title: Text(
+                'Conversation tones',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
                 ),
               ),
               trailing: utils().getxswitch(),
-              subtitle: Padding(
-                padding: EdgeInsets.only(left: 37),
-                child: Text(
-                  'Play sounds for incoming and outgoing messages',
-                  style: TextStyle(color: Colors.grey),
-                ),
+              subtitle: Text(
+                'Play sounds for incoming and outgoing messages',
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () {},
             ),
             ListTile(
-              title: Padding(
-                padding: const EdgeInsets.only(left: 37),
-                child: Text(
-                  'Reminders',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.04,
-                  ),
+              title: Text(
+                'Reminders',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
                 ),
               ),
               trailing: utils().getxswitch(),
-              subtitle: Padding(
-                padding: EdgeInsets.only(left: 37),
-                child: Text(
-                  '''Get occasional reminders about messages or status updates you haven't seen ''' ,
-                  style: TextStyle(color: Colors.grey),
-                ),
+              subtitle: Text(
+                '''Get occasional reminders about messages or status updates you haven't seen ''' ,
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () {},
             ),
@@ -105,14 +93,14 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
             ListTile(
 
               title: Text(
-                'Message Sound',
+                'Notification tone',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: srcwidth * 0.04,
                 ),
               ),
               subtitle: Text(
-                'Default tone',
+                'Silent',
                 style: TextStyle(color: Colors.grey),
               ),
               onTap: () {},
@@ -120,14 +108,14 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
             ListTile(
 
               title: Text(
-                'Vibrate Default',
+                'Vibrate',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: srcwidth * 0.04,
                 ),
               ),
               subtitle: Text(
-                'Default tone',
+                'Default',
                 style: TextStyle(color: Colors.grey),
               ),
               onTap: () {},
@@ -147,33 +135,77 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
               ),
               onTap: () {},
             ),
-
-            Divider(
-              thickness: 0.5,
-              color: Color.fromARGB(255, 31, 43, 50),
+            ListTile(
+              title: Text(
+                'Use high priority notifications',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Text(
+                '''Show previews of notifications at the top of the screen ''' ,
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
             ),
+            ListTile(
+              title: Text(
+                'Reaction notifications',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Text(
+                '''Show notifications for reactions to messages you send ''' ,
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+
+
+
             Padding(
               padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
               child: Text(
-                'Group Notifications',
+                'Calls',
                 style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
               ),
             ),
+
+
             ListTile(
-              leading: Icon(Icons.group, color: Colors.grey),
               title: Text(
-                'Group Sound',
+                'Ringtone',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: srcwidth * 0.04,
                 ),
               ),
               subtitle: Text(
-                'Default tone',
+                '''Default ringtone''' ,
                 style: TextStyle(color: Colors.grey),
               ),
               onTap: () {},
             ),
+            ListTile(
+              title: Text(
+                'Vibrate',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                '''Default''' ,
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+
             ListTile(
               leading: Icon(Icons.notifications, color: Colors.grey),
               title: Text(
@@ -211,9 +243,30 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
             Padding(
               padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
               child: Text(
-                'Other Notifications',
+                'Status',
                 style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
               ),
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left: 37),
+                child: Text(
+                  'Reactions',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Padding(
+                padding: EdgeInsets.only(left: 37),
+                child: Text(
+                  'Show notifications when you get likes on a status',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              onTap: () {},
             ),
             ListTile(
               title: Padding(
