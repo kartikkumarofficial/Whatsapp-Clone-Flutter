@@ -165,13 +165,17 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
               ),
               onTap: () {},
             ),
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
 
 
 
             Padding(
               padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
               child: Text(
-                'Calls',
+                'Groups',
                 style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
               ),
             ),
@@ -236,10 +240,55 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
               ),
               onTap: () {},
             ),
+
             Divider(
               thickness: 0.5,
               color: Color.fromARGB(255, 31, 43, 50),
             ),
+            Padding(
+              padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
+              child: Text(
+                'Calls',
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+              ),
+            ),
+
+
+            ListTile(
+              title: Text(
+                'Ringtone',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                '''Default ringtone''' ,
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text(
+                'Vibrate',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                '''Default''' ,
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+
+
             Padding(
               padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
               child: Text(
@@ -268,113 +317,7 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
               ),
               onTap: () {},
             ),
-            ListTile(
-              title: Padding(
-                padding: const EdgeInsets.only(left: 37),
-                child: Text(
-                  'Enter is Send',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.04,
-                  ),
-                ),
-              ),
-              trailing: utils().getxswitch(),
-              subtitle: Padding(
-                padding: EdgeInsets.only(left: 37),
-                child: Text(
-                  'Enter key will send your message',
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Padding(
-                padding: const EdgeInsets.only(left: 37),
-                child: Text(
-                  'Media Visibility',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.04,
-                  ),
-                ),
-              ),
-              trailing: utils().getxswitch(),
-              subtitle: Padding(
-                padding: EdgeInsets.only(left: 37),
-                child: Text(
-                  'Show new media in gallery',
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Padding(
-                padding: const EdgeInsets.only(left: 37),
-                child: Text(
-                  'Voice Message Transcripts',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.04,
-                  ),
-                ),
-              ),
-              trailing: utils().getxswitch(),
-              subtitle: Padding(
-                padding: EdgeInsets.only(left: 37),
-                child: Text(
-                  'Transcribe voice messages to text',
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
-              onTap: () {},
-            ),
-            Divider(
-              thickness: 0.5,
-              color: Color.fromARGB(255, 31, 43, 50),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
-              child: Text(
-                'Backup & History',
-                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.cloud_upload_outlined, color: Colors.grey, size: 25),
-              title: Text(
-                'Chat Backup',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: srcwidth * 0.04,
-                ),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.phonelink_ring_sharp, color: Colors.grey, size: 25),
-              title: Text(
-                'Transfer Chats',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: srcwidth * 0.04,
-                ),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.history, color: Colors.grey, size: 25),
-              title: Text(
-                'Chat History',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: srcwidth * 0.04,
-                ),
-              ),
-              onTap: () {},
-            ),
+            SizedBox(height: 15,)
           ],
         ),
       ),
