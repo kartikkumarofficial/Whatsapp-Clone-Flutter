@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/main.dart';
+import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
+import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
+import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
 import 'DrawerScreens/newgroup.dart';
 import 'DrawerScreens/settings/settingspage.dart';
 
@@ -18,11 +21,8 @@ class _UpdatespageState extends State<Updatespage> {
     var srcheight=MediaQuery.of(context).size.height;
     var srcwidth =MediaQuery.of(context).size.width;
     final List arrDrawerItems = [
-      'New Group',
-      'New Broadcast',
-      'Linked List',
-      'Starred messages',
-      'Payments',
+      'Status privacy',
+      'Create channel',
       'Settings'
     ];
     List<String> arrNames = [
@@ -146,7 +146,7 @@ class _UpdatespageState extends State<Updatespage> {
           ),
           IconButton(
             icon: Icon(
-              Icons.camera_alt_outlined,
+              Icons.search,
               color: Colors.white,
               size: 28,
             ),
@@ -166,6 +166,11 @@ class _UpdatespageState extends State<Updatespage> {
                 padding: EdgeInsets.zero,
 
                 child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25)
+                  ),
+                  height: srcwidth*0.1,
+                  width: srcwidth*0.4,
                   padding: EdgeInsets.zero,
                   // width: double.infinity,
                   // color: Color.fromARGB(255,7,21,29),
@@ -175,21 +180,27 @@ class _UpdatespageState extends State<Updatespage> {
 
                       title: Padding(
                         padding: EdgeInsets.only(left: srcwidth*0.03),
-                        child: Text(item,style: TextStyle(color: Colors.black),),
+                        child: Text(item,style: TextStyle(color: Colors.white),),
                       )),
                 ),
               ))
                   .toList(),
-              onSelected: (value) {
-                if(value=='Settings'){
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=> SettingsPage() ));
-                }else if (value =='New Group'){
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => NewgroupPage(),));
-                }
+    onSelected: (value) {
+    if(value=='Settings'){
+    Navigator.push(context,
+    MaterialPageRoute(builder: (context)=> SettingsPage() ));
+    }else if (value =='Status Privacy'){
+    Navigator.push(context,
+    MaterialPageRoute(builder: (context) => NewgroupPage(),));
+    }else if (value =='Create channel'){
+    Navigator.push(context, MaterialPageRoute(
+    builder: (context) => LinkedDevicesPage(),));
+    }
 
-              },
+
+                },
+
+
             ),
           ),
         ],
@@ -280,7 +291,7 @@ class _UpdatespageState extends State<Updatespage> {
                                 width: 2.5,
                               ),),
                             child: Padding(
-                              padding: const EdgeInsets.all(2.0),
+                              padding: const EdgeInsets.all(1.6),
                               child: CircleAvatar(
                                 radius: 20,
                                 backgroundImage: arrChannelImage[index].image,),
