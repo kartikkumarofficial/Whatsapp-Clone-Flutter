@@ -9,7 +9,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String name = "";
+  String name = "Kartik";
   String about = "Relaxing";
   String phone = "1234567890";
 
@@ -73,9 +73,27 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 SizedBox(height: srcwidth * 0.08),
                 Center(
-                  child: CircleAvatar(
-                    radius: srcheight * 0.1,
-                    child: Image.asset('assets/images/meta.png'),
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      CircleAvatar(
+                        radius: srcheight * 0.11,
+                        child: Image.asset('assets/images/meta.png'),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: -srcwidth*0.01,
+                        child: CircleAvatar(
+                          radius: srcheight * 0.03,
+                          backgroundColor: Color.fromRGBO(32,194,93,1.0),
+                          child: const Icon(
+                            Icons.camera_alt_outlined,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 20),
