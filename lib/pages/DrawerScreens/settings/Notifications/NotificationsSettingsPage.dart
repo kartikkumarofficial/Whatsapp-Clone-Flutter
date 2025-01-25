@@ -1,0 +1,330 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:whatsappclone/widgets.dart';
+
+class NotificationsSettingsPage extends StatefulWidget {
+  const NotificationsSettingsPage({super.key});
+
+  @override
+  State<NotificationsSettingsPage> createState() => _NotificationsSettingsPageState();
+}
+
+class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
+  @override
+  Widget build(BuildContext context) {
+
+    var srcheight = MediaQuery.of(context).size.height;
+    var srcwidth = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 11, 17, 21),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 3),
+          child: const Text(
+            'Notifications',
+            style: TextStyle(
+              fontSize: 23,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+      body: Container(
+        color: Color.fromARGB(255, 11, 17, 21),
+        height: double.infinity,
+        width: double.infinity,
+        child: ListView(
+          children: [
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left: 37),
+                child: Text(
+                  'Conversation tones',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Padding(
+                padding: EdgeInsets.only(left: 37),
+                child: Text(
+                  'Play sounds for incoming and outgoing messages',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left: 37),
+                child: Text(
+                  'Reminders',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Padding(
+                padding: EdgeInsets.only(left: 37),
+                child: Text(
+                  '''Get occasional reminders about messages or status updates you haven't seen ''' ,
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              onTap: () {},
+            ),
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
+              child: Text(
+                'Messages',
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+              ),
+            ),
+            ListTile(
+
+              title: Text(
+                'Message Sound',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                'Default tone',
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+
+              title: Text(
+                'Vibrate Default',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                'Default tone',
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+
+              title: Text(
+                'Light',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                'White',
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
+              child: Text(
+                'Group Notifications',
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.group, color: Colors.grey),
+              title: Text(
+                'Group Sound',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                'Default tone',
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.notifications, color: Colors.grey),
+              title: Text(
+                'Vibrate for Groups',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                'Vibrate on group messages',
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.notifications_none, color: Colors.grey),
+              title: Text(
+                'Popup Notification for Groups',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              subtitle: Text(
+                'Always',
+                style: TextStyle(color: Colors.grey),
+              ),
+              onTap: () {},
+            ),
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
+              child: Text(
+                'Other Notifications',
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+              ),
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left: 37),
+                child: Text(
+                  'Enter is Send',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Padding(
+                padding: EdgeInsets.only(left: 37),
+                child: Text(
+                  'Enter key will send your message',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left: 37),
+                child: Text(
+                  'Media Visibility',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Padding(
+                padding: EdgeInsets.only(left: 37),
+                child: Text(
+                  'Show new media in gallery',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(left: 37),
+                child: Text(
+                  'Voice Message Transcripts',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: srcwidth * 0.04,
+                  ),
+                ),
+              ),
+              trailing: utils().getxswitch(),
+              subtitle: Padding(
+                padding: EdgeInsets.only(left: 37),
+                child: Text(
+                  'Transcribe voice messages to text',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              onTap: () {},
+            ),
+            Divider(
+              thickness: 0.5,
+              color: Color.fromARGB(255, 31, 43, 50),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: srcwidth * 0.07, top: srcwidth * 0.04),
+              child: Text(
+                'Backup & History',
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.cloud_upload_outlined, color: Colors.grey, size: 25),
+              title: Text(
+                'Chat Backup',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.phonelink_ring_sharp, color: Colors.grey, size: 25),
+              title: Text(
+                'Transfer Chats',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.history, color: Colors.grey, size: 25),
+              title: Text(
+                'Chat History',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),
+              ),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
