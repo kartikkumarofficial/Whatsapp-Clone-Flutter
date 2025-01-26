@@ -9,6 +9,7 @@ import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
 import 'package:whatsappclone/pages/chattextpage.dart';
+import 'package:whatsappclone/pages/selectcontactspage.dart';
 import 'callpage.dart';
 import 'DrawerScreens/settings/settingspage.dart';
 
@@ -338,6 +339,7 @@ class _ChatPageState extends State<ChatPage> {
               right: srcwidth*0.04,
               child: ElevatedButton(
                 onPressed: () {
+                  Get.to(SelectContactsPage());
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
