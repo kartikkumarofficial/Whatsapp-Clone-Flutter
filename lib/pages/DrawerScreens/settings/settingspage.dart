@@ -9,6 +9,7 @@ import 'package:whatsappclone/pages/DrawerScreens/settings/Lists.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Notifications/NotificationsSettingsPage.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Privacy.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/StorageAndData.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/inviteafriend.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -185,8 +186,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     else if(items[index].label=='Help'){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => HelpSettingsPage(),));
                     }
-                    else if(items[index].label=='Lists'){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => StorageAndDataScreen(),));
+                    else if(items[index].label=='Invite a Friend'){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => InviteaFriendPage(),));
                     }
 
 
@@ -215,6 +216,9 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                 ),
               ),
+              onTap: (){
+                Get.to(InviteaFriendPage());
+              },
             ),
             ListTile(
               leading: Padding(
