@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Account.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Profile.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/AppUpdateSettings.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Avatar.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/Chats.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Help/Help.dart';
@@ -238,6 +239,9 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                 ),
               ),
+              onTap: (){
+                Get.to(AppUpdateSettings());
+              },
             ),
             Padding(
               padding: EdgeInsets.only(left: srcwidth * 0.06,top: srcwidth*0.02),
