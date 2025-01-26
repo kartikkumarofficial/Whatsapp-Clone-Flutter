@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/SecurityNotifications.dart';
 
 
 class AccountPage extends StatefulWidget {
@@ -68,6 +69,14 @@ class _AccountPageState extends State<AccountPage> {
                       ),),
                     onTap: (){
                       print('Tapped on ${accountpagelist[index]}');
+                      if(accountpagelist[index]=='Security notifications'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SecurityNotificationsPage(),));
+                      }
+                      else if(accountpagelist[index]=='Storage and data'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SecurityNotificationsPage(),));
+                      }
+
+
                     },
 
                   );

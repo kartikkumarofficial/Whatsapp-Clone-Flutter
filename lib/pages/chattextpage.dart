@@ -162,7 +162,7 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
         decoration: BoxDecoration(
           image: DecorationImage(
             //todo check the image
-            image:AssetImage('assets/images/darkwallpaper.png'),
+            image:AssetImage('assets/images/wallpaper/darkwallpaper.png'),
             fit: BoxFit.cover,
           ),
         ),
