@@ -1,12 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:whatsappclone/bottomnavigationbar.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
+import 'package:whatsappclone/pages/chattextpage.dart';
 import 'callpage.dart';
 import 'DrawerScreens/settings/settingspage.dart';
 
@@ -297,6 +299,13 @@ class _ChatPageState extends State<ChatPage> {
                           fontSize: 18,
                           color: Colors.white,
                         ),),
+                        onTap: (){
+                          Get.to(ChatDetailsPage(), arguments: {
+                            'name': arrNames[index],
+                            'image': arrImages[index],
+                          });
+
+                        },
                         subtitle:Row(
                           children: [
                             Icon(Icons.check),
