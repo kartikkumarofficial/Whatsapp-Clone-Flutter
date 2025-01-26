@@ -3,8 +3,10 @@ import 'package:whatsappclone/main.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
-import 'DrawerScreens/newgroup.dart';
-import 'DrawerScreens/settings/settingspage.dart';
+import 'package:whatsappclone/pages/UpdatesPage/CreateChannel.dart';
+import 'package:whatsappclone/pages/UpdatesPage/StatusPrivacy.dart';
+import '../DrawerScreens/newgroup.dart';
+import '../DrawerScreens/settings/settingspage.dart';
 
 
 
@@ -189,12 +191,11 @@ class _UpdatespageState extends State<Updatespage> {
     if(value=='Settings'){
     Navigator.push(context,
     MaterialPageRoute(builder: (context)=> SettingsPage() ));
-    }else if (value =='Status Privacy'){
+    }else if (value =='Status privacy'){
     Navigator.push(context,
-    MaterialPageRoute(builder: (context) => NewgroupPage(),));
+    MaterialPageRoute(builder: (context) => statusp(),));
     }else if (value =='Create channel'){
-    Navigator.push(context, MaterialPageRoute(
-    builder: (context) => LinkedDevicesPage(),));
+    CreateChannel().getCreateChannelSheet();
     }
 
 

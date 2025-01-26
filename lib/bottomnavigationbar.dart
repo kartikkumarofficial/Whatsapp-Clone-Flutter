@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsappclone/pages/callpage.dart';
 import 'package:whatsappclone/pages/chatspage.dart';
 import 'package:whatsappclone/pages/communitiespage.dart';
-import 'package:whatsappclone/pages/updatespage.dart';
+import 'package:whatsappclone/pages/UpdatesPage/updatespage.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
