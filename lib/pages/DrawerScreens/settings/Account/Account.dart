@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/AddAccount.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/ChangeNumber.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/DeleteAccount.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/EmailAddress.dart';
@@ -98,6 +99,9 @@ class _AccountPageState extends State<AccountPage> {
                       }
                       else if(accountpagelist[index]=='Delete account'){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => DeleteAccountPage(),));
+                      }
+                      else if(accountpagelist[index]=='Add account'){
+                        BottomSheetOpener().showBottomSheet(context);
                       }
 
 
