@@ -23,13 +23,11 @@ class BottomSheetOpener {
 
               SizedBox(height: 16),
               ListTile(
-                leading: CircleAvatar(child: Image.asset('assets/images/sus.png'),),
+                leading: CircleAvatar(child:ClipOval(child: Image.asset('assets/images/sus.png',fit: BoxFit.cover,)),  ),
                 title: Text("Kartik",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                 subtitle:Text('1234567890',style: TextStyle(color: Colors.grey),) ,
-                trailing: Icon(Icons.check_circle,color: Color.fromRGBO(0,214,85,1.0),),
-                onTap: () {
-
-                },
+              trailing: Icon(Icons.check_circle,color: Color.fromRGBO(0,214,85,1.0),),
+                onTap: () {},
               ),
               Padding(
                 padding: EdgeInsets.only(left: 8.0),

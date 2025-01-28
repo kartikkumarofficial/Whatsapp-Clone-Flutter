@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/bottomnavigationbar.dart';
-import 'chatspage.dart';
+import 'ChatPage/chatspage.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});

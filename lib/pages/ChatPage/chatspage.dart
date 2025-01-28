@@ -8,10 +8,10 @@ import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
-import 'package:whatsappclone/pages/chattextpage.dart';
+import 'package:whatsappclone/pages/ChatPage/chattextpage.dart';
 import 'package:whatsappclone/pages/selectcontactspage.dart';
-import 'callpage.dart';
-import 'DrawerScreens/settings/settingspage.dart';
+import '../callpage.dart';
+import '../DrawerScreens/settings/settingspage.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
