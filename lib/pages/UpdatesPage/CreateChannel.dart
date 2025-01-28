@@ -63,13 +63,14 @@ class CreateChannel {
 
                 children: [
                   Container(
-                    height: 100,
-                    width: ,
+                    height: Get.height*0.08,
+                    width: Get.width,
 
                     color: Color.fromRGBO(30,39,43,1.0),
                     child: Padding(
                       padding: EdgeInsets.all(20),
                       child: Container(
+                        // height: Get.height*0.4,
 
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25),
