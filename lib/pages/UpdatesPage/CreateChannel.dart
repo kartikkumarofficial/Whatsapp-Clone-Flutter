@@ -21,7 +21,6 @@ class CreateChannel {
             children: [
 
               Container(
-                color: Colors.red,
                   height: 100,
                   width: 200,
                   child: Image.asset('assets/images/channelimage.png',)),
@@ -68,7 +67,7 @@ class CreateChannel {
 
                     color: Color.fromRGBO(30,39,43,1.0),
                     child: Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: EdgeInsets.only(left: 20,right: 20,top: 15,bottom: 15),
                       child: Container(
                         // height: Get.height*0.4,
 
@@ -76,19 +75,20 @@ class CreateChannel {
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: SizedBox(
+                          height: 150,
                           width: 300,
                           child: ElevatedButton(
-
                             style: ElevatedButton.styleFrom(
-
                               backgroundColor: Color.fromRGBO(32,192,98,1.0),
-
                             ),
-                              onPressed: (){
-                            Get.back();
-                          },
-                              child: Text('Continue',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
-                        ),
+                            onPressed: () {
+                              Get.back();
+                            },
+                            child: Text(
+                              'Continue',
+                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                            ),
+                          ),),
                       ),
                     ),
                   )
