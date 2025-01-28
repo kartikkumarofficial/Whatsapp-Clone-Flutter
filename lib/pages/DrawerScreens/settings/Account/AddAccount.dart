@@ -9,12 +9,13 @@ class BottomSheetOpener {
 
     showModalBottomSheet(
       context: context,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
-      ),
       builder: (BuildContext context) {
         return Container(
-          color: Color.fromARGB(255,11,17,21),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)),
+            color: Color.fromARGB(255,16,25,29,),
+          ),
+
           padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -30,12 +31,15 @@ class BottomSheetOpener {
 
                 },
               ),
-              ListTile(
-                leading: Icon(Icons.add,color: Colors.white,),
-                title: Text("Add account",style: TextStyle(color: Colors.white),),
-                onTap: () {
-        }
-        ),
+              Padding(
+                padding: EdgeInsets.only(left: 8.0),
+                child: ListTile(
+                  leading: Icon(Icons.add,color: Colors.white,),
+                  title: Text("Add account",style: TextStyle(color: Colors.white),),
+                  onTap: () {
+                        }
+                        ),
+              ),
 
             ],
           ),
