@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/ChangeNumber.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/DeleteAccount.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/EmailAddress.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Passkeys.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/RequestAccountInfo.dart';
@@ -57,7 +58,7 @@ class _AccountPageState extends State<AccountPage> {
           physics: const BouncingScrollPhysics(),
           children: [
             Divider(
-              thickness: 1,
+              thickness: 0.5,
               color: Color.fromARGB(255, 31, 43, 50),
             ),
             ListView.builder(
@@ -95,8 +96,8 @@ class _AccountPageState extends State<AccountPage> {
                       else if(accountpagelist[index]=='Request account info'){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => RequestAccountInfoPage(),));
                       }
-                      else if(accountpagelist[index]=='Passkeys'){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
+                      else if(accountpagelist[index]=='Delete account'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DeleteAccountPage(),));
                       }
 
 
