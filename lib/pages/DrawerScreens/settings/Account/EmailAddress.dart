@@ -46,8 +46,25 @@ class _EmailAddressPageState extends State<EmailAddressPage> {
               thickness: 0.5,
               color: Color.fromARGB(255, 31, 43, 50),
             ),
-            Icon(Icons.email_sharp,color: Color.fromRGBO(0,214,85,1.0),size: Get.height*0.1,),
-            Text('Email helps you access your account',)
+            Icon(Icons.email_rounded,color: Color.fromRGBO(0,214,85,1.0),size: Get.height*0.1,),
+            Text('''Email helps you access your account. It isn't visible''',style: TextStyle(color: Colors.grey),textAlign: TextAlign.center,),
+            Text('''to others''',style: TextStyle(color: Colors.grey),textAlign: TextAlign.center,),
+            ListTile(
+              title: Text('Email',style: TextStyle(color: Colors.grey),),
+              subtitle: Text('work.kartikkumar@gmail.com',style: TextStyle(color: Colors.white,fontSize: Get.height*0.02),),
+              trailing: Icon(Icons.edit_outlined,color: Colors.grey,),
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding:  EdgeInsets.only(left: Get.width*0.035),
+                  child: Icon(color: Colors.green,Icons.check_circle_outline,),
+                ),
+                Text(' Verified',style: TextStyle(color: Colors.green),)
+              ],
+            )
+
+
 
 
           ],
