@@ -60,25 +60,35 @@ class CreateChannel {
 
               ),
               Row(
+
                 children: [
                   Container(
+                    height: 100,
+                    width: ,
 
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25)
-                    ),
-                    child: SizedBox(
-                      width: 300,
-                      child: ElevatedButton(
+                    color: Color.fromRGBO(30,39,43,1.0),
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Container(
 
-                        style: ElevatedButton.styleFrom(
-
-                          backgroundColor: Color.fromRGBO(32,192,98,1.0),
-
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
                         ),
-                          onPressed: (){
-                        Get.back();
-                      },
-                          child: Text('Continue',style: TextStyle(color: Colors.black),)),
+                        child: SizedBox(
+                          width: 300,
+                          child: ElevatedButton(
+
+                            style: ElevatedButton.styleFrom(
+
+                              backgroundColor: Color.fromRGBO(32,192,98,1.0),
+
+                            ),
+                              onPressed: (){
+                            Get.back();
+                          },
+                              child: Text('Continue',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
+                        ),
+                      ),
                     ),
                   )
                 ],
