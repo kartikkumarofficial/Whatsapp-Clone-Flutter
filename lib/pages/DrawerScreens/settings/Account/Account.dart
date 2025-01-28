@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/EmailAddress.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Passkeys.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/SecurityNotifications.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Two-step%20verification.dart';
 
 
 class AccountPage extends StatefulWidget {
@@ -83,8 +84,8 @@ class _AccountPageState extends State<AccountPage> {
                       else if(accountpagelist[index]=='Email address'){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => EmailAddressPage(),));
                       }
-                      else if(accountpagelist[index]=='Passkeys'){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
+                      else if(accountpagelist[index]=='Two-step verification'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => TwoStepVerificationPage(),));
                       }
                       else if(accountpagelist[index]=='Passkeys'){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
