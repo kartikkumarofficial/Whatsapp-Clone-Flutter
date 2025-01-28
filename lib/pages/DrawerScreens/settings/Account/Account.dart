@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/ChangeNumber.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/EmailAddress.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Passkeys.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/RequestAccountInfo.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/SecurityNotifications.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Two-step%20verification.dart';
 
@@ -91,8 +92,8 @@ class _AccountPageState extends State<AccountPage> {
                       else if(accountpagelist[index]=='Change number'){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeNumberPage(),));
                       }
-                      else if(accountpagelist[index]=='Passkeys'){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
+                      else if(accountpagelist[index]=='Request account info'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => RequestAccountInfoPage(),));
                       }
                       else if(accountpagelist[index]=='Passkeys'){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
