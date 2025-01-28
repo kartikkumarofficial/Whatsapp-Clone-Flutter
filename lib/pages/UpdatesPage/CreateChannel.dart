@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,7 @@ class CreateChannel {
     Get.bottomSheet(
 
         Container(
+          height: double.infinity,
           decoration: BoxDecoration(
               color: Color.fromRGBO(10,17,20,1.0,),
               borderRadius: BorderRadius.circular(20)
@@ -19,11 +21,68 @@ class CreateChannel {
             children: [
 
               Container(
-                  height: 150,
-                  width: 100,
+                color: Colors.red,
+                  height: 100,
+                  width: 200,
                   child: Image.asset('assets/images/channelimage.png',)),
-              Text('Create a channel to reach',style: TextStyle(color: Colors.white),)
+              Text('Create a channel to reach',style: TextStyle(color: Colors.white,fontSize: 23),),
+              Text('unlimited followers',style: TextStyle(color: Colors.white,fontSize: 23),),
+              ListTile(
+                leading: Icon(CupertinoIcons.globe,color: Colors.white,),
+                title: Text('Anyone can discover your channel',style: TextStyle(color: Colors.white,fontSize: 16),),
+                subtitle: Text('Channels are public, so anyone can find them and see 30 days of history.',style: TextStyle(color: Colors.grey),),
+              ),
+              ListTile(
+                leading: Icon(CupertinoIcons.eye_slash,color: Colors.white,),
+                title: Text('People see your channel, not you',style: TextStyle(color: Colors.white,fontSize: 16),),
+                subtitle: Text('''Followers can't see your phone number, profile picture or name,but other admins can.''',style: TextStyle(color: Colors.grey),),
+              ),
+              ListTile(
+                leading: Icon(Icons.security,color: Colors.white,),
+                title: Text(''' You're responsible for your channel''',style: TextStyle(color: Colors.white,fontSize: 16),),
+                subtitle: RichText(
+                  text: TextSpan(
+                    text: 'Your channel needs to follow our ',
+                    style: const TextStyle(color: Colors.grey, fontSize: 16),
+                    children: [
+                      TextSpan(
+                        text: 'guidelines',
+                        style: const TextStyle(color: Colors.blue, fontSize: 16),
+                      ),
+                      TextSpan(
+                        text: ' and is reviewed against them.',
+                        style: const TextStyle(color: Colors.grey, fontSize: 16),
+                      ),
+                    ],
+                  ),
+              ),
 
+
+              ),
+              Row(
+                children: [
+                  Container(
+
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25)
+                    ),
+                    child: SizedBox(
+                      width: 300,
+                      child: ElevatedButton(
+
+                        style: ElevatedButton.styleFrom(
+
+                          backgroundColor: Color.fromRGBO(32,192,98,1.0),
+
+                        ),
+                          onPressed: (){
+                        Get.back();
+                      },
+                          child: Text('Continue',style: TextStyle(color: Colors.black),)),
+                    ),
+                  )
+                ],
+              )
 
             ],
           ),
