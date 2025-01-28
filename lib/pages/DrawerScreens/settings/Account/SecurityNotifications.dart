@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/widgets.dart';
 
 class SecurityNotificationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var srcheight = MediaQuery.of(context).size.height;
     var srcwidth = MediaQuery.of(context).size.width;
+    var srcsize = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 11, 17, 21),
       appBar: AppBar(
@@ -159,7 +163,7 @@ read or listen to them. This includes your:''',
                 Row(
                   children: [
                     
-                    Text('Learn more',style: TextStyle(color: Colors.blue , fontWeight:FontWeight.bold
+                    Text('Learn more',style: TextStyle(color: Colors.lightBlueAccent, fontWeight:FontWeight.bold
                     ),),
                   ],
                 )
@@ -170,48 +174,31 @@ read or listen to them. This includes your:''',
             thickness: 0.5,
             color: Colors.white12,
           ),
-          Padding(
-            padding: EdgeInsets.all(srcwidth * 0.05),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Show security notifications on this device',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: srcwidth * 0.045,
-                    fontWeight: FontWeight.w500,
+          ListTile(
+
+            title: Text('Show security notifications on this device',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: srcwidth * 0.04,
+              ),),
+            subtitle:RichText(
+              text: TextSpan(
+                text: '''Get notified when your security code changes for a contact's phone in an end-to-end encrypted chat. If you have multiple devices, this setting must be enabled on each device where you want to get notifications.''',
+                style: const TextStyle(color: Colors.grey),
+                children: [
+                  TextSpan(
+                    text: 'Learn more',
+                    style: const TextStyle(color: Colors.lightBlueAccent),
                   ),
-                ),
-                SizedBox(height: srcwidth * 0.02),
-                Text(
-                  "Get notified when your security code changes for a contact's phone in an end-to-end encrypted chat. If you have multiple devices, this setting must be enabled on each device where you want to get notifications.",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: srcwidth * 0.038,
-                    height: 1.4,
-                  ),
-                ),
-                SizedBox(height: srcwidth * 0.03),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Learn more',
-                      style: TextStyle(
-                        color: Color(0xFF00A884),
-                        fontSize: srcwidth * 0.042,
-                      ),
-                    ),
-                    Switch(
-                      value: false,
-                      onChanged: (value) {},
-                      activeColor: Color(0xFF00A884),
-                    ),
-                  ],
-                ),
-              ],
+
+                ],
+              ),
             ),
+            trailing: utils().getxswitch(),
+
+            onTap: (){
+
+            },
           ),
         ],
       ),

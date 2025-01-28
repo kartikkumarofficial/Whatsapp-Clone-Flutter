@@ -25,11 +25,6 @@ class _CommunitiespageState extends State<Communitiespage> {
     var srcheight=MediaQuery.of(context).size.height;
     var srcwidth =MediaQuery.of(context).size.width;
     final List arrDrawerItems = [
-      'New Group',
-      'New Broadcast',
-      'Linked List',
-      'Starred messages',
-      'Payments',
       'Settings'
     ];
     List<String> arrChannelNames = [
@@ -106,6 +101,11 @@ class _CommunitiespageState extends State<Communitiespage> {
                 padding: EdgeInsets.zero,
 
                 child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25)
+                  ),
+                  height: srcwidth*0.1,
+                  width: srcwidth*0.4,
                   padding: EdgeInsets.zero,
                   // width: double.infinity,
                   // color: Color.fromARGB(255,7,21,29),
@@ -115,7 +115,7 @@ class _CommunitiespageState extends State<Communitiespage> {
 
                       title: Padding(
                         padding: EdgeInsets.only(left: srcwidth*0.03),
-                        child: Text(item,style: TextStyle(color: Colors.black),),
+                        child: Text(item,style: TextStyle(color: Colors.white),),
                       )),
                 ),
               ))
@@ -124,13 +124,15 @@ class _CommunitiespageState extends State<Communitiespage> {
                 if(value=='Settings'){
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context)=> SettingsPage() ));
-                }else if (value =='New Group'){
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => NewgroupPage(),));
+                }else if (value ==''){
+
                 }
 
+
               },
-            ),
+
+
+            )
           ),
         ],
       ),

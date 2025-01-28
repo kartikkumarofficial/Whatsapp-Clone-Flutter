@@ -15,11 +15,7 @@ class _CallspageState extends State<Callspage> {
     var srcheight = MediaQuery.of(context).size.height;
     var srcwidth = MediaQuery.of(context).size.width;
     final List arrDrawerItems = [
-      'New Group',
-      'New Broadcast',
-      'Linked List',
-      'Starred messages',
-      'Payments',
+      'Clear call log'
       'Settings'
     ];
     List<String> arrNames = [
@@ -96,6 +92,11 @@ class _CallspageState extends State<Callspage> {
                 padding: EdgeInsets.zero,
 
                 child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25)
+                  ),
+                  height: srcwidth*0.1,
+                  width: srcwidth*0.4,
                   padding: EdgeInsets.zero,
                   // width: double.infinity,
                   // color: Color.fromARGB(255,7,21,29),
@@ -105,7 +106,7 @@ class _CallspageState extends State<Callspage> {
 
                       title: Padding(
                         padding: EdgeInsets.only(left: srcwidth*0.03),
-                        child: Text(item,style: TextStyle(color: Colors.black),),
+                        child: Text(item,style: TextStyle(color: Colors.white),),
                       )),
                 ),
               ))
@@ -114,12 +115,13 @@ class _CallspageState extends State<Callspage> {
                 if(value=='Settings'){
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context)=> SettingsPage() ));
-                }else if (value =='New Group'){
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => NewgroupPage(),));
+                }else if (value =='Status privacy'){
+
                 }
 
               },
+
+
             ),
           ),
         ],
@@ -132,59 +134,64 @@ class _CallspageState extends State<Callspage> {
             color: Color.fromARGB(255,11,17,21),
             child: Column(
               children: [
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(left: srcwidth * 0.04),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: srcwidth * 0.0, top: srcwidth * 0.02),
-                    child: Text(
-                      'Favourites',
-                      style: TextStyle(
-                        fontSize: srcwidth * 0.05,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:  EdgeInsets.only(top: srcwidth*0.013),
-                  child: ListTile(
-                    title: Text(
-                      'Add favourite',
-                      style: TextStyle(
-                      color: Colors.white,
-                      fontSize: srcwidth*0.048
-                    ),),
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.green,
-                      child: Icon(Icons.favorite_rounded,
-                        color: Colors.black,
-                      size: srcwidth*0.05,),
-                      // radius: srcwidth*0.06,
-                      // backgroundImage: AssetImage('assets/images/communitiespage/library.jpg')
-                      ),
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(left: srcwidth * 0.04),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: srcwidth * 0.0, top: srcwidth * 0.02),
-                    child: Text(
-                      'Recent',
-                      style: TextStyle(
-                        fontSize: srcwidth * 0.05,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+
+
                 Expanded(
                   child: ListView.builder(
                     itemCount: arrNames.length,
-                    itemBuilder: (context, index) => ListTile(
+                    itemBuilder: (context, index) => index ==0 ? Column(
+                      children: [
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          margin: EdgeInsets.only(left: srcwidth * 0.04),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: srcwidth * 0.0, top: srcwidth * 0.02),
+                            child: Text(
+                              'Favourites',
+                              style: TextStyle(
+                                fontSize: srcwidth * 0.05,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding:  EdgeInsets.only(top: srcwidth*0.013),
+                          child: ListTile(
+                            title: Text(
+                              'Add favourite',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: srcwidth*0.048
+                              ),),
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.green,
+                              child: Icon(Icons.favorite_rounded,
+                                color: Colors.black,
+                                size: srcwidth*0.05,),
+                              // radius: srcwidth*0.06,
+                              // backgroundImage: AssetImage('assets/images/communitiespage/library.jpg')
+                            ),
+                          ),
+                        ),
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          margin: EdgeInsets.only(left: srcwidth * 0.04),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: srcwidth * 0.0, top: srcwidth * 0.02),
+                            child: Text(
+                              'Recent',
+                              style: TextStyle(
+                                fontSize: srcwidth * 0.05,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ) : ListTile(
                       title: Text(
                         arrNames[index],
                         style: TextStyle(

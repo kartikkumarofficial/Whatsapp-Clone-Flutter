@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/EmailAddress.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Passkeys.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/SecurityNotifications.dart';
 
 
@@ -74,6 +76,24 @@ class _AccountPageState extends State<AccountPage> {
                       }
                       else if(accountpagelist[index]=='Storage and data'){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => SecurityNotificationsPage(),));
+                      }
+                      else if(accountpagelist[index]=='Passkeys'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
+                      }
+                      else if(accountpagelist[index]=='Email address'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => EmailAddressPage(),));
+                      }
+                      else if(accountpagelist[index]=='Passkeys'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
+                      }
+                      else if(accountpagelist[index]=='Passkeys'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
+                      }
+                      else if(accountpagelist[index]=='Passkeys'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
+                      }
+                      else if(accountpagelist[index]=='Passkeys'){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PasskeysPage(),));
                       }
 
 
