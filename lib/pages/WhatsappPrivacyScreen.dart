@@ -16,7 +16,7 @@ class ProfilePhotoPrivacyScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Profile photo'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back), //
           onPressed: () => Get.back(),
         ),
       ),
