@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsappclone/Functions/AppOpeners.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Account.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Account/Profile.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/AppUpdateSettings.dart';
@@ -255,6 +256,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
             ListTile(
+              onTap: (){
+                AppOpeners().openInstagram();
+              },
               leading: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.01),
                 child: Icon(

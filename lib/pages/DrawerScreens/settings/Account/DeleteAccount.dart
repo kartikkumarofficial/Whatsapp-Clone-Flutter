@@ -149,7 +149,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
             const SizedBox(height: 30),
             Center(
               child: Padding(
-                padding:EdgeInsets.only(left: Get.height*0.04,right: Get.height*0.2,),
+                padding:EdgeInsets.only(left: Get.height*0.04,right: Get.height*0.21,),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
