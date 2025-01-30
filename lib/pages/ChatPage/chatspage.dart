@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -50,15 +51,15 @@ class _ChatPageState extends State<ChatPage> {
     var srcwidth =MediaQuery.of(context).size.width;
     var size =MediaQuery.of(context).size;
     List<String> arrNames = [
-      'Supreme Leader', 'Mummy', 'Bhai', 'Koi toh hai', 'Pata nahi kon',
-      'hmmm....', 'Benaam', 'Badnaam', 'chotu', 'kuch toh naam hai'
+      '', 'Supreme Leader', 'Mummy', 'Papa', 'Bunty ka Sabun',
+      'Chi Chiii', 'Shivlayz', 'Abhinav', 'Anmol Bunz', 'Vedraj'
     ];
 
     List<String> arrMessages = [
-      'Last message.', 'Kya dekh raha hai?', 'Padhai karle.',
-      'Aise lagegi placement?', 'Jake Flutter seekh.',
-      'Samajh mein aaya', 'kya', 'typing...',
-      'Coding kar.', 'Naya seekhne ka waqt hai.',
+      'Last message.', 'Roger that', 'khana khaya?',
+      'Padh bhi liya kar kabhi', 'Or kaisa hai',
+      'ok', 'layz khilade', 'typing...',
+      'aja ghumne chalte hai', 'bahar hun',
     ];
 
 

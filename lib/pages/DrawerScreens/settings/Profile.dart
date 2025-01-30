@@ -76,9 +76,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Stack(
                     clipBehavior: Clip.none,
                     children: [
-                      CircleAvatar(
-                        radius: srcheight * 0.11,
-                        child: Image.asset('assets/images/meta.png'),
+                      Hero(
+                        tag:'profile',
+                        child: CircleAvatar(
+                          radius: srcheight * 0.11,
+                          child: Image.asset('assets/images/meta.png'),
+                        ),
                       ),
                       Positioned(
                         bottom: 0,
