@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 
-class LastSeenAndOnlinePage extends StatefulWidget {
-  const LastSeenAndOnlinePage({super.key});
+class PrivacyCallsPage extends StatefulWidget {
+  const PrivacyCallsPage({super.key});
 
   @override
-  State<LastSeenAndOnlinePage> createState() => _LastSeenAndOnlinePageState();
+  State<PrivacyCallsPage> createState() => _PrivacyCallsPageState();
 }
 
-class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
+class _PrivacyCallsPageState extends State<PrivacyCallsPage> {
   var lt = FontWeight.w300;
   var scrh = 0.0;
   var scrw = 0.0;
@@ -35,7 +35,7 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
         title: Padding(
           padding: const EdgeInsets.only(top: 3),
           child: const Text(
-            'Profile',
+            'Profile photo',
             style: TextStyle(
               fontSize:23,
               color: Colors.white,
@@ -57,14 +57,29 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
               Padding(
                 padding: const EdgeInsets.only(left: 23),
                 child: Text(
-                  "Who can see my status updates",
-                  style: TextStyle(color: Colors.white38, fontWeight: FontWeight.w300),
+                  "Who can see my Profile Photo",
+                  style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 2),
                 child: Column(
                   children: [
+                    ListTile(
+                      leading: Radio<String>(
+                        value: "everyone",
+                        groupValue: _selectedOption,
+                        onChanged: (String? value) {
+                          setState(() {
+                            _selectedOption = value;
+                          });
+
+                        },
+
+                        activeColor: Colors.green,
+                      ),
+                      title: Text("Everyone", style: TextStyle(color: Colors.white, fontWeight: lt)),
+                    ),
                     ListTile(
                       leading: Radio<String>(
                         value: "contacts",
@@ -92,7 +107,7 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
                         activeColor: Colors.green,
                       ),
                       title: Text("My contacts except...", style: TextStyle(color: Colors.white, fontWeight: lt)),
-                      trailing: Text("40 excluded", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
+
                     ),
                     ListTile(
                       leading: Radio<String>(
@@ -106,9 +121,9 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
                         },
                         activeColor: Colors.green,
                       ),
-                      title: Text("Only share with...", style: TextStyle(color: Colors.white, fontWeight: lt)),
+                      title: Text("Nobody", style: TextStyle(color: Colors.white, fontWeight: lt)),
 
-                      trailing: Text("1 included", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
+                      // trailing: Text("1 included", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
                     ),
                   ],
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LastSeenAndOnline.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/ProfilePhoto.dart';
 import 'package:whatsappclone/widgets.dart';
 
 
@@ -105,6 +106,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(ProfilePhotoPage());
               },
             ),
 

@@ -35,7 +35,7 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
         title: Padding(
           padding: const EdgeInsets.only(top: 3),
           child: const Text(
-            'Profile',
+            'Last seen and online',
             style: TextStyle(
               fontSize:23,
               color: Colors.white,
@@ -57,14 +57,29 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
               Padding(
                 padding: const EdgeInsets.only(left: 23),
                 child: Text(
-                  "Who can see my status updates",
-                  style: TextStyle(color: Colors.white38, fontWeight: FontWeight.w300),
+                  "Who can see my last seen",
+                  style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 2),
                 child: Column(
                   children: [
+                    ListTile(
+                      leading: Radio<String>(
+                        value: "everyone",
+                        groupValue: _selectedOption,
+                        onChanged: (String? value) {
+                          setState(() {
+                            _selectedOption = value;
+                          });
+
+                        },
+
+                        activeColor: Colors.green,
+                      ),
+                      title: Text("Everyone", style: TextStyle(color: Colors.white, fontWeight: lt)),
+                    ),
                     ListTile(
                       leading: Radio<String>(
                         value: "contacts",
@@ -92,7 +107,7 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
                         activeColor: Colors.green,
                       ),
                       title: Text("My contacts except...", style: TextStyle(color: Colors.white, fontWeight: lt)),
-                      trailing: Text("40 excluded", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
+
                     ),
                     ListTile(
                       leading: Radio<String>(
@@ -106,10 +121,67 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
                         },
                         activeColor: Colors.green,
                       ),
-                      title: Text("Only share with...", style: TextStyle(color: Colors.white, fontWeight: lt)),
+                      title: Text("Nobody", style: TextStyle(color: Colors.white, fontWeight: lt)),
 
-                      trailing: Text("1 included", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
+                      // trailing: Text("1 included", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
                     ),
+                  ],
+                ),
+              ),
+              Divider(
+                thickness: 0.5,
+                color: Color.fromARGB(255, 31, 43, 50),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 23,top: 20),
+                child: Text(
+                  "Who can see when I'm online.",
+                  style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 2),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Radio<String>(
+                        value: "everyone",
+                        groupValue: _selectedOption,
+                        onChanged: (String? value) {
+                          setState(() {
+                            _selectedOption = value;
+                          });
+
+                        },
+
+                        activeColor: Colors.green,
+                      ),
+                      title: Text("Everyone", style: TextStyle(color: Colors.white, fontWeight: lt)),
+                    ),
+
+                    ListTile(
+                      leading: Radio<String>(
+
+                        value: "share_with",
+                        groupValue: _selectedOption,
+                        onChanged: (String? value) {
+                          setState(() {
+                            _selectedOption = value;
+                          });
+                        },
+                        activeColor: Colors.green,
+                      ),
+                      title: Text("Same as last seen", style: TextStyle(color: Colors.white, fontWeight: lt)),
+
+                      // trailing: Text("1 included", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 23,right: 30),
+                      child: Text(
+                        "If you don\'t share when you were last seen or online, you won\'t be able  to see when other people were last seen or online.",
+                        style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w300),
+                      ),
+                    )
                   ],
                 ),
               ),
