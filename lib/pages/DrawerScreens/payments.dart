@@ -143,7 +143,7 @@ class _PaymentsPageState extends State<PaymentsPage> {
                           width: srcwidth*0.9,
                           // color: Colors.green,
                           decoration: BoxDecoration(
-                            color:Colors.blueGrey,
+                            color:Color.fromRGBO(37,49,55,1.0),
                             borderRadius: BorderRadius.circular(srcwidth*0.05)
                           ),
                           child: Row(

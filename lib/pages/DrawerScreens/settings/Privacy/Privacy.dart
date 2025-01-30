@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LastSeenAndOnline.dart';
 import 'package:whatsappclone/widgets.dart';
 
 
@@ -70,6 +71,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                     color: Colors.white,
                     fontSize: srcwidth * 0.042,
                   ),),
+
               ),
               subtitle: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.018),
@@ -80,6 +82,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(LastSeenAndOnlinePage());
               },
             ),
 
