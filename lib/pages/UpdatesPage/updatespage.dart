@@ -23,8 +23,9 @@ class _UpdatespageState extends State<Updatespage> {
     var srcheight=MediaQuery.of(context).size.height;
     var srcwidth =MediaQuery.of(context).size.width;
     final List arrDrawerItems = [
-      'Status privacy',
       'Create channel',
+      'Status privacy',
+
       'Settings'
     ];
     List<String> arrNames = [
@@ -193,7 +194,7 @@ class _UpdatespageState extends State<Updatespage> {
     MaterialPageRoute(builder: (context)=> SettingsPage() ));
     }else if (value =='Status privacy'){
     Navigator.push(context,
-    MaterialPageRoute(builder: (context) => statusp(),));
+    MaterialPageRoute(builder: (context) => StatusPrivacy(),));
     }else if (value =='Create channel'){
     CreateChannel().getCreateChannelSheet();
     }

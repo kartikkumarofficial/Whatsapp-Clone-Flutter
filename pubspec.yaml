@@ -73,6 +73,8 @@ flutter:
      - assets/images/
      - assets/images/communitiespage/
      - assets/images/chatpage/
+     - assets/images/wallpaper/darkwallpaper.png
+     - assets/images/wallpaper/
 
 
   # The following line ensures that the Material Icons font is

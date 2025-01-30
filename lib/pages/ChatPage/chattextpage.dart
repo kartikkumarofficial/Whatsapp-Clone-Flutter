@@ -204,7 +204,7 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                         decoration: InputDecoration(
                           focusedBorder: InputBorder.none,
                           border: InputBorder.none,
-                          hintText: 'Type your message...',
+                          hintText: 'Message',
                           hintStyle: TextStyle(color: Colors.white70),
                         ),
                       ),
