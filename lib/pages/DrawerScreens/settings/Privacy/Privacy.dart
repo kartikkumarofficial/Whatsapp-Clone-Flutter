@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/About.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/AdvancedPrivacy.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/AppLock.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/BlockedContacts.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/ChatLock.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Groups.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LastSeenAndOnline.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LiveLocation.dart';
@@ -297,6 +301,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(BlockedContactsPage());
               },
             ),
             ListTile(
@@ -318,6 +323,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(AppLockPage());
               },
             ),
 
@@ -333,6 +339,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
               ),
 
               onTap: (){
+                Get.to(ChatLockPage());
               },
             ),
             ListTile(
@@ -388,6 +395,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(AdvancedPrivacyPage());
               },
             ),
             Divider(
