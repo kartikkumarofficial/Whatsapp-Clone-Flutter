@@ -56,6 +56,54 @@ class _PrivacyCheckupPageState extends State<PrivacyCheckupPage> {
               padding: const EdgeInsets.only(top: 8.0,left: 15,right: 15),
               child: Text('Control your privacy settings and set up Whatsapp just the way you want it. ',style: TextStyle(color: Colors.grey,fontSize: srcwidth*0.035),textAlign: TextAlign.center,),
             ),
+            ListTile(
+              leading: Icon(Icons.perm_phone_msg_outlined,color: Colors.grey,),
+              title: Text('Choose who can contact you',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+
+              trailing: Icon(Icons.arrow_forward_rounded,color: Colors.grey,),
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.person_outline,color: Colors.grey,),
+              title: Text('Control your personal info',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+
+              trailing: Icon(Icons.arrow_forward_rounded,color: Colors.grey,),
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.message_outlined,color: Colors.grey,),
+              title: Text('Add more privacy to your chats',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+
+              trailing: Icon(Icons.arrow_forward_rounded,color: Colors.grey,),
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.lock_person_outlined,color: Colors.grey,),
+              title: Text('Add more protection to your account',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: srcwidth * 0.04,
+                ),),
+
+              trailing: Icon(Icons.arrow_forward_rounded,color: Colors.grey,),
+              onTap: (){
+              },
+            ),
 
 
 

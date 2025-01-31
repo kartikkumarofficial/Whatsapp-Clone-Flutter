@@ -75,7 +75,7 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
               },
             ),
             Divider(
-              thickness: 1,
+              thickness: 0.5,
               color: Color.fromARGB(255, 31, 43, 50),
             ),
             ListTile(

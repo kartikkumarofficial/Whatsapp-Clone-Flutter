@@ -56,7 +56,7 @@ class _StatusPrivacyrivacyState extends State<StatusPrivacy> {
                 padding: const EdgeInsets.only(left: 23),
                 child: Text(
                   "Who can see my status updates",
-                  style: TextStyle(color: Colors.white38, fontWeight: FontWeight.w300),
+                  style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
@@ -111,13 +111,52 @@ class _StatusPrivacyrivacyState extends State<StatusPrivacy> {
                   ],
                 ),
               ),
+
+              Divider(
+                thickness: 0.5,
+                color: Color.fromARGB(255, 31, 43, 50),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 23,top: 10),
+                child: Text(
+                  "Share my status updates across my account",
+                  style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
+                ),
+              ),
+
+
+              ListTile(
+                leading: Icon(Icons.facebook_outlined,color: Colors.grey,),
+                title: Text('Facebook',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: scrw * 0.04,
+                  ),),
+                subtitle: Text('Tap to add your account',
+                  style: TextStyle(
+                      color: Colors.grey
+                  ),
+                ),
+
+                onTap: (){
+                },
+              ),
+              Divider(
+                thickness: 0.5,
+                color: Color.fromARGB(255, 31, 43, 50),
+              ),
+
+
               Padding(
                 padding: const EdgeInsets.only(left: 23),
                 child: Text(
                   "Changes to your privacy settings won't affect status updates you've sent already",
-                  style: TextStyle(color: Colors.white38, fontWeight: FontWeight.w300),
+                  style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w300),
                 ),
               ),
+
+
+
             ],
           ),
         ),
