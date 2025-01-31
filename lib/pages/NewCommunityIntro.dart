@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsappclone/pages/NewCommunity.dart';
 
 
 class NewCommunityIntroPage extends StatefulWidget {
@@ -85,7 +86,7 @@ class _NewCommunityIntroPageState extends State<NewCommunityIntroPage> {
                               backgroundColor: Color.fromRGBO(32,192,98,1.0),
                             ),
                             onPressed: () {
-                              Get.back();
+                              Get.to(NewCommunityPage());
                             },
                             child: Text(
                               'Get Started',

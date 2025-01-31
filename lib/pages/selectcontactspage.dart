@@ -231,7 +231,7 @@ class _SelectContactsPageState extends State<SelectContactsPage> {
                     ),
                   ),
                   onTap: (){
-                    Get.to(NewCommunityPage());
+                    Get.to(NewCommunityIntroPage());
                   },
                 ),
                 ListTile(
