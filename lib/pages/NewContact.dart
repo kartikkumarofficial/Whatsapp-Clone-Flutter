@@ -67,7 +67,7 @@ class _NewContactPageState extends State  <NewContactPage> {
               child: Row(
                 children: [
                   Padding(
-                    padding:  EdgeInsets.only(left: Get.height*0.02,right: Get.height*0.0499),
+                    padding:  EdgeInsets.only(left: Get.height*0.02,right: Get.height*0.05),
                     child: null
                   ),
                   Expanded(child: buildInputField('Last name', lastnamecontroller)),
@@ -95,7 +95,7 @@ class _NewContactPageState extends State  <NewContactPage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 40.0,top: 8),
-                  child: Text('Add Information  ',style: TextStyle(color: Colors.green,fontSize:15,fontWeight: FontWeight.bold ),),
+                  child: Text('Add Information  ',style: TextStyle(color: Color.fromRGBO(1,194,87,1.0),fontSize:15,fontWeight: FontWeight.bold ),),
                 ),
               ],
             ),
