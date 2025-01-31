@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
+import 'package:whatsappclone/pages/NewCommunity.dart';
 import 'package:whatsappclone/pages/NewCommunityIntro.dart';
 import 'package:whatsappclone/pages/NewContact.dart';
 
@@ -230,7 +231,7 @@ class _SelectContactsPageState extends State<SelectContactsPage> {
                     ),
                   ),
                   onTap: (){
-                    Get.to(NewCommunityIntroPage());
+                    Get.to(NewCommunityPage());
                   },
                 ),
                 ListTile(

@@ -83,7 +83,68 @@ class _NewContactPageState extends State  <NewContactPage> {
                     padding:  EdgeInsets.only(left: Get.height*0.02,right: Get.height*0.025),
                     child: Icon(Icons.phone_outlined,color: Colors.grey,size: 24,),
                   ),
-                  Expanded(child: buildInputField('First name', firstnamecontroller)),
+                  Padding(
+                    padding:  EdgeInsets.only(right: 10,),
+                    child: Column(
+                      children: [
+                        Text('Country',style: TextStyle(color: Colors.grey,fontSize: 12),textAlign: TextAlign.left,),
+                        DropdownButton<String>(
+                          value: selectedCountry,
+                          dropdownColor: Color.fromARGB(255, 11, 17, 21),
+                          style: TextStyle(color: Colors.white),
+                          items: ["+91", "+1", "+44", "+61", "+81"]
+                              .map((String value) => DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          ))
+                              .toList(),
+                          onChanged: (newValue) {
+                            setState(() {
+                              selectedCountry = newValue!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(child: buildInputField('Phone', phonecontroller)),
+
+                ],
+              ),
+            ),
+            Padding(
+              padding:  EdgeInsets.only(right: Get.height*0.04),
+              child: Row(
+                children: [
+                  Padding(
+                    padding:  EdgeInsets.only(left: Get.height*0.02,right: Get.height*0.025), 
+                    child: Icon(Icons.download_outlined,color: Colors.grey,size: 24,),
+                  ),
+                  Padding(
+                    padding:  EdgeInsets.only(right: 10,),
+                    child: Column(
+                      children: [
+                        // Text('Save to',style: TextStyle(color: Colors.grey,fontSize: 12),textAlign: TextAlign.left,),
+                        DropdownButton<String>(
+                          value: selectedAccount,
+                          dropdownColor: Color.fromARGB(255, 11, 17, 21),
+                          style: TextStyle(color: Colors.white),
+                          items: ["work.kartikkumar@gmail.com","Other account"]
+                              .map((String value) => DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          ))
+                              .toList(),
+                          onChanged: (newValue) {
+                            setState(() {
+                              selectedAccount = newValue!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+
 
                 ],
               ),
@@ -91,16 +152,18 @@ class _NewContactPageState extends State  <NewContactPage> {
 
 
 
+
+
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 40.0,top: 8),
+                  padding: const EdgeInsets.only(left: 60,top: 8),
                   child: Text('Add Information  ',style: TextStyle(color: Color.fromRGBO(1,194,87,1.0),fontSize:15,fontWeight: FontWeight.bold ),),
                 ),
               ],
             ),
             Padding(
-              padding:  EdgeInsets.only(top: Get.height*0.38),
+              padding:  EdgeInsets.only(top: Get.height*0.48),
               child: Row(
 
                 children: [
@@ -122,7 +185,7 @@ class _NewContactPageState extends State  <NewContactPage> {
                           width: 300,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromRGBO(32,192,98,1.0),
+                              backgroundColor:Color.fromRGBO(1,194,87,1.0),
                             ),
                             onPressed: () {
                               Get.back();
