@@ -8,6 +8,7 @@ import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/ChatLock.dart
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Groups.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LastSeenAndOnline.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LiveLocation.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/PrivacyCheckup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/ProfilePhoto.dart';
 import 'package:whatsappclone/pages/UpdatesPage/StatusPrivacy.dart';
 import 'package:whatsappclone/widgets.dart';
@@ -424,6 +425,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(PrivacyCheckupPage());
               },
             ),
             SizedBox(height: srcwidth*0.03,),

@@ -65,15 +65,18 @@ class _ChatLockPageState extends State<ChatLockPage> {
                     ),
                     TextSpan(
                       text: 'Learn more',
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(color: Colors.lightBlueAccent),
                     ),
 
                   ]
                   )),
             ),
-            Divider(
-              thickness: 0.5,
-              color: Color.fromARGB(255, 31, 43, 50),
+            Padding(
+              padding:  EdgeInsets.only(top: 20,bottom: 20),
+              child: Divider(
+                thickness: 0.5,
+                color: Color.fromARGB(255, 31, 43, 50),
+              ),
             ),
             ListTile(
               subtitle: Text('If you forgot your secret code, you can clear it. This will also unlock and clear messages, photos and videos in locked chats.',
