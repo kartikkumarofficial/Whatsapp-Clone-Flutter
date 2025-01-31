@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 
-class LastSeenAndOnlinePage extends StatefulWidget {
-  const LastSeenAndOnlinePage({super.key});
+class AboutPage extends StatefulWidget {
+  const AboutPage({super.key});
 
   @override
-  State<LastSeenAndOnlinePage> createState() => _LastSeenAndOnlinePageState();
+  State<AboutPage> createState() => _AboutPageState();
 }
 
-class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
+class _AboutPageState extends State<AboutPage> {
   var lt = FontWeight.w300;
   var scrh = 0.0;
   var scrw = 0.0;
 
-  String? _selectedOption="share_with";
+  String? _selectedOption="everyone";
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
               Padding(
                 padding: const EdgeInsets.only(left: 23),
                 child: Text(
-                  "Who can see my status updates",
+                  "Who can see my About",
                   style: TextStyle(color: Colors.white38, fontWeight: FontWeight.w300),
                 ),
               ),
@@ -67,7 +67,22 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
                   children: [
                     ListTile(
                       leading: Radio<String>(
-                        value: "contacts",
+                        value: "everyone",
+                        groupValue: _selectedOption,
+                        onChanged: (String? value) {
+                          setState(() {
+                            _selectedOption = value;
+                          });
+
+                        },
+
+                        activeColor: Colors.green,
+                      ),
+                      title: Text("Everyone", style: TextStyle(color: Colors.white, fontWeight: lt)),
+                    ),
+                    ListTile(
+                      leading: Radio<String>(
+                        value: "contacts1",
                         groupValue: _selectedOption,
                         onChanged: (String? value) {
                           setState(() {
@@ -92,23 +107,21 @@ class _LastSeenAndOnlinePageState extends State<LastSeenAndOnlinePage> {
                         activeColor: Colors.green,
                       ),
                       title: Text("My contacts except...", style: TextStyle(color: Colors.white, fontWeight: lt)),
-                      trailing: Text("40 excluded", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
                     ),
                     ListTile(
                       leading: Radio<String>(
-
-                        value: "share_with",
+                        value: "contacts",
                         groupValue: _selectedOption,
                         onChanged: (String? value) {
                           setState(() {
                             _selectedOption = value;
                           });
+
                         },
+
                         activeColor: Colors.green,
                       ),
-                      title: Text("Only share with...", style: TextStyle(color: Colors.white, fontWeight: lt)),
-
-                      trailing: Text("1 included", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
+                      title: Text("Nobody", style: TextStyle(color: Colors.white, fontWeight: lt)),
                     ),
                   ],
                 ),

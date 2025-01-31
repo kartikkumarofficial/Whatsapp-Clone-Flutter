@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/About.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Groups.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LastSeenAndOnline.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LiveLocation.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/ProfilePhoto.dart';
+import 'package:whatsappclone/pages/UpdatesPage/StatusPrivacy.dart';
 import 'package:whatsappclone/widgets.dart';
 
 
@@ -129,6 +133,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(AboutPage());
               },
             ),
 
@@ -143,6 +148,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                   ),),
               ),
               onTap: (){
+                Get.to(StatusPrivacy());
               },
             ),
 
@@ -231,6 +237,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
                 ),
               ),
               onTap: (){
+                Get.to(GroupsPage());
               },
             ),
 
@@ -246,6 +253,7 @@ class _PrivacyPageState extends State<PrivacyPage> {
               ),
 
               onTap: (){
+                Get.to(LiveLocationPage());
               },
             ),
 

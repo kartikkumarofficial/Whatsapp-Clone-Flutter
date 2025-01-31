@@ -13,7 +13,7 @@ class _GroupsPageState extends State<GroupsPage> {
   var scrh = 0.0;
   var scrw = 0.0;
 
-  String? _selectedOption="share_with";
+  String? _selectedOption="everyone";
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _GroupsPageState extends State<GroupsPage> {
         title: Padding(
           padding: const EdgeInsets.only(top: 3),
           child: const Text(
-            'Profile photo',
+            'Groups',
             style: TextStyle(
               fontSize:23,
               color: Colors.white,
@@ -57,7 +57,7 @@ class _GroupsPageState extends State<GroupsPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 23),
                 child: Text(
-                  "Who can see my Profile Photo",
+                  "Who can add me to groups",
                   style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w600),
                 ),
               ),
@@ -109,22 +109,21 @@ class _GroupsPageState extends State<GroupsPage> {
                       title: Text("My contacts except...", style: TextStyle(color: Colors.white, fontWeight: lt)),
 
                     ),
-                    ListTile(
-                      leading: Radio<String>(
 
-                        value: "share_with",
-                        groupValue: _selectedOption,
-                        onChanged: (String? value) {
-                          setState(() {
-                            _selectedOption = value;
-                          });
-                        },
-                        activeColor: Colors.green,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 23,right: 20),
+                      child: Text(
+                        "Admins who can\'t add you to a group will have the option of inviting you privately instead.",
+                        style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w300),
                       ),
-                      title: Text("Nobody", style: TextStyle(color: Colors.white, fontWeight: lt)),
-
-                      // trailing: Text("1 included", style: TextStyle(color: Colors.green, fontWeight: lt, fontSize: 15)),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 23,right: 20,top: 10),
+                      child: Text(
+                        "This setting does not apply to community announcement groups. If you\'re added to a community, you\'ll always be added to a community announcement group.",
+                        style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w300),
+                      ), 
+                    )
                   ],
                 ),
               ),
