@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:whatsappclone/bottomnavigationbar.dart';
+import 'package:whatsappclone/pages/DrawerScreens/StarredMessages.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
@@ -167,6 +168,9 @@ class _ChatPageState extends State<ChatPage> {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) => PaymentsPage(),));
                 }
+    else if (value =='Starred messages'){
+    Navigator.push(context, MaterialPageRoute(
+    builder: (context) => StarredMessagesPage(),));}
 
               },
             ),
