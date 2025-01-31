@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'package:whatsappclone/pages/NewCommunityIntro.dart';
+import 'package:whatsappclone/pages/NewContact.dart';
 
 class SelectContactsPage extends StatefulWidget {
   const SelectContactsPage({super.key});
@@ -214,6 +215,7 @@ class _SelectContactsPageState extends State<SelectContactsPage> {
                     Icons.qr_code,
                     color: Colors.white,
                   ),
+                  onTap: (){ Get.to(NewContactPage());}
                 ),
                 ListTile(
                   leading: Icon(
