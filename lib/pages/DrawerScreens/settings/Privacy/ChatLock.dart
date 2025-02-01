@@ -40,7 +40,7 @@ class _ChatLockPageState extends State<ChatLockPage> {
         height: double.infinity,
         width: double.infinity,
         child: ListView(
-          // physics: const BouncingScrollPhysics(),
+
           children: [
             Divider(
               thickness: 0.5,
