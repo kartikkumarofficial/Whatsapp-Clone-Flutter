@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/Controllers/controllers.dart';
 
+
 class CustomBottomNavigationBar extends StatefulWidget {
   final Function(int) onTabSelected;
   final int currentIndex;
@@ -61,6 +62,100 @@ class utils{
 
 
   }));
+
+
+
+
+
+
+
 }
 
+}
+
+class ThemeController extends GetxController {
+  var selectedOption = "contacts".obs;
+
+  void setOption(String value) {
+    selectedOption.value = value;
+  }
+}
+
+
+
+class ThemeManager{
+  final ThemeController themeController = Get.put(ThemeController());
+
+  void themedialogopener() {
+    Get.defaultDialog(
+      backgroundColor: Color.fromARGB(255, 11, 17, 21),
+      title: 'Choose Theme',
+      titleStyle: TextStyle(color: Colors.white),
+      content: Padding(
+        padding: const EdgeInsets.only(left: 2),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Obx(() => ListTile(
+              leading: Radio<String>(
+                value: "System default",
+                groupValue: themeController.selectedOption.value,
+                onChanged: (String? value) {
+                  themeController.setOption(value!);
+                },
+                activeColor: Colors.green,
+              ),
+              title: Text("My contacts", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+            )),
+            Obx(() => ListTile(
+              leading: Radio<String>(
+                value: "except",
+                groupValue: themeController.selectedOption.value,
+                onChanged: (String? value) {
+                  themeController.setOption(value!);
+                },
+                activeColor: Colors.green,
+              ),
+              title: Text("Light Theme", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+
+            )),
+            Obx(() => ListTile(
+              leading: Radio<String>(
+                value: "share_with",
+                groupValue: themeController.selectedOption.value,
+                onChanged: (String? value) {
+                  themeController.setOption(value!);
+                },
+                activeColor: Colors.green,
+              ),
+              title: Text("Dark Theme", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+
+            )),
+          ],
+        ),
+      ),
+      onConfirm: () {
+        print("Selected Option: ${themeController.selectedOption.value}");
+        Get.back();
+      },
+      onCancel: () {
+        Get.back();
+      },
+      textCancel: 'No',
+      textConfirm: 'Yes',
+      confirm: TextButton(
+        onPressed: () {
+          print("Confirmed Selection: ${themeController.selectedOption.value}");
+          Get.back();
+        },
+        child: Text('OK', style: TextStyle(color: Colors.green)),
+      ),
+      cancel: TextButton(
+        onPressed: () {
+          Get.back();
+        },
+        child: Text('Cancel', style: TextStyle(color: Colors.green)),
+      ),
+    );
+  }
 }

@@ -72,6 +72,7 @@ class _ChatsSettingsPageState extends State<ChatsSettingsPage> {
                 ),
               ),
               onTap: (){
+                ThemeManager().themedialogopener();
 
               },
             ),
