@@ -11,6 +11,7 @@ import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newgroup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/payments.dart';
 import 'package:whatsappclone/pages/ChatPage/chattextpage.dart';
+import 'package:whatsappclone/pages/login/authscreen.dart';
 import 'package:whatsappclone/pages/selectcontactspage.dart';
 import '../callpage.dart';
 import '../DrawerScreens/settings/settingspage.dart';
@@ -368,6 +369,7 @@ class _ChatPageState extends State<ChatPage> {
               right: srcwidth*0.055,
               child: ElevatedButton(
                 onPressed: () {
+                  Get.to(AuthScreen());
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
