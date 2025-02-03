@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:whatsappclone/pages/splashscreen.dart';
 import 'bottomnavigationbar.dart';
 import 'package:get/get.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'constants/constants.dart';
+
+
+Future<void> main() async {
+  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+  runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
