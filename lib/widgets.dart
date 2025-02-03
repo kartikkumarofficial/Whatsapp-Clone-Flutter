@@ -93,45 +93,48 @@ class ThemeManager{
       titleStyle: TextStyle(color: Colors.white),
       content: Padding(
         padding: const EdgeInsets.only(left: 2),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Obx(() => ListTile(
-              leading: Radio<String>(
-                value: "System default",
-                groupValue: themeController.selectedOption.value,
-                onChanged: (String? value) {
-                  themeController.setOption(value!);
-                },
-                activeColor: Colors.green,
-              ),
-              title: Text("My contacts", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-            )),
-            Obx(() => ListTile(
-              leading: Radio<String>(
-                value: "except",
-                groupValue: themeController.selectedOption.value,
-                onChanged: (String? value) {
-                  themeController.setOption(value!);
-                },
-                activeColor: Colors.green,
-              ),
-              title: Text("Light Theme", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        child: Container(
+          width: Get.width*0.9,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Obx(() => ListTile(
+                leading: Radio<String>(
+                  value: "System default",
+                  groupValue: themeController.selectedOption.value,
+                  onChanged: (String? value) {
+                    themeController.setOption(value!);
+                  },
+                  activeColor: Colors.green,
+                ),
+                title: Text("System default", style: TextStyle(color: Colors.white,fontSize: 15)),
+              )),
+              Obx(() => ListTile(
+                leading: Radio<String>(
+                  value: "except",
+                  groupValue: themeController.selectedOption.value,
+                  onChanged: (String? value) {
+                    themeController.setOption(value!);
+                  },
+                  activeColor: Colors.green,
+                ),
+                title: Text("Light Theme", style: TextStyle(color: Colors.white,fontSize: 15)),
 
-            )),
-            Obx(() => ListTile(
-              leading: Radio<String>(
-                value: "share_with",
-                groupValue: themeController.selectedOption.value,
-                onChanged: (String? value) {
-                  themeController.setOption(value!);
-                },
-                activeColor: Colors.green,
-              ),
-              title: Text("Dark Theme", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              )),
+              Obx(() => ListTile(
+                leading: Radio<String>(
+                  value: "share_with",
+                  groupValue: themeController.selectedOption.value,
+                  onChanged: (String? value) {
+                    themeController.setOption(value!);
+                  },
+                  activeColor: Colors.green,
+                ),
+                title: Text("Dark Theme", style: TextStyle(color: Colors.white,fontSize: 15)),
 
-            )),
-          ],
+              )),
+            ],
+          ),
         ),
       ),
       onConfirm: () {
