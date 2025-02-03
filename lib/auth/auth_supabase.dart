@@ -30,3 +30,19 @@ Future<void> verifyOTP(String phoneNumber, String otp) async {
     print("Invalid OTP");
   }
 }
+
+
+Future sendVerificationCode({required String phoneNumber}) async {
+  final supabase = Supabase.instance.client;
+  try {
+
+    final response = await supabase.auth.signInWithOtp(
+      phone: phoneNumber,
+    );
+
+    return response;
+  } catch (e) {
+    print('Error sending verification code: $e');
+    rethrow;
+  }
+}

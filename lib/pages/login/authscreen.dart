@@ -1,51 +1,55 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-
-class AuthScreen extends StatelessWidget {
-  const AuthScreen({Key? key}) : super(key: key);
-
- 
+class OtpScreen extends StatefulWidget {
+  const OtpScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+  State<OtpScreen> createState() => _OtpScreenState();
+}
 
+class _OtpScreenState extends State<OtpScreen> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 70,
+        backgroundColor: Color.fromARGB(255,11,17,21),
+        title: Text(
+          'Verify Otp',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
+
+
+      ),
+      body: Container(
+        color: Color.fromARGB(255,11,17,21),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 50),
-            const Text(
-              'Welcome to WhatsApp',
-              style: TextStyle(
-                fontSize: 33,
-                fontWeight: FontWeight.w600,
-              ),
+            TextFormField(
+
+
             ),
-            SizedBox(height: size.height / 9),
-            Image.asset(
-              'assets/images/bg.png',
-              height: 340,
-              width: 340,
-              color: Colors.green,
+            TextFormField(
+              keyboardType: TextInputType.number,
+              maxLength: 6,
             ),
-            SizedBox(height: size.height / 9),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                'Read our Privacy Policy. Tap "Agree and continue" to accept the Terms of Service.',
-                style: TextStyle(color: Colors.grey),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            const SizedBox(height: 10),
-           SizedBox(
-             child: ElevatedButton(onPressed: (){}, child: Text('Agree and Continue')),
-           )
+            ElevatedButton
+              (onPressed: (){
+
+
+            },
+                child:Text('Sign up') )
           ],
         ),
+
+
       ),
     );
   }
