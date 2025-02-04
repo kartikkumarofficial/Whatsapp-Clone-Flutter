@@ -1,48 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-Future<void> signUp(String email, String password) async {
+
+Future<void> sendVerificationCode({required String phoneNumber}) async {
   final supabase = Supabase.instance.client;
-  final response = await supabase.auth.signUp(
-    email: email,
-    password: password,
-  );
 
-  if (response.user != null) {
-    print("Sign-up successful!");
-  } else {
-    print("Sign-up failed.");
-  }
-}
-
-
-
-Future<void> verifyOTP(String phoneNumber, String otp) async {
-  final supabase = Supabase.instance.client;
-  final response = await supabase.auth.verifyOTP(
-    phone: phoneNumber,
-    token: otp, type: OtpType.signup,
-  );
-
-  if (response.session != null) {
-    print("User logged in successfully!");
-  } else {
-    print("Invalid OTP");
-  }
-}
-
-
-Future sendVerificationCode({required String phoneNumber}) async {
-  final supabase = Supabase.instance.client;
   try {
-
-    final response = await supabase.auth.signInWithOtp(
+    await supabase.auth.signInWithOtp(
       phone: phoneNumber,
     );
-
-    return response;
+    print("✅ OTP sent successfully to $phoneNumber");
   } catch (e) {
-    print('Error sending verification code: $e');
-    rethrow;
+    print("❌ Error sending OTP: $e");
+  }
+}
+
+
+Future<void> verifyOTP({required String phoneNumber, required String otp}) async {
+  final supabase = Supabase.instance.client;
+
+  try {
+    final AuthResponse response = await supabase.auth.verifyOTP(
+      phone: phoneNumber,
+      token: otp,
+      type: OtpType.sms,
+    );
+
+    if (response.session != null) {
+      print("✅ User logged in successfully! Session ID: ${response.session!.accessToken}");
+    } else {
+      print("❌ Invalid OTP, please try again.");
+    }
+  } catch (e) {
+    print("⚠️ OTP Verification failed: $e");
   }
 }
