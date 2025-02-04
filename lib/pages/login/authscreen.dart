@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsappclone/auth/auth_supabase.dart';
 
 class OtpScreen extends StatefulWidget {
-  const OtpScreen({super.key});
+
+   OtpScreen({super.key});
+
+
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
+
 }
 
 class _OtpScreenState extends State<OtpScreen> {
+  final phoneController = TextEditingController();
+  @override
+  void dispose() {
+    phoneController.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +48,20 @@ class _OtpScreenState extends State<OtpScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextFormField(
-
+              style: TextStyle(
+                color: Colors.white
+              ),
+              controller:phoneController ,
+              validator: (value){
+                if(value!.isEmpty){
+                  return "Number is required";
+                }
+                return null;
+              },
+              decoration: InputDecoration(
+                label: Text('Phone Number'),
+                hintText: 'Phone num'
+              ),
 
             ),
             TextFormField(
@@ -41,7 +69,8 @@ class _OtpScreenState extends State<OtpScreen> {
               maxLength: 6,
             ),
             ElevatedButton
-              (onPressed: (){
+              (onPressed: ( ){
+                sendVerificationCode(phoneNumber: phoneController.text);
 
 
             },
