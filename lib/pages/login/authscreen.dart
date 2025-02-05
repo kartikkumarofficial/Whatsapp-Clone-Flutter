@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whatsappclone/auth/auth_supabase.dart';
+import 'package:whatsappclone/auth/auth_firebase.dart';
 
 class OtpScreen extends StatefulWidget {
   OtpScreen({super.key});

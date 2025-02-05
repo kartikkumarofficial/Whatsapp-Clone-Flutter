@@ -3,12 +3,18 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:whatsappclone/pages/splashscreen.dart';
 import 'bottomnavigationbar.dart';
 import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 import 'constants/constants.dart';
 
 
 Future<void> main() async {
   await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
