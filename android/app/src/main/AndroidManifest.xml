@@ -2,7 +2,7 @@
     package="com.example.whatsappclone">
 
     <application
-        android:label="whatsappclone"
+        android:label="Whatsapp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
