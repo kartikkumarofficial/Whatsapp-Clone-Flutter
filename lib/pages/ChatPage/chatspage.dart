@@ -185,7 +185,6 @@ class _ChatPageState extends State<ChatPage> {
         children: [
           Container(
             color: Color.fromARGB(255,11,17,21),
-
             height: double.infinity,
             width: double.infinity,
             child: Column(
