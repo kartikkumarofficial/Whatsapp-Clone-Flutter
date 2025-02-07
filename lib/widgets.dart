@@ -44,37 +44,37 @@ class utils{
   bool flag = true;
   Widget getxswitch(){
     return Obx(()=>Switch(
-  activeTrackColor: Colors.green,
-  activeColor: Colors.black,
-  inactiveTrackColor: Color.fromRGBO(17,25,28,1.0),
-  inactiveThumbColor: Colors.grey,
+        activeTrackColor: Colors.green,
+        activeColor: Colors.black,
+        inactiveTrackColor: Color.fromRGBO(17,25,28,1.0),
+        inactiveThumbColor: Colors.grey,
 
-  value: switchController.dataforcalls.value,
-  onChanged: (value){
-  print('Switch Value: $value');
-  switchController.dataforcalls(value);
-  if (value=true){
+        value: switchController.dataforcalls.value,
+        onChanged: (value){
+          print('Switch Value: $value');
+          switchController.dataforcalls(value);
+          if (value=true){
 
 
-  }else if(value=false){
+          }else if(value=false){
+
+          }
+
+
+        }));
+
+
+
+
+
+
 
   }
-
-
-  }));
-
-
-
-
-
-
-
-}
 
 }
 
 class ThemeController extends GetxController {
-  var selectedOption = "contacts".obs;
+  var selectedOption = "Dark".obs;
 
   void setOption(String value) {
     selectedOption.value = value;
@@ -88,54 +88,78 @@ class ThemeManager{
 
   void themedialogopener() {
     Get.defaultDialog(
-      backgroundColor: Color.fromARGB(255, 11, 17, 21),
-      title: 'Choose Theme',
-      titleStyle: TextStyle(color: Colors.white),
-      content: Padding(
-        padding: const EdgeInsets.only(left: 2),
-        child: Container(
-          width: Get.width*0.9,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Obx(() => ListTile(
-                leading: Radio<String>(
-                  value: "System default",
-                  groupValue: themeController.selectedOption.value,
-                  onChanged: (String? value) {
-                    themeController.setOption(value!);
-                  },
-                  activeColor: Colors.green,
-                ),
-                title: Text("System default", style: TextStyle(color: Colors.white,fontSize: 15)),
-              )),
-              Obx(() => ListTile(
-                leading: Radio<String>(
-                  value: "except",
-                  groupValue: themeController.selectedOption.value,
-                  onChanged: (String? value) {
-                    themeController.setOption(value!);
-                  },
-                  activeColor: Colors.green,
-                ),
-                title: Text("Light Theme", style: TextStyle(color: Colors.white,fontSize: 15)),
+      radius: 40,
+      backgroundColor: Color.fromARGB(255,43,46,51),
+      title: 'Choose theme',titlePadding: EdgeInsets.only(right: Get.height*0.16,top: Get.width*0.07),
+      titleStyle: TextStyle(color: Colors.white ,fontSize:20 ),
+      content: Stack(
+        children: [
+          Container(
+            width: Get.width*0.9,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
 
-              )),
-              Obx(() => ListTile(
-                leading: Radio<String>(
-                  value: "share_with",
-                  groupValue: themeController.selectedOption.value,
-                  onChanged: (String? value) {
-                    themeController.setOption(value!);
-                  },
-                  activeColor: Colors.green,
-                ),
-                title: Text("Dark Theme", style: TextStyle(color: Colors.white,fontSize: 15)),
+                Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0),
+                    leading: Radio<String>(
+                      value: "System default",
+                      groupValue: themeController.selectedOption.value,
+                      onChanged: (String? value) {
+                        themeController.setOption(value!);
+                      },
+                      activeColor: Colors.green,
+                    ),
+                    title: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("System default", style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ),
+                  ),
+                )),
+                Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0),
+                    leading: Radio<String>(
+                      value: "light",
+                      groupValue: themeController.selectedOption.value,
+                      onChanged: (String? value) {
+                        themeController.setOption(value!);
+                      },
+                      activeColor: Colors.green,
+                    ),
+                    title: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Light", style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ),
+                  ),
+                )),
+                Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0),
+                    leading: Radio<String>(
+                      value: "Dark",
+                      groupValue: themeController.selectedOption.value,
+                      onChanged: (String? value) {
+                        themeController.setOption(value!);
+                      },
+                      activeColor: Colors.green,
+                    ),
+                    title: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Dark", style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ),
+                  ),
+                )),
 
-              )),
-            ],
+
+              ],
+            ),
           ),
-        ),
+        ],
       ),
       onConfirm: () {
         print("Selected Option: ${themeController.selectedOption.value}");
@@ -153,12 +177,16 @@ class ThemeManager{
         },
         child: Text('OK', style: TextStyle(color: Colors.green)),
       ),
-      cancel: TextButton(
-        onPressed: () {
-          Get.back();
-        },
-        child: Text('Cancel', style: TextStyle(color: Colors.green)),
+      cancel: Padding(
+        padding:  EdgeInsets.only(left: 150.0,bottom: 5),
+        child: TextButton(
+          onPressed: () {
+            Get.back();
+          },
+          child: Text('Cancel', style: TextStyle(color: Colors.green)),
+        ),
       ),
     );
   }
 }
+
