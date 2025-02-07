@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/ChatBackup.dart';
 import 'package:whatsappclone/widgets.dart';
 
 
@@ -243,6 +244,7 @@ class _ChatsSettingsPageState extends State<ChatsSettingsPage> {
                   fontSize: srcwidth * 0.04,
                 ),),
               onTap: (){
+                Get.to(ChatBackupPage());
 
               },
             ),
