@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/Chat%20history.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/ChatBackup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/TransferChats.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/Wallpaper.dart';
 import 'package:whatsappclone/widgets.dart';
 
 
@@ -88,6 +89,7 @@ class _ChatsSettingsPageState extends State<ChatsSettingsPage> {
                 ),),
 
               onTap: (){
+                Get.to(WallpaperPage());
 
               },
             ),
