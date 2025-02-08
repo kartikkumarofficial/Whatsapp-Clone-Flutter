@@ -12,6 +12,7 @@ import 'package:whatsappclone/pages/DrawerScreens/settings/Notifications/Notific
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Privacy.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Storage%20and%20Data/StorageAndData.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/inviteafriend.dart';
+import 'package:whatsappclone/widgets.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -198,12 +199,16 @@ class _SettingsPageState extends State<SettingsPage> {
                     else if(items[index].label=='Invite a Friend'){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => InviteaFriendPage(),));
                     }
+                    else if(items[index].label=='App language'){
+                      utils().AppLanguageSheet();
+                    }
 
 
 
 
 
-                    },
+
+                  },
                 );
               },
             ),

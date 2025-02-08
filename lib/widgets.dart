@@ -1,5 +1,6 @@
 // custom_bottom_navigation_bar.dart
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/Controllers/controllers.dart';
@@ -69,6 +70,43 @@ class utils{
 
 
 
+  }
+
+  void AppLanguageSheet(){
+
+
+    Get.bottomSheet(
+
+        Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+              color: Color.fromRGBO(10,17,20,1.0,),
+              borderRadius: BorderRadius.circular(20)
+          ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(Get.width*0.04),
+                    child: Icon(CupertinoIcons.xmark,color: Colors.grey,),
+                  ),
+                  Text(' App language',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Divider(
+                    thickness: 0.5,
+                    color: Color.fromARGB(255, 31, 43, 50),
+                  ),
+
+
+
+                ],
+              )
+
+            ],
+          ),
+        )
+    );
   }
 
 }
