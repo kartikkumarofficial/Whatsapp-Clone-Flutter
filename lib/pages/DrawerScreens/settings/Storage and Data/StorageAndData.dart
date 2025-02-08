@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whatsappclone/pages/DrawerScreens/settings/Storage%20and%20Data/Proxy.dart';
 import 'package:whatsappclone/pages/constants/constants.dart';
 import 'package:whatsappclone/Controllers/controllers.dart';
 import 'package:whatsappclone/widgets.dart';
@@ -128,7 +129,7 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
                 ),
               ),
               onTap: (){
-                print('Tapped on Network Usage');
+                Get.to(ProxyPage());
               },
             ),
             Divider(
