@@ -622,7 +622,7 @@ class StorageAndDataSettingManager{
     Get.defaultDialog(
       radius: 40,
       backgroundColor: Color.fromARGB(255,43,46,51),
-      title: 'Media upload quality',titlePadding: EdgeInsets.only(right: Get.height*0.23,top: Get.width*0.07),
+      title: 'Media upload quality',titlePadding: EdgeInsets.only(right: Get.height*0.08,top: Get.width*0.07),
       titleStyle: TextStyle(color: Colors.white ,fontSize:20 ),
       content: Stack(
         children: [
@@ -665,46 +665,12 @@ class StorageAndDataSettingManager{
                     ),
                     title: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("Default", style: TextStyle(color: Colors.white, fontSize: 15)),
+                      child: Text("HD quality", style: TextStyle(color: Colors.white, fontSize: 15)),
                     ),
+                      subtitle: Text('Slower to send, can be 6 times larger',style: TextStyle(color: Colors.white),),
                   ),
                 )),
-                Obx(() => Padding(
-                  padding: const EdgeInsets.only(left: 0),
-                  child: ListTile(
-                    contentPadding: EdgeInsets.only(left: 0),
-                    leading: Radio<String>(
-                      value: "Dark",
-                      groupValue: themeController.selectedOption.value,
-                      onChanged: (String? value) {
-                        themeController.setOption(value!);
-                      },
-                      activeColor: Colors.green,
-                    ),
-                    title: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Short", style: TextStyle(color: Colors.white, fontSize: 15)),
-                    ),
-                  ),
-                )),
-                Obx(() => Padding(
-                  padding: const EdgeInsets.only(left: 0),
-                  child: ListTile(
-                    contentPadding: EdgeInsets.only(left: 0),
-                    leading: Radio<String>(
-                      value: "Dark",
-                      groupValue: themeController.selectedOption.value,
-                      onChanged: (String? value) {
-                        themeController.setOption(value!);
-                      },
-                      activeColor: Colors.green,
-                    ),
-                    title: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Long", style: TextStyle(color: Colors.white, fontSize: 15)),
-                    ),
-                  ),
-                )),
+
 
 
               ],

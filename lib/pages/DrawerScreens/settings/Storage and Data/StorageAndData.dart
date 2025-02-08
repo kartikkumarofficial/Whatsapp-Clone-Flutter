@@ -148,7 +148,8 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
                 ),
               ),
               onTap: (){
-                print('Tapped on Network Usage');
+                StorageAndDataSettingManager().mediauploaddialogopener();
+
               },
             ),
 
@@ -168,6 +169,7 @@ class _StorageAndDataScreenState extends State<StorageAndDataScreen> {
                 ),
               ),
               onTap: (){
+
 
               },
             ),
