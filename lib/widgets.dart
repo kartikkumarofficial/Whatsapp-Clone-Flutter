@@ -302,7 +302,7 @@ class NotificationsSettingManager{
     Get.defaultDialog(
       radius: 40,
       backgroundColor: Color.fromARGB(255,43,46,51),
-      title: 'Vibrate',titlePadding: EdgeInsets.only(right: Get.height*0.16,top: Get.width*0.07),
+      title: 'Vibrate',titlePadding: EdgeInsets.only(right: Get.height*0.23,top: Get.width*0.07),
       titleStyle: TextStyle(color: Colors.white ,fontSize:20 ),
       content: Stack(
         children: [
@@ -610,6 +610,136 @@ class NotificationsSettingManager{
       ),
     );
   }
+
+
+
+}
+
+class StorageAndDataSettingManager{
+  final ThemeController themeController = Get.put(ThemeController());
+
+  void mediauploaddialogopener() {
+    Get.defaultDialog(
+      radius: 40,
+      backgroundColor: Color.fromARGB(255,43,46,51),
+      title: 'Media upload quality',titlePadding: EdgeInsets.only(right: Get.height*0.23,top: Get.width*0.07),
+      titleStyle: TextStyle(color: Colors.white ,fontSize:20 ),
+      content: Stack(
+        children: [
+          Container(
+            width: Get.width*0.9,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+
+                Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0),
+                    leading: Radio<String>(
+                      value: "Systemdefault",
+                      groupValue: themeController.selectedOption.value,
+                      onChanged: (String? value) {
+                        themeController.setOption(value!);
+                      },
+                      activeColor: Colors.green,
+                    ),
+                    title: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Standard quality", style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ),
+                    subtitle: Text('Faster to send, smaller file size',style: TextStyle(color: Colors.white),),
+                  ),
+                )),
+                Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0),
+                    leading: Radio<String>(
+                      value: "System default",
+                      groupValue: themeController.selectedOption.value,
+                      onChanged: (String? value) {
+                        themeController.setOption(value!);
+                      },
+                      activeColor: Colors.green,
+                    ),
+                    title: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Default", style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ),
+                  ),
+                )),
+                Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0),
+                    leading: Radio<String>(
+                      value: "Dark",
+                      groupValue: themeController.selectedOption.value,
+                      onChanged: (String? value) {
+                        themeController.setOption(value!);
+                      },
+                      activeColor: Colors.green,
+                    ),
+                    title: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Short", style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ),
+                  ),
+                )),
+                Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 0),
+                    leading: Radio<String>(
+                      value: "Dark",
+                      groupValue: themeController.selectedOption.value,
+                      onChanged: (String? value) {
+                        themeController.setOption(value!);
+                      },
+                      activeColor: Colors.green,
+                    ),
+                    title: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Long", style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ),
+                  ),
+                )),
+
+
+              ],
+            ),
+          ),
+        ],
+      ),
+      onConfirm: () {
+        print("Selected Option: ${themeController.selectedOption.value}");
+        Get.back();
+      },
+      onCancel: () {
+        Get.back();
+      },
+      textCancel: 'No',
+      textConfirm: 'Yes',
+      confirm: TextButton(
+        onPressed: () {
+          print("Confirmed Selection: ${themeController.selectedOption.value}");
+          Get.back();
+        },
+        child: Text('OK', style: TextStyle(color: Colors.green)),
+      ),
+      cancel: Padding(
+        padding:  EdgeInsets.only(left: 150.0,bottom: 5),
+        child: TextButton(
+          onPressed: () {
+            Get.back();
+          },
+          child: Text('Cancel', style: TextStyle(color: Colors.green)),
+        ),
+      ),
+    );
+  }
+
 
 
 
