@@ -422,8 +422,8 @@ class NotificationsSettingManager{
     Get.defaultDialog(
       radius: 40,
       backgroundColor: Color.fromARGB(255,43,46,51),
-      title: 'Light',titlePadding: EdgeInsets.only(right: Get.height*0.16,top: Get.width*0.07),
-      titleStyle: TextStyle(color: Colors.white ,fontSize:20 ),
+      title: 'Light',titlePadding: EdgeInsets.only(right: Get.height*0.25,top: Get.width*0.07,),
+      titleStyle: TextStyle(color: Colors.white ,fontSize:20,fontWeight: FontWeight.bold ),
       content: Stack(
         children: [
           Container(

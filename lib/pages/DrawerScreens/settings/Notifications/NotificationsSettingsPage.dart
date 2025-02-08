@@ -135,7 +135,9 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
                 'White',
                 style: TextStyle(color: Colors.grey),
               ),
-              onTap: () {},
+              onTap: () {
+                NotificationsSettingManager().lightdialogopener();
+              },
             ),
             ListTile(
               title: Text(
