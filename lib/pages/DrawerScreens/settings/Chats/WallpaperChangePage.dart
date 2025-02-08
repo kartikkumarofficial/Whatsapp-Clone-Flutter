@@ -56,7 +56,13 @@ class _WallpaperChangePageState extends State<WallpaperChangePage> {
               ),
               Row(
                 children: [
-                  Container()
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20)
+                          
+                    ),
+                    child:Image.asset(),
+                  )
                 ],
               ),
 
