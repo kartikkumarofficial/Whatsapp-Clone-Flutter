@@ -63,12 +63,7 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
     final String chatName = args['name'];
     final Image chatAvatar = args['image'];
 
-    List<String> randomNames = [
-      'Commander', 'Mom', 'Bro', 'Someone', 'No idea',
-      'Hmm...', 'Anonymous', 'Infamous', 'Tiny', 'Some name'
-    ];
-    var deviceH = MediaQuery.of(context).size.height;
-    var deviceW = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
