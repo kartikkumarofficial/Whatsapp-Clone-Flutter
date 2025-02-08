@@ -290,6 +290,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
             ListTile(
+              onTap: (){
+                AppOpeners().openFacebook();
+              },
               leading: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.01),
                 child: Icon(
@@ -309,6 +312,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
             ListTile(
+              onTap: (){
+                AppOpeners().openThreads();
+              },
               leading: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.01),
                 child: Icon(
