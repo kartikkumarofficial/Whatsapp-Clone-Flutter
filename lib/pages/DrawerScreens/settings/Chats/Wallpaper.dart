@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:whatsappclone/Controllers/WallpaperController.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/WallpaperChangePage.dart';
 
+import '../../../../widgets.dart';
+
 
 class WallpaperPage extends StatefulWidget {
   WallpaperPage({super.key});
@@ -80,7 +82,7 @@ class _WallpaperPageState extends State<WallpaperPage> {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: Get.width*0.07,top: Get.width*0.04),
+                    padding: EdgeInsets.only(left: Get.width*0.07,top: Get.width*0.04,bottom: Get.height*0.01),
                     child: Text('Wallpaper Dimming',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
                   ),
                 ],
@@ -88,18 +90,25 @@ class _WallpaperPageState extends State<WallpaperPage> {
 
 
 
-              Obx(() => Slider(
-                value: opacityController.opacity.value,
-                min: 0.0,
-                max: 1.0,
-                // divisions: 10,
-                label: opacityController.opacity.value.toStringAsFixed(1),
-                onChanged: (value) {
-                  print('Slider Value: $value');
-                  opacityController.setOpacity(value);
-                  
-                },
+              Obx(() => SliderTheme(
+                data: SliderTheme.of(context).copyWith(
+                  thumbShape: MoonSliderThumb(),
+                ),
+                child: Slider(
+                  value: 1.0 - opacityController.opacity.value,
+                  min: 0.0,
+                  max: 1.0,
+                  activeColor: Colors.green,
+
+                  label: (1.0 - opacityController.opacity.value).toStringAsFixed(1),
+                  onChanged: (value) {
+                    double reversedValue = 1.0 - value;
+                    print('Slider Value: $reversedValue');
+                    opacityController.setOpacity(reversedValue);
+                  },
+                ),
               )),
+
 
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
@@ -114,3 +123,9 @@ class _WallpaperPageState extends State<WallpaperPage> {
     );
   }
 }
+
+
+
+
+
+

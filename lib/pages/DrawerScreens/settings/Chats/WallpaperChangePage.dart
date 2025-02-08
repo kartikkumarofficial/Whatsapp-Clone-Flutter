@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/Controllers/WallpaperController.dart';
@@ -56,24 +57,111 @@ class _WallpaperChangePageState extends State<WallpaperChangePage> {
               ),
               Row(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20)
-                          
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+
+                        width: Get.width*0.44,
+                      height: Get.width*0.4,
+
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        // color: Colors.red,
+                        image: DecorationImage(fit: BoxFit.fill,image: AssetImage('assets/images/wallpaper/brightwallpaper.jpg',)),
+
+                      ),
+                      // child:Image.asset('assets/images/wallpaper/brightwallpaper.jpg',fit: BoxFit.fill,),
                     ),
-                    child:Image.asset(),
-                  )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+
+                      width: Get.width*0.44,
+                      height: Get.width*0.4,
+
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        // color: Colors.red,
+                        image: DecorationImage(fit: BoxFit.cover,image: AssetImage('assets/images/wallpaper/darkwallpaperr.jpg',)),
+
+                      ),
+                      // child:Image.asset('assets/images/wallpaper/brightwallpaper.jpg',fit: BoxFit.fill,),
+                    ),
+                  ),
+
                 ],
               ),
 
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: Get.width*0.07,top: Get.width*0.04),
-                    child: Text('Wallpaper Dimming',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+                    padding: EdgeInsets.only(left: Get.width*0.05,top: Get.width*0.03),
+                    child: Text(' Bright',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: Get.width*0.37,top: Get.width*0.03),
+                    child: Text('  Dark',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
                   ),
                 ],
               ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+
+                      width: Get.width*0.44,
+                      height: Get.width*0.4,
+
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        // color: Colors.red,
+                        image: DecorationImage(fit: BoxFit.fill,image: AssetImage('assets/images/wallpaper/solidwallpaper.jpg',)),
+
+                      ),
+                      // child:Image.asset('assets/images/wallpaper/brightwallpaper.jpg',fit: BoxFit.fill,),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+
+                      width: Get.width*0.44,
+                      height: Get.width*0.4,
+
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+
+                        image: DecorationImage(fit: BoxFit.cover,image: AssetImage('assets/images/wallpaper/myphotowallpaper.jpg',)),
+
+                      ),
+                      // child:Image.asset('assets/images/wallpaper/brightwallpaper.jpg',fit: BoxFit.fill,),
+                    ),
+                  ),
+
+                ],
+              ),
+
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: Get.width*0.05,top: Get.width*0.03),
+                    child: Text(' Solid colors',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: Get.width*0.25,top: Get.width*0.03),
+                    child: Text('      My photos',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ListTile(
+                  leading: Icon(CupertinoIcons.photo,color: Colors.green,),
+                  title: Text('Default wallpaper',style: TextStyle(color: Colors.white),),
+                ),
+              )
 
 
 

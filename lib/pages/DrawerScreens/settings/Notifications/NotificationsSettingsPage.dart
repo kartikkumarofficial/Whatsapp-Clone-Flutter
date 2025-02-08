@@ -118,7 +118,9 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
                 'Default',
                 style: TextStyle(color: Colors.grey),
               ),
-              onTap: () {},
+              onTap: () {
+                NotificationsSettingManager().vibratedialogopener();
+              },
             ),
             ListTile(
 
@@ -207,7 +209,9 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
                 '''Default''' ,
                 style: TextStyle(color: Colors.grey),
               ),
-              onTap: () {},
+              onTap: () {
+                NotificationsSettingManager().vibratedialogopener();
+              },
             ),
 
             ListTile(
@@ -280,7 +284,9 @@ class _NotificationsSettingsPageState extends State<NotificationsSettingsPage> {
                 '''Default''' ,
                 style: TextStyle(color: Colors.grey),
               ),
-              onTap: () {},
+              onTap: () {
+                NotificationsSettingManager().vibratedialogopener();
+              },
             ),
 
             Divider(

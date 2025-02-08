@@ -76,7 +76,7 @@ class _ChatsSettingsPageState extends State<ChatsSettingsPage> {
                 ),
               ),
               onTap: (){
-                ThemeManager().themedialogopener();
+                ChatsSettingThemeManager().themedialogopener();
 
               },
             ),
@@ -172,6 +172,7 @@ class _ChatsSettingsPageState extends State<ChatsSettingsPage> {
               ),
 
               onTap: (){
+                ChatsSettingThemeManager().fontsizedialogopener();
 
               },
             ),
