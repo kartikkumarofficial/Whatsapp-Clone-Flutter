@@ -79,14 +79,7 @@ class _CommunitiespageState extends State<Communitiespage> {
             ),
             onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(
-              Icons.camera_alt_outlined,
-              color: Colors.white,
-              size: 28,
-            ),
-            onPressed: () {},
-          ),
+
           Container(
             color: Color.fromARGB(255,11,17,21),
             child: PopupMenuButton<String>(

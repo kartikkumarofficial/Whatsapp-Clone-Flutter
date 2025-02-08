@@ -73,6 +73,7 @@ class utils{
   }
 
   void AppLanguageSheet(){
+    final ThemeController themeController = Get.put(ThemeController());
 
 
     Get.bottomSheet(
@@ -86,22 +87,138 @@ class utils{
           ),
           child: Column(
             children: [
+              Padding(
+
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Container(
+                    height: Get.height*0.005,
+                    width: Get.width*0.1,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(30)
+                    ),
+                  ),
+                ),
+              ),
               Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.all(Get.width*0.04),
-                    child: Icon(CupertinoIcons.xmark,color: Colors.grey,),
+                    child: InkWell(
+                        onTap: (){Get.back();},
+                        child: Icon(CupertinoIcons.xmark,color: Colors.grey,)),
                   ),
-                  Text(' App language',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Divider(
-                    thickness: 0.5,
-                    color: Color.fromARGB(255, 31, 43, 50),
-                  ),
+                  Text('  App language',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+
 
 
 
                 ],
-              )
+              ),
+              Divider(
+                thickness: 0.5,
+                color: Color.fromARGB(255, 31, 43, 50),
+              ),
+
+              Obx(() => Padding(
+                padding: const EdgeInsets.only(left: 0),
+                child: ListTile(
+                  contentPadding: EdgeInsets.only(left: 0),
+                  leading: Radio<String>(
+                    value: "Dark",
+                    groupValue: themeController.selectedOption.value,
+                    onChanged: (String? value) {
+                      themeController.setOption(value!);
+                    },
+                    activeColor: Colors.green,
+                  ),
+                  title: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("English", style: TextStyle(color: Colors.white, fontSize: 15)),
+                  ),
+                  subtitle: Text('(device\' language)',style: TextStyle(color: Colors.grey),),
+                ),
+              )),
+              Obx(() => Padding(
+                padding: const EdgeInsets.only(left: 0),
+                child: ListTile(
+                  contentPadding: EdgeInsets.only(left: 0),
+                  leading: Radio<String>(
+                    value: "hindi",
+                    groupValue: themeController.selectedOption.value,
+                    onChanged: (String? value) {
+                      themeController.setOption(value!);
+                    },
+                    activeColor: Colors.green,
+                  ),
+                  title: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("हिन्दी", style: TextStyle(color: Colors.white, fontSize: 15)),
+                  ),
+                  subtitle: Text('Hindi',style: TextStyle(color: Colors.grey),),
+                ),
+              )),
+              Obx(() => Padding(
+                padding: const EdgeInsets.only(left: 0),
+                child: ListTile(
+                  contentPadding: EdgeInsets.only(left: 0),
+                  leading: Radio<String>(
+                    value: "marathi",
+                    groupValue: themeController.selectedOption.value,
+                    onChanged: (String? value) {
+                      themeController.setOption(value!);
+                    },
+                    activeColor: Colors.green,
+                  ),
+                  title: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("मराठी", style: TextStyle(color: Colors.white, fontSize: 15)),
+                  ),
+                  subtitle: Text('Marathi',style: TextStyle(color: Colors.grey),),
+                ),
+              )),
+              Obx(() => Padding(
+                padding: const EdgeInsets.only(left: 0),
+                child: ListTile(
+                  contentPadding: EdgeInsets.only(left: 0),
+                  leading: Radio<String>(
+                    value: "gujju",
+                    groupValue: themeController.selectedOption.value,
+                    onChanged: (String? value) {
+                      themeController.setOption(value!);
+                    },
+                    activeColor: Colors.green,
+                  ),
+                  title: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("ગુજરાતી", style: TextStyle(color: Colors.white, fontSize: 15)),
+                  ),
+                  subtitle: Text('Gujarati',style: TextStyle(color: Colors.grey),),
+                ),
+              )),
+              Obx(() => Padding(
+                padding: const EdgeInsets.only(left: 0),
+                child: ListTile(
+                  contentPadding: EdgeInsets.only(left: 0),
+                  leading: Radio<String>(
+                    value: "tamil",
+                    groupValue: themeController.selectedOption.value,
+                    onChanged: (String? value) {
+                      themeController.setOption(value!);
+                    },
+                    activeColor: Colors.green,
+                  ),
+                  title: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("தமிழ்", style: TextStyle(color: Colors.white, fontSize: 15)),
+                  ),
+                  subtitle: Text('Tamil',style: TextStyle(color: Colors.grey),),
+                ),
+              )),
+
+
+
 
             ],
           ),
