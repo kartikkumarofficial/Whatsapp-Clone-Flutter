@@ -1,7 +1,11 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:whatsappclone/pages/ChatPage/chat_firebase.dart';
 
 import '../../CustomWidgets/ChatBubble.dart';
 
@@ -138,6 +142,49 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
           ),
           Column(
             children: [
+              //new data from firestore
+              Expanded(
+                child: StreamBuilder(
+                  stream: firebase.getAllMessages(),
+                  builder: (context, snapshot) {
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.waiting:
+                        return CircularProgressIndicator();
+                      case ConnectionState.none:
+                        return const Center(child: CircularProgressIndicator());
+
+                      case ConnectionState.active:
+                      case ConnectionState.done:
+                        if (snapshot.hasError) {
+                          return Center(child: Text('Error: ${snapshot.error}'));
+                        }
+
+                        final data = snapshot.data?.docs;
+
+                        if (data == null || data.isEmpty) {
+                          return const Center(child: Text('No messages available'));
+                        }
+
+                        log('Data: ${jsonEncode(data[0].data())}');
+
+                        return ListView.builder(
+                          itemCount: data.length,
+                          itemBuilder: (context, index) {
+                            final message = data[index].data();
+                            return ListTile(
+                              title: Text(message['text'] ?? 'No message'),
+                              subtitle: Text(message['sender'] ?? 'Unknown'),
+                            );
+                          },
+                        );
+                    }
+                  },
+                ),
+              ),
+
+
+
+              //old static data
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(10),
