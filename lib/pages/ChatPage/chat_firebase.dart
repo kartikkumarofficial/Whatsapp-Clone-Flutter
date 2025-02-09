@@ -8,4 +8,10 @@ import 'package:get/get.dart';
 class firebase {
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+
+  static Stream<QuerySnapshot<Map<String,dynamic>>> getAllMessages(){
+    return firestore.collection('chats').orderBy('timestamp',descending: false).snapshots();
 }
+
+}
+

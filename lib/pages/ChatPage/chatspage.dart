@@ -203,9 +203,13 @@ class _ChatPageState extends State<ChatPage> {
                               ),
                               height: srcheight*0.055,
                               width: srcwidth*1,
+
                               child: TextField(
+                                style: TextStyle(color: Colors.white),
+
                                 textAlignVertical: TextAlignVertical.bottom,
                                 decoration: InputDecoration(
+
                                   filled: true,
                                   prefixIcon: Padding(
                                     padding: const EdgeInsets.only(left: 8.0,top: 4,bottom: 4),
@@ -234,6 +238,9 @@ class _ChatPageState extends State<ChatPage> {
                             ),
 
                           ),
+
+
+
                           SizedBox(height: srcwidth*0.02),
                           SingleChildScrollView(
                             child: Padding(
