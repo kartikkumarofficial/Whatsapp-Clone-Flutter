@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whatsappclone/widgets.dart';
+import 'package:whatsappclone/CustomWidgets/widgets.dart';
 
 
 class AdvancedPrivacyPage extends StatefulWidget {

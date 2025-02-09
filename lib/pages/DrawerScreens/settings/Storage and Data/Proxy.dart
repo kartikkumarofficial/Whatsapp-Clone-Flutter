@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whatsappclone/pages/constants/constants.dart';
+
 import 'package:whatsappclone/Controllers/controllers.dart';
-import 'package:whatsappclone/widgets.dart';
+import 'package:whatsappclone/CustomWidgets/widgets.dart';
 
 
 class ProxyPage extends StatefulWidget {
@@ -79,7 +79,7 @@ class _ProxyPageState extends State<ProxyPage> {
                 ),
               ),
               onTap: (){
-                print('Tapped on Manage Storage');
+
               },
             ),
             Divider(

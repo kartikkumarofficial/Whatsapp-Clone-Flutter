@@ -12,7 +12,7 @@ import 'package:whatsappclone/pages/DrawerScreens/settings/Notifications/Notific
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/Privacy.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Storage%20and%20Data/StorageAndData.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/inviteafriend.dart';
-import 'package:whatsappclone/widgets.dart';
+import 'package:whatsappclone/CustomWidgets/widgets.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});

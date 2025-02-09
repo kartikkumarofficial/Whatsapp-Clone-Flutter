@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:whatsappclone/Controllers/WallpaperController.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/WallpaperChangePage.dart';
 
-import '../../../../widgets.dart';
+import '../../../../CustomWidgets/widgets.dart';
 
 
 class WallpaperPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whatsappclone/widgets.dart';
+import 'package:whatsappclone/CustomWidgets/widgets.dart';
 
 class ChatBackupPage extends StatefulWidget {
   const ChatBackupPage({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Storage%20and%20Data/Proxy.dart';
-import 'package:whatsappclone/pages/constants/constants.dart';
+
 import 'package:whatsappclone/Controllers/controllers.dart';
-import 'package:whatsappclone/widgets.dart';
+import 'package:whatsappclone/CustomWidgets/widgets.dart';
 
 
 class StorageAndDataScreen extends StatefulWidget {

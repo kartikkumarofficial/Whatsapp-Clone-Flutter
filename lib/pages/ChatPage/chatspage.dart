@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:whatsappclone/bottomnavigationbar.dart';
+import 'package:whatsappclone/CustomWidgets/bottomnavigationbar.dart';
 import 'package:whatsappclone/pages/DrawerScreens/StarredMessages.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';

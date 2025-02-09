@@ -4,7 +4,7 @@ import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/Chat%20history.
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/ChatBackup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/TransferChats.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Chats/Wallpaper.dart';
-import 'package:whatsappclone/widgets.dart';
+import 'package:whatsappclone/CustomWidgets/widgets.dart';
 
 
 class ChatsSettingsPage extends StatefulWidget {

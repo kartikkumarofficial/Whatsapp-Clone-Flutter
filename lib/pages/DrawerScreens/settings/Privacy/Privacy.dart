@@ -11,7 +11,7 @@ import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/LiveLocation.
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/PrivacyCheckup.dart';
 import 'package:whatsappclone/pages/DrawerScreens/settings/Privacy/ProfilePhoto.dart';
 import 'package:whatsappclone/pages/UpdatesPage/StatusPrivacy.dart';
-import 'package:whatsappclone/widgets.dart';
+import 'package:whatsappclone/CustomWidgets/widgets.dart';
 
 
 class PrivacyPage extends StatefulWidget {
