@@ -146,25 +146,20 @@ class _CommunitiespageState extends State<Communitiespage> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      badges.Badge(
+                      Container(
 
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey,
+                            shape: BoxShape.rectangle
+                        ),
 
-
-                        child: Container(
-
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey,
-                              shape: BoxShape.rectangle
-                          ),
-                        
-                          child: Padding(
-                            padding: EdgeInsets.all(srcwidth*0.02),
-                            child: Icon(
-                              Icons.group_add,
-                              color: Colors.white,
-                              size: srcwidth * 0.1,
-                            ),
+                        child: Padding(
+                          padding: EdgeInsets.all(srcwidth*0.02),
+                          child: Icon(
+                            Icons.group_add,
+                            color: Colors.white,
+                            size: srcwidth * 0.1,
                           ),
                         ),
                       ),
