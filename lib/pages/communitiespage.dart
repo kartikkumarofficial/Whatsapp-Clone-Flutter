@@ -146,7 +146,7 @@ class _CommunitiespageState extends State<Communitiespage> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      badges.BadgePositioned(
+                      badges.Badge(
 
 
 
