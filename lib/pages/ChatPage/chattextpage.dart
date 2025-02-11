@@ -5,9 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:whatsappclone/pages/ChatPage/chat_firebase.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../CustomWidgets/ChatBubble.dart';
+import '../../models/message_model.dart';
+import 'chat_firebase.dart';
 
 class ChatDetailsPage extends StatefulWidget {
   @override
@@ -17,6 +19,11 @@ class ChatDetailsPage extends StatefulWidget {
 class _ChatDetailsPageState extends State<ChatDetailsPage> {
   final TextEditingController messageController = TextEditingController();
   final ScrollController scrollController = ScrollController();
+
+  List<Message> _list=[
+
+
+  ];
 
   List<String> conversation = [
     'Knock Knock!',
@@ -41,13 +48,15 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
     }
   }
 
-  void addNewMessage() {
+  void addNewMessage() async {
     if (messageController.text.isNotEmpty) {
+      await firebase.sendMessage(messageController.text);
+
       setState(() {
         conversation.add(messageController.text);
         messageController.clear();
       });
-      // Scroll to the latest message
+
       Future.delayed(Duration(milliseconds: 300), () {
         scrollController.jumpTo(scrollController.position.maxScrollExtent);
       });
@@ -70,7 +79,6 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
     final Image chatAvatar = args['image'];
 
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.back(),
@@ -136,55 +144,48 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/wallpaper/darkwallpaperr.jpg',
+              'assets/images/wallpaper/brightwallpaper.jpg',
               fit: BoxFit.cover,
             ),
           ),
           Column(
             children: [
-              //new data from firestore
-              // Expanded(
-              //   child: StreamBuilder(
-              //     stream: firebase.getAllMessages(),
-              //     builder: (context, snapshot) {
-              //       switch (snapshot.connectionState) {
-              //         case ConnectionState.waiting:
-              //           return CircularProgressIndicator();
-              //         case ConnectionState.none:
-              //           return const Center(child: CircularProgressIndicator());
-              //
-              //         case ConnectionState.active:
-              //         case ConnectionState.done:
-              //           if (snapshot.hasError) {
-              //             return Center(child: Text('Error: ${snapshot.error}'));
-              //           }
-              //
-              //           final data = snapshot.data?.docs;
-              //
-              //           if (data == null || data.isEmpty) {
-              //             return const Center(child: Text('No messages available'));
-              //           }
-              //
-              //           log('Data: ${jsonEncode(data[0].data())}');
-              //
-              //           return ListView.builder(
-              //             itemCount: data.length,
-              //             itemBuilder: (context, index) {
-              //               final message = data[index].data();
-              //               return ListTile(
-              //                 title: Text(message['text'] ?? 'No message'),
-              //                 subtitle: Text(message['sender'] ?? 'Unknown'),
-              //               );
-              //             },
-              //           );
-              //       }
-              //     },
-              //   ),
-              // ),
+
+              //dynamic chats
+              Expanded(
+                child: StreamBuilder(
+                  stream: firebase.getAllMessages(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(child: CircularProgressIndicator());
+                    }
+                    if (snapshot.hasError) {
+                      return Center(child: Text('Error: ${snapshot.error}'));
+                    }
+                    final data = snapshot.data?.docs;
+                    if (data == null || data.isEmpty) {
+                      return const Center(child: Text('No messages available'));
+                    }
+                    _list.clear();
+                    _list.add(Message(isSeen: false, msgtype: 'text', receiverId: 'user1', senderId: 'user1', text: 'msg1 this is crossid', timestamp: DateTime.timestamp()));
+                    _list.add(Message(isSeen: false, msgtype: 'text', receiverId: 'user1', senderId: 'user1', text: 'msg1 this is cross id as well a bit long , uk djsdjsadk jdsajdsak ksnd jajasldkjj asljd jlaslkdas jkljjdflk jldfksj kld', timestamp: DateTime.timestamp()));
+                    _list.add(Message(isSeen: false, msgtype: 'text', receiverId: 'Mummy', senderId: 'user1', text: 'msg2 this is sameid', timestamp: DateTime.timestamp()));
+
+                    return ListView.builder(
+                      itemCount: _list.length,
+                      physics: BouncingScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return MessageCard(message: _list[index]);
+                      },
+                    );
+                  },
+                ),
+              ),
 
 
 
-              //old static data
+
+              // Static conversation messages
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -201,6 +202,22 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                   ),
                 ),
               ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              //textfield keyboard
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -250,4 +267,3 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
     );
   }
 }
-
