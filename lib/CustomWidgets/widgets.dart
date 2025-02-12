@@ -1,9 +1,15 @@
 // custom_bottom_navigation_bar.dart
 
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/Controllers/controllers.dart';
+import 'package:whatsappclone/pages/ChatPage/chatspage_backend.dart';
+
+import '../auth/auth_google.dart';
 
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -70,6 +76,32 @@ class utils{
 
 
 
+  }
+
+  void toastMessage(String message){
+    Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+
+    );
+  }
+  void gtoastMessage(String message){
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.green,
+      textColor: Colors.white,
+      fontSize: 16.0,
+
+
+    );
   }
 
   void AppLanguageSheet(){
@@ -869,7 +901,62 @@ class StorageAndDataSettingManager{
 
 
 
+class BottomSheetOpener {
+  final GoogleSignInProvider _googleSignInProvider = GoogleSignInProvider();
 
+  void showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+      ),
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Select an Option",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16),
+              ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("Login with Phone Number"),
+                onTap: () {
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => null)));
+                  print("Login with Phone Number selected");
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.g_mobiledata),
+                title: Text("Continue with Google"),
+                onTap: () async {
+                  final user = await _googleSignInProvider.signInWithGoogle();
+                  if (user != null) {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPageBackend(),));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Signed in as ${user.displayName}')),
+                    );
+                  } else {
+                    utils().toastMessage(e.toString());
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Sign-in failed')),
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
 
 
 //made with chatgpt

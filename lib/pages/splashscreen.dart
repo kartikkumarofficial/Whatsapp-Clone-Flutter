@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/CustomWidgets/bottomnavigationbar.dart';
+import 'package:whatsappclone/pages/login/LoginScreen.dart';
 import 'ChatPage/chatspage.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _SplashscreenState extends State<Splashscreen> {
   void _startTimer() {
     Timer(Duration(milliseconds: 1500), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Homepage()));
+          context, MaterialPageRoute(builder: (context) => LoginScreen()));
     });
     // fade effect
     Future.delayed(Duration(milliseconds: 500), () {

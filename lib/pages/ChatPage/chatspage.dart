@@ -1,10 +1,14 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:whatsappclone/CustomWidgets/bottomnavigationbar.dart';
+import 'package:whatsappclone/models/chat_user_model.dart';
+import 'package:whatsappclone/pages/ChatPage/ChatTile.dart';
+import 'package:whatsappclone/pages/ChatPage/chat_firebase.dart';
 import 'package:whatsappclone/pages/DrawerScreens/StarredMessages.dart';
 import 'package:whatsappclone/pages/DrawerScreens/linkeddevices.dart';
 import 'package:whatsappclone/pages/DrawerScreens/newbroadcast.dart';
@@ -25,6 +29,9 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+
+
+  List<ChatUser> list =[];
   //todo fix image picker to fetch images
   File? image;
   Future pickImage() async {
@@ -47,6 +54,9 @@ class _ChatPageState extends State<ChatPage> {
     'Payments',
     'Settings'
   ];
+
+  // get srcWidth => null;
+  double get srcWidth => MediaQuery.of(context).size.width;
 
   @override
   Widget build(BuildContext context) {
@@ -338,6 +348,9 @@ class _ChatPageState extends State<ChatPage> {
                           ),),)
                   ),
                 ),
+
+
+
 
 
 

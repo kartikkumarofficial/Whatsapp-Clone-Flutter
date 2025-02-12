@@ -4,6 +4,8 @@ import 'package:whatsappclone/pages/ChatPage/chatspage.dart';
 import 'package:whatsappclone/pages/communitiespage.dart';
 import 'package:whatsappclone/pages/UpdatesPage/updatespage.dart';
 
+import '../pages/ChatPage/chatspage_backend.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -30,7 +32,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> widgetList = [
-      ChatPage(),
+      ChatPageBackend(),
       Updatespage(),
       Communitiespage(),
       Callspage(),

@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'chattextpage.dart';
+//services ft firestore services
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 class firebase {
@@ -14,6 +16,14 @@ class firebase {
         'timestamp', descending: false).snapshots();
   }
 
+  static Stream<QuerySnapshot<Map<String, dynamic>>> getAllUsers() {
+    return firestore.collection('users').snapshots();
+  }
+
+  // static Future<bool> userExists() async{
+    // return await firestore.collection('users').doc();
+  // }
+
 
   static Future<void> sendMessage(String text) async {
     await firestore.collection('messages').add({
@@ -23,4 +33,8 @@ class firebase {
       'timestamp': FieldValue.serverTimestamp(),
     });
   }
+
+  //chats(collection) -> chatId(doc) -> messages(collection) ->message(doc)
+
+
 }
