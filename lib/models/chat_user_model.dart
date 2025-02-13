@@ -39,7 +39,7 @@ class ChatUser {
     email: json["email"]?? '',
     image: json["image"]?? '',
     isOnline: json["is_online"]?? false,
-    lastActive: json["last_active"]?? '',
+    lastActive: json["last_active"]?? 'last_active_here',
     name: json["name"]?? '',
     pushToken: json["push_token"]?? '',
     userId: json["userId"]?? '',
