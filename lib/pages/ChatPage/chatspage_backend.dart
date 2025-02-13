@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:whatsappclone/CustomWidgets/bottomnavigationbar.dart';
+import 'package:whatsappclone/auth/auth_google.dart';
 import 'package:whatsappclone/models/chat_user_model.dart';
 import 'package:whatsappclone/pages/ChatPage/ChatTile.dart';
 import 'package:whatsappclone/pages/ChatPage/chat_firebase.dart';
@@ -18,6 +19,7 @@ import 'package:whatsappclone/pages/ChatPage/chattextpage.dart';
 import 'package:whatsappclone/pages/login/authscreen.dart';
 import 'package:whatsappclone/pages/login/welcomepage.dart';
 import 'package:whatsappclone/pages/selectcontactspage.dart';
+import 'package:whatsappclone/pages/splashscreen.dart';
 import '../callpage.dart';
 import '../DrawerScreens/settings/settingspage.dart';
 
@@ -421,7 +423,9 @@ class _ChatPageState extends State<ChatPageBackend> {
               right: srcwidth*0.055,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.to(WelcomeScreen());
+                  // Get.to(WelcomeScreen());
+                  GoogleSignInProvider().signOut();
+                  Get.to(Splashscreen());
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
