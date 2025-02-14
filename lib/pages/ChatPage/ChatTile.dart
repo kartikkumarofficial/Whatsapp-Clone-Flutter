@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/models/chat_user_model.dart';
+import 'package:whatsappclone/pages/EditContact.dart';
 import 'package:whatsappclone/pages/NewContact.dart';
 import 'chattextpage.dart';
 
@@ -28,7 +29,7 @@ class CustomChatTile extends StatelessWidget {
       },
       leading: InkWell(
         onTap: (){
-          Get.to(NewContactPage(),
+          Get.to(EditContactPage(),
             arguments: {
           'name': chatUser.name,
           'image': chatUser.image,}

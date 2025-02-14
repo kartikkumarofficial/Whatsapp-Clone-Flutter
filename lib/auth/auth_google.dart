@@ -29,9 +29,14 @@ class GoogleSignInProvider {
   }
 
   Future<void> signOut() async {
-    await _auth.signOut();
-    await _googleSignIn.signOut();
+    try {
+      await _googleSignIn.signOut();
+      await _auth.signOut();
+    } catch (e) {
+      print("Error signing out: $e");
+    }
   }
+
 }
 
 

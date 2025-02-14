@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class NewContactPage extends StatefulWidget {
-  const NewContactPage({super.key});
+class EditContactPage extends StatefulWidget {
+  const EditContactPage({super.key});
 
   @override
-  State<NewContactPage> createState() => _NewContactPageState();
+  State<EditContactPage> createState() => _EditContactPageState();
 }
 
-class _NewContactPageState extends State<NewContactPage> {
+class _EditContactPageState extends State<EditContactPage> {
   final TextEditingController firstnamecontroller = TextEditingController();
   final TextEditingController lastnamecontroller = TextEditingController();
   final TextEditingController phonecontroller = TextEditingController();
@@ -38,7 +38,7 @@ class _NewContactPageState extends State<NewContactPage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 11, 17, 21),
         title: Text(
-          'New Contact',
+          'Edit Contact ',
           style: TextStyle(color: Colors.white, fontSize: srcwidth * 0.048),
         ),
         leading: IconButton(

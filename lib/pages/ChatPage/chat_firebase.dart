@@ -11,6 +11,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class firebase {
 
+
   static final FirebaseAuth auth = FirebaseAuth.instance;
 
   //to return current user
@@ -25,6 +26,7 @@ class firebase {
         'timestamp', descending: false).snapshots();
   }
 
+  //function to get all users from firestore database
   static Stream<QuerySnapshot<Map<String, dynamic>>> getAllUsers() {
     return firestore.collection('users').snapshots();
   }
@@ -34,6 +36,8 @@ class firebase {
     final doc = await firestore.collection('users').doc(auth.currentUser!.uid).get();
     return doc.exists;
   }
+
+
 
   //function to create a new user
   static Future<void> createUser() async{
