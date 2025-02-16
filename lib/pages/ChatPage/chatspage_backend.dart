@@ -34,6 +34,7 @@ class _ChatPageState extends State<ChatPageBackend> {
 
 
   List<ChatUser> list =[];
+
   //todo fix image picker to fetch images
   File? image;
   Future pickImage() async {
@@ -59,9 +60,15 @@ class _ChatPageState extends State<ChatPageBackend> {
 
   // get srcWidth => null;
   double get srcWidth => MediaQuery.of(context).size.width;
+  @override
+  void initState() {
+    firebase.getSelfInfo();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+
     var srcheight=MediaQuery.of(context).size.height;
     var srcwidth =MediaQuery.of(context).size.width;
     var size =MediaQuery.of(context).size;

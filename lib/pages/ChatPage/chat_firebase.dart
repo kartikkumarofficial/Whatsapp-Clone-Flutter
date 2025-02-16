@@ -20,15 +20,28 @@ class firebase {
   // var uid = auth.currentUser!.uid;
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+  //for storing selfinfo
+  static late ChatUser me;
 
   static Stream<QuerySnapshot<Map<String, dynamic>>> getAllMessages() {
     return firestore.collection('messages').orderBy(
         'timestamp', descending: false).snapshots();
   }
 
+  //function to get current user info
+  static Future<void> getSelfInfo() async{
+    await firestore.collection('users').doc(userr.uid).get().then((user)async{
+      if(user.exists){
+        me = ChatUser.fromJson(user.data()!);
+      }else{
+        await createUser().then((value)=> getSelfInfo());
+      }
+    });
+  }
+
   //function to get all users from firestore database
   static Stream<QuerySnapshot<Map<String, dynamic>>> getAllUsers() {
-    return firestore.collection('users').snapshots();
+    return firestore.collection('users').where('userId',isNotEqualTo: userr.uid).snapshots(); //id or userId
   }
 
   //function to check if user exists or not , has a specific uid
