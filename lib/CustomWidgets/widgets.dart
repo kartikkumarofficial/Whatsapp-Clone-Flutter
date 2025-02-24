@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:whatsappclone/Controllers/controllers.dart';
+import 'package:whatsappclone/pages/ChatPage/chatspage.dart';
 import 'package:whatsappclone/pages/ChatPage/chatspage_backend.dart';
 
 import '../auth/auth_google.dart';
@@ -938,7 +939,7 @@ class BottomSheetOpener {
                 onTap: () async {
                   final user = await _googleSignInProvider.signInWithGoogle();
                   if (user != null) {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPageBackend(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage(),));
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text('Signed in as ${user.displayName}')),
                     );
